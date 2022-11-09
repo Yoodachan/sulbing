@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style type="text/css">
+        body,input,select,option,button {
+            font-size: 20px;
+            transition:all 0.1s;
+        }
+        input[type=checkbox] {
+            width: 20px; 
+            height: 20px;
+        }
+        input:focus {
+            border: 2px solid rgb(123, 175, 171); 
+            border-radius: 2px;
+            outline:0 none; 
+            background: rgb(255, 255, 255); 
+            box-shadow: 2px 2px 2px rgba(123, 175, 171, 0.548);
+            color: black; 
+        }
+        .err_txt {
+            font-size:16px;
+            color: red;
+        }
+        .dsp_txt {
+            font-size: 16px;
+        }
+        .c_title {
+            display:inline-block;
+            width: 80px;
+        }
+        .c_line {
+            padding-bottom: 15px;
+            border-bottom: 1px dotted #aaa;
+        }
+        #postalCode,#addr1 {
+            background-color:lightgray;
+        }
+    </style>
+
+    <script>
+
+        function form_check() {
+            var u_name = document.getElementById("u_name");
+            var u_id = document.getElementById("u_id");
+            var u_name = document.getElementById("pwd");
+            var mobile = document.getElementById("mobile");
+            var apply = document.getElementById("apply");
+                //값이 없을 경우
+            if(!u_name.value) {
+                var txt = document.getElementById("err_name");
+                txt.textContent = "이름을 한글로 최소 2자, 최대 20자 이내로 입력하세요.";
+                u_name.focus();
+                return false;
+            }
+
+
+            if(!u_id.value) {
+                var txt = document.getElementById("err_id");
+                txt.textContent = "아이디를 영어소문자, 숫자로 최소 4글자, 최대 12자 이내로 입력하세요.";
+                u_id.focus();
+                return false;
+            }
+
+            if(!pwd.value) {
+                var txt = document.getElementById("err_pwd");
+                txt.textContent = "비밀번호를 입력하세요.";
+                pwd.focus();
+                return false;
+            }
+
+            if(repwd.value == "" ) {
+                var txt = document.getElementById("err_repwd");
+                txt.textContent = "비밀번호 확인을 입력하세요.";
+                repwd.focus();
+                return false;
+            }
+            if(repwd.value != pwd.value) {
+                var txt = document.getElementById("err_repwd");
+                txt.textContent = "똑바로 입력하세요.";
+                repwd.focus();
+                return false;
+            }
+
+            if(mobile.value == "" ) {
+                var txt = document.getElementById("err_mobile");
+                txt.textContent = "전화번호를 입력하세요.";
+                mobile.focus();
+                return false;
+            }
+
+
+            // 정규식으로 숫자인지 검사
+            // 변수 = /패턴(규칙)/플래그(옵션);
+            // 변수.메소드()
+            // [0-9],[a-zA-Z0-9],[!@#$%^&*],[ㄱ-힣]
+            // 숫자만 사용 가능
+            var reg = /^[0-9]+$/g;
+            // 숫자만 사용 가능 + 5글자이상 11글자 이하
+            // var reg = /^[0-9]+{5, 11}+$/g; 안댐
+            // test : 대응되는 문자열이 있는지 검사하는 메소드 true 나 false를 반환합니다.
+            
+            if (!reg.test(mobile.value)) {
+                var txt = document.getElementById("err_mobile");
+                txt.textContent = "전화번호는 숫자만 입력할 수 있습니다.";
+                mobile.focus();
+                return false;
+            }
+
+            if (!apply.checked) {
+                var txt = document.getElementById("err_apply");
+                txt.textContent = "약관 동의가 필요합니다.";
+                apply.focus();
+                return false;
+            }
+            
+        }   
+
+        function change_email() {
+            var email_dns = document.getElementById("email_dns");
+            var email_sel = document.getElementById("email_sel");
+
+            // email_sel.options.selectedindex
+            //카멜 표기법 사용
+            var idx = email_sel.options.selectedIndex;
+            var val = email_sel.options[idx].value
+            // alert(idx);
+            // if (val) {
+                
+            // }
+            email_dns.value = val
+            // if (email_sel.options[1]) {
+            //     var val1 = email_sel.options[1].value;
+            //     email_dns.value = val1
+            // }
+            // if (email_sel.options[2]) {
+            //     var val1 = email_sel.options[2].value;
+            //     email_dns.value = val1
+            // }
+
+        
+            // alert(val)
+        
+            // console.log (email_sel.options[1])
+            // <= <select><option>
+        }
+        
+        function id_search() {
+            // window.open("팝업될 문서 경로","팝업 되었을 때의 이름","옵션");
+            //left top bottom right 지원안함
+            window.open ("02. 아이디 검색 페이지.html","","width=600,height=300")
+        }
+
+        function postal_search() {
+            window.open ("04. 주소 검색 페이지.html","","width=600,height=300")
+        }
+        
+
+    </script>
+</head>
+<body>
+    <!-- <form name="join_form" action="insert.php" method="post"> -->
+    <form name="join_form" action="insert.php" method="get" onsubmit=" return form_check()">
+        <fieldset>
+
+            <legend>회원가입</legend>
+            <p>
+                <label for="u_name" class="c_title">이름</label>
+                <input type="text" name="u_name" id="u_name" />
+                <br /><span id="err_name" class="err_txt"></span>
+            </p>
+            <p>
+                <label for="u_id" class="c_title">아이디</label>
+                <input type="text" name="u_id" id="u_id" />
+                <button type="button" onclick="id_search()">아이디 중복 확인</button>
+                <br /><span class="dsp_txt">*아이디는 4~12글자만 입력할 수 있습니다.</span>
+                <br /><span id="err_id" class="err_txt"></span>
+            </p>
+            <p>
+                <label for="pwd">비밀번호</label>
+                <input type="text" name="pwd" id="pwd" />
+                <br />*비밀번호는는 4~12글자만 입력할 수 있습니다.
+                <br /><span id="err_pwd" class="err_txt"></span>
+            </p>
+            <p>
+                <label for="repwd">비밀번호 확인</label>
+                <input type="text" name="repwd" id="repwd" />
+                <br /><span id="err_repwd" class="err_txt"></span>
+            </p>
+
+            <p>
+                <label for="mobile">전화번호</label>
+                <input type="text" name="mobile" id="mobile"/>
+                <br /> "-" 없이 숫자만 입력
+                <br /><span id="err_mobile" class="err_txt"></span>
+            </p>
+
+            <p class="c_line" onclick="change_email()">  
+                <label for="email_id">이메일</label>
+                <input type="text" name="email_id" id="email_id" size="12" /> @
+                <input type="text" name="email_dns" id="email_dns" size="12" />
+                <select name="email_sel" id="email_sel" onchange="change_email()">
+                    <option value="">직접입력</option>
+                    <option value="naver.com">naver.com</option>
+                    <option value="hanmail.net">hanmail.net</option>
+                    <option value="gmail.com">gmail.com</option>
+                </select>
+                <span id="err_mobile" class="err_txt"></span>
+            </p>
+
+            <p>
+                <label for="birth">생년월일</label>
+                <input type="text" name="birth" id="birth"/>
+                <br /> ex) 20221006
+            </p>
+
+            <br />
+            
+            <p>
+                <label for="postalCode">주소</label>
+                <input type="text" name="postalCode" id="postalCode" readonly/>
+                <button type="button" onclick="postal_search()">주소검색</button><br />
+                <label for="addr1">기본주소</label>
+                <input type="text" name="addr1" id="addr1" size="30" readonly/><br />
+                <label for="addr2">상세주소</label>
+                <input type="text" name="addr2" id="addr2" size="30"/>
+            </p> 
+
+            <p>
+                <input type="checkbox" name="apply" id="apply" value="y">
+                <label for="apply">약관 동의</label>
+                <br /><span id="err_apply" class="err_txt"></span>
+            </p>
+
+            <p> 
+                <button class="off_sub" type="submit">회원가입</button>
+                <button type="button">돌아가기</button>
+            </p>
+
+        </fieldset>
+    </form>
+    
+</body>
+</html>
