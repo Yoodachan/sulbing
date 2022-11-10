@@ -452,102 +452,97 @@ button {
   }
   
 
-.common_title {
-  width: 100%;
-
-  border-bottom: 1px solid #f0f0f0;
-}
-
-.inner_title {
-  display: block;
-  position:relative;
-  width: 1040px;
-  height: 60px;
-  margin: 50px auto;
-}
-
-.inner_title h2 {
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  text-align: center;
-  display: block;
-  width: 1040px;
-  height: 60px;
-  line-height: 60px;
-}
-
-.common_title h2>a::before {
-  display: block;
-  position: absolute;
-  content: "";
-  top: 25px;
-  left: 13px;
-  /* left: 400px; */
-  background-image: url(../IMAGES/ico_tit_arrow_left.jpg);
-  width:44px;
-  height:13px;
-  font-weight: bold;
-}
-
-.common_title h2>a {
-  display: block;
-  position: absolute;
-  top: 0px;
-  left: 260px;
-  width: 520px;
-  height: 60px;
-  line-height: 60px;
-  text-align: center;
-  font-size: 36px;
-  font-weight: bold ;
-  transition: all 0.5s;
+  .title_wrap {
+    width: 100%;
+  }
   
-  /* border: 2px solid red; */
-}
+  .common_title {
+    display: block;
+    position:relative;
+    width: 1040px;
+    height: 60px;
+    margin: 50px auto;
+  }
+  
+  .inner_title {
+    position: relative;
+    text-align: center;
+    display: block;
+    width: 520px;
+    height: 60px;
+    font-size: 36px;
+    line-height: 60px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  
+  .title_text {
+    display: block;
+    width: 270px;
+    height: 60px;
+    font-size: 36px;
+    line-height: 60px;
+    margin: 0 auto;
+    color: #2d2d2d;
+  }
+  
+  .title_left,
+  .title_right {
+    position: absolute;
+    top: 25px;
+  }
+  
+  .title_left {
+    background-image: url(../IMAGES/ico_tit_arrow_left.jpg);
+    left: 80px;
+    width:44px;
+    height:13px;
+  }
+  
+  .title_right {
+    right: 80px;
+    background-image: url(../IMAGES/ico_tit_arrow_right.jpg);
+    width:44px;
+    height:13px;
+  }
+  
+  
+  .common_title ul {
+    display: flex;
+    position: absolute;
+    top: 0px;
+    right: 30px;
+    width: 250px;
+    height: 60px;
+  }
+  
+  .common_title ul li {
+    margin: 20px auto;
+    height: 20px;
+    line-height: 20px;
+    font-size: 16px;
+    color:#666666;
+  }
 
-.common_title h2>a::after {
-  display: block;
-  position: absolute;
-  content: "";
-  top: 25px;
-  right: 13px;
-  background-image: url(../IMAGES/ico_tit_arrow_right.jpg);
-  width:44px;
-  height:13px;
-  font-weight: bold;
-}
+  .common_title li:nth-of-type(2)::before,
+  .common_title li:nth-of-type(3)::before {
+    content: ">";
+    position:absolute;
+    top: 19px;
+  }
+  
+  .common_title li:nth-of-type(2)::before {
+    left: 35px;
+  } 
 
-.inner_title ul {
-  display: flex;
-  position: absolute;
-  top: 0px;
-  right: 30px;
-  width: 140px;
-  height: 60px;
-}
-
-.inner_title ul li {
-  margin: 20px auto;
-  height: 20px;
-  line-height: 20px;
-  font-size: 16px;
-  color:#666666;
-}
-
-.inner_title li:nth-of-type(2)::before {
-  width: 20px;
-  height: 18px;
-  font-size: 16px;
-  content: ">";
-  position:absolute;
-  top: 19px;
-  left: 45px;
-} 
-
-.inner_title li p {
-  font-weight: bold;
-} 
+  .common_title li:nth-of-type(3)::before {
+    left: 122px;
+  } 
+  
+  .common_title li:nth-of-type(3) p {
+    font-weight: bold;
+  } 
+  
 
 .register_wrap {
   width: 100%;
@@ -678,5 +673,87 @@ button {
   font-size: 22px;
   text-align: center;
   margin: 60px auto 0px; 
+}
+
+
+
+
+
+
+#footer {
+  width: 100%;
+  height: 220px;
+  font-size: 16px;
+  color:#666666;
+  padding-bottom: 60px;
+  margin-top: 80px;
+}
+
+.footer_inner {
+  width: 100%;
+  height: 180px;
+  margin: 0 auto;
+}
+
+.footer_info {
+  border: 2px solid red;
+}
+
+.footer_top {
+  width: 100%;
+  height: 50px;
+  line-height: 50px;
+  margin: 0 auto;
+  border-bottom: 1px solid #f4eae2;
+  
+}
+
+.footer_top ul {
+  margin: 0 auto;
+  width: 1040px;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+}
+.footer_top li {
+  padding: 0px 15px;
+  font-weight: bold;
+}
+
+.footer_top li:nth-of-type(4) {
+  color: #000;
+}
+
+.footer_bottom {
+  width: 1040px;
+  height: 85px;
+  font-weight: 100;
+  position: relative;
+  margin: 15px auto 0px;
+}
+
+.footer_bottom ul {
+  width: 1040px;
+  padding-left: 15px;
+}
+.footer_bottom li {
+  margin-bottom: 5px;
+  height:18px;
+
+}
+
+.footer_bottom span::before {
+  content: "|";
+  margin: 0 3px;
+  color: #000;
+}
+
+.footer_bottom img {
+  display: block;
+  width: 75px;
+  height: 65px;
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
 }
 

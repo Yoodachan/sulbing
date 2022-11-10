@@ -1,7 +1,6 @@
 
 /* 드롭다운 애니 */
 
-/* 드롭다운 0.8 */
 .drop_down_off {
     opacity: 0;
     transform: translate3d(0, -100%, 0);
@@ -10,6 +9,60 @@
   .drop_down_on {
     opacity: 1;
     transform: translateZ(0);
-    transition:all 1.2s;
+    transition-duration:  1.2s;
   }
 
+
+/* 좌우 이동 애니 */
+
+
+.left_move_off {
+    opacity: 0;
+    transform: translate(-80px,0px);
+} 
+
+.left_move_on {
+    opacity: 1;
+    transform: translateZ(0);
+    transition-delay: 1.2s;
+    transition-duration:  1.2s;
+  }
+
+
+.right_move_off {
+    opacity: 0;
+    transform: translate(80px,0px);
+} 
+
+.right_move_on {
+    opacity: 1;
+    transform: translateZ(0);
+    transition-delay: 2.4s;
+    transition-duration:  1.2s;
+}
+
+/* Y축 회전 */
+
+.rtty_off {
+opacity: 0;
+transform: rotateY( 180deg );
+transform: translate(0px,30px);
+}
+
+.rtty_on {
+    opacity: 1;
+    transform: translateZ(0);
+    transition-duration:  1.2s;
+}
+
+
+/* @keyframes rotate_inf {
+  0% {
+      opacity: 0;
+      transform: scaleY(-2);
+  }
+  to {
+      opacity: 1;
+      transform: scaleY(1);
+  }
+} */

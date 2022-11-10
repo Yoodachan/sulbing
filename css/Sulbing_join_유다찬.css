@@ -442,81 +442,69 @@ button {
 
 .join_wrap {
   margin: 0 auto;
-  text-align: left;
   width: 100%;
 
   background-color: white;
   border-radius: 8px;
-  
   }
   
 
-.common_title {
+.title_wrap {
   width: 100%;
 }
 
-.inner_title {
+.common_title {
   display: block;
   position:relative;
   width: 1040px;
   height: 60px;
   margin: 50px auto;
-  
+}
+
+.inner_title {
+  position: relative;
+  text-align: center;
+  display: block;
+  width: 520px;
+  height: 60px;
+  font-size: 36px;
+  line-height: 60px;
+  margin: 0 auto;
+  text-align: center;
 }
 
 .title_text {
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  text-align: center;
   display: block;
-  width: 1040px;
+  width: 160px;
   height: 60px;
+  font-size: 36px;
   line-height: 60px;
+  margin: 0 auto;
+  color: #2d2d2d;
 }
 
-.title_text>a::after {
-  display: block;
+.title_left,
+.title_right {
   position: absolute;
-  content: "";
   top: 25px;
-  right: 13px;
+}
+
+.title_left {
+  background-image: url(../IMAGES/ico_tit_arrow_left.jpg);
+  left: 130px;
+  width:44px;
+  height:13px;
+}
+
+.title_right {
+  right: 130px;
   background-image: url(../IMAGES/ico_tit_arrow_right.jpg);
   width:44px;
   height:13px;
-  font-weight: bold;
 }
 
-.title_text>a::before {
-  display: block;
-  position: absolute;
-  content: "";
-  top: 25px;
-  left: 13px;
-  /* left: 400px; */
-  background-image: url(../IMAGES/ico_tit_arrow_left.jpg);
-  width:44px;
-  height:13px;
-  font-weight: bold;
-}
 
-.title_text>a {
-  display: block;
-  position: absolute;
-  top: 0px;
-  left: 260px;
-  width: 520px;
-  height: 60px;
-  line-height: 60px;
-  text-align: center;
-  font-size: 36px;
-  font-weight: bold ;
-  transition: all 0.5s;
-  
-  /* border: 2px solid red; */
-}
-
-.inner_title ul {
+.common_title ul {
   display: flex;
   position: absolute;
   top: 0px;
@@ -525,7 +513,7 @@ button {
   height: 60px;
 }
 
-.inner_title ul li {
+.common_title ul li {
   margin: 20px auto;
   height: 20px;
   line-height: 20px;
@@ -533,7 +521,7 @@ button {
   color:#666666;
 }
 
-.inner_title li:nth-of-type(2)::before {
+.common_title li:nth-of-type(2)::before {
   width: 20px;
   height: 18px;
   font-size: 16px;
@@ -543,14 +531,14 @@ button {
   left: 45px;
 } 
 
-.inner_title li p {
+.common_title li p {
   font-weight: bold;
 } 
 
 .form_title {
   width: 1040px;
   margin: 0 auto;
-  text-align: left;
+
 }
 
 .form_title h3 {
@@ -954,7 +942,7 @@ input::placeholder {
 /* 절취선 */
 
 
-.btn_Area {
+.btn_area {
   width: 520px;
   margin: 0 auto;
 }
