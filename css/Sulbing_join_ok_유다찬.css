@@ -556,18 +556,6 @@ button {
   overflow: hidden;
 }
 
-.anime_off {
-  opacity: 0;
-  transform: translate3d(0, -100%, 0);
-  scale: 150%;
-}
-
-.anime_on {
-  opacity: 1;
-  transform: translateZ(0);
-  transition:all 0.8s;
-  scale: 100%;
-}
 
 .register_img {
   display: block;

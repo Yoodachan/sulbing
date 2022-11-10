@@ -7,12 +7,6 @@ let inner_title = document.getElementsByClassName('inner_title')[0];
 let title_left = document.getElementsByClassName('title_left')[0];
 let title_right = document.getElementsByClassName('title_right')[0];
 
-let welcome_0 = document.getElementsByClassName('welcome')[0];
-let welcome_1 = document.getElementsByClassName('welcome')[1];
-let welcome_2 = document.getElementsByClassName('welcome')[2];
-let welcome_3 = document.getElementsByClassName('welcome')[3];
-let welcome_4 = document.getElementsByClassName('welcome')[4];
-let welcome_5 = document.getElementsByClassName('welcome')[5];
 
 function character_animation () {
     character.classList.remove('anime_off');
@@ -38,7 +32,76 @@ function title_anime () {
 }
 
 title_anime ()
-console.log("Dd ")
+
+
+let welcome_0 = document.getElementsByClassName('welcome')[0];
+let welcome_1 = document.getElementsByClassName('welcome')[1];
+let welcome_2 = document.getElementsByClassName('welcome')[2];
+let welcome_3 = document.getElementsByClassName('welcome')[3];
+let welcome_4 = document.getElementsByClassName('welcome')[4];
+let welcome_5 = document.getElementsByClassName('welcome')[5];
+let welcome_if = document.querySelector('.rtty_on_05')
+
+//6초마다 실행댐
+var count = true;
+setInterval ( function () {
+            welcome_0.classList.remove('rtty_off_00');
+            welcome_0.classList.add('rtty_on_00');
+            welcome_1.classList.remove('rtty_off_01');
+            welcome_1.classList.add('rtty_on_01');
+            welcome_2.classList.remove('rtty_off_02');
+            welcome_2.classList.add('rtty_on_02');
+            welcome_3.classList.remove('rtty_off_03');
+            welcome_3.classList.add('rtty_on_03');
+            welcome_4.classList.remove('rtty_off_04');
+            welcome_4.classList.add('rtty_on_04');
+            welcome_5.classList.remove('rtty_off_05');
+            welcome_5.classList.add('rtty_on_05');
+} , 1200 )
+
+
+setInterval ( function () {
+        welcome_0.classList.remove('rtty_on_00');
+        welcome_1.classList.remove('rtty_on_01');
+        welcome_2.classList.remove('rtty_on_02');
+        welcome_3.classList.remove('rtty_on_03');
+        welcome_4.classList.remove('rtty_on_04');
+        welcome_5.classList.remove('rtty_on_05');
+    
+        welcome_0.classList.add('rtty_off_00');
+        welcome_1.classList.add('rtty_off_01');
+        welcome_2.classList.add('rtty_off_02');
+        welcome_3.classList.add('rtty_off_03');
+        welcome_4.classList.add('rtty_off_04');
+        welcome_5.classList.add('rtty_off_05');
+} , 4800 )
+
+
+let welcome_clear = document.getElementsByClassName('welcome_clear')[0];
+let welcome_service = document.getElementsByClassName('welcome_service')[0];
+let welcome_user = document.getElementsByClassName('welcome_user')[0];
+let home_btn = document.getElementsByClassName('home_btn')[0];
+
+function welcome_anime (){
+
+    welcome_clear.classList.remove('welcome_down_off_00');
+    welcome_clear.classList.add('welcome_down_on_00');
+
+    welcome_service.classList.remove('welcome_down_off_01');
+    welcome_service.classList.add('welcome_down_on_01');
+
+    welcome_user.classList.remove('welcome_down_off_02');
+    welcome_user.classList.add('welcome_down_on_02');
+
+    home_btn.classList.remove('btn_left_off');
+    home_btn.classList.add('btn_left_on');
+}
+
+welcome_anime ()
+
+
+
+
 // var container ㅇ= document.getElementById('map'); //지도를 담을 영역의 DOM 레퍼런스
 // var options = { //지도를 생성할 때 필요한 기본 옵션
 // 	center: new kakao.maps.LatLng(33.450701, 126.570667), //지도의 중심좌표.
