@@ -20,26 +20,28 @@
     <meta name="twitter:description" content="코리안 디저트 카페, 인절미설빙, 메뉴, 전국매장 안내, 이벤트, 고객센터">
     <meta name="naver-site-verification" content="4c28a9c772921b16e3cf7cc13b6f11e959f283b8"/> 
     <meta name="robots" content="noindex" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Hahmlet:wght@100;200;300;400;500;600;700;800;900&family=Noto+Sans+KR&display=swap" rel="stylesheet">
     <link rel="shortcut icon" type="image/x-icon" href="https://sulbing.com/theme/cntt/img/favicon.ico">
     <link rel="apple-touch-icon" sizes="180x180" href="/img/apple-icon-180x180.png" />
     <link rel="icon" type="image/png" href="/img/android-icon-192x192.png" sizes="192x192">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Hahmlet:wght@100;200;300;400;500;600;700;800;900&family=Noto+Sans+KR&display=swap" rel="stylesheet">
 
+    <!-- 폰트어썸 -->
     <script src="https://kit.fontawesome.com/73110e26f5.js" crossorigin="anonymous"></script>
+    <!-- 제이쿼리 -->
     <script src="https://code.jquery.com/jquery-3.6.1.min.js"
     integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ="
     crossorigin="anonymous"></script>
-    <script src="https://kit.fontawesome.com/73110e26f5.js" crossorigin="anonymous"></script>
-    <!-- <script src='https://www.google.com/recaptcha/api.js'></script> -->
+   <!-- 리캅챠 -->
+    <script src='https://www.google.com/recaptcha/api.js'></script>
 
     <!-- 초기값 리셋 css -->
     <link rel="stylesheet" href="../css/reset.css">
-    <!-- 메인 css -->
+    <!-- 로그인 css -->
     <link rel="stylesheet" href="../CSS/login.css">
     <!-- 애니메이션 css -->
-    <link rel="stylesheet" href="../css/anime.css">
+    <link rel="stylesheet" href="../CSS/anime.css">
     <!-- 헤더 & 푸터 css -->
     <link rel="stylesheet" href="../css/header_and_footer.css">
 
@@ -86,7 +88,7 @@
             </p>
             <p class="pwd_line">
                 <label for="pwd"><strong>PW</strong></label>
-                <input type="text" name="pwd" id="pwd" placeholder="비밀번호">
+                <input type="password" name="pwd" id="pwd" placeholder="비밀번호">
             </p>
             <p class="phone_check">
               <span class="info_txt">

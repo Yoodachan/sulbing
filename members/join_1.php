@@ -9,6 +9,8 @@
         body,input,button,select,option{font-size:20px}
         input[type=checkbox]{width:20px;height:20px}
         input[type=radio]{width:20px;height:20px}
+        .blueText{font-weight:bold;color:rgb(40, 92, 188)}
+        .redText{font-weight:bold;color:rgb(251, 77, 14)}
     </style>
     <script>
         function join_form_check(){
@@ -70,9 +72,67 @@
             email_dns.value = g_txt;
         };
 
-        function id_search(){
-            window.open("id_search.php", "idsch",  "width=600, height=300");
-        };
+        // 비동기식으로 아이디 중복 검사
+        function getCont( g_id ){
+            var dsp  = document.getElementById('dsp');
+            
+            if(g_id.length < 4 || g_id.length > 12){
+                dsp.innerHTML = '아이디는 4~12글자만 입력할 수 있습니다.';
+                dsp.className = 'redText';
+            } else{
+                var xmlhttp = fncGetXMLHttpRequest();
+
+                // 아이디를 체크할 php 페이지에 체크 하려하는 id 값을 파라미터로 전송
+                // alert('id_check_ajax.php?u_id='+g_id);
+                // return false;
+                xmlhttp.open('GET', 'id_check_ajax.php?u_id='+g_id, false);
+
+                xmlhttp.setRequestHeader('Content-Type','application/x-www-form-urlencoded; charset=UTF-8');
+
+                xmlhttp.onreadystatechange = function (){
+                    if( xmlhttp.readyState=='4' && xmlhttp.status==200 ){
+                        if( xmlhttp.status==500 || xmlhttp.status==404 || xmlhttp.status==403 )
+                            alert( xmlhttp.status );
+                        else{
+                            var txt = xmlhttp.responseText;
+                            txt = txt.replace(/\n/g, ""); // 행바꿈 제거
+                            txt = txt.replace(/\r/g, ""); // 엔터값 제거
+                            txt = txt.replace(/\s+/, ""); // 왼쪽 공백 제거
+                            txt = txt.replace(/\s+$/g, ""); // 오른쪽 공백 제거
+                            // alert("페이지에 입력된 값 : " + g_id + "\r처리 페이지에서 반환된 값 : " + txt);
+
+                            if(txt=='Y') {
+                                dsp.innerHTML = '이미 가입된 아이디입니다.';
+                                dsp.className = 'redText';
+                            } else{
+                                dsp.innerHTML = '사용할 수 있는 아이디입니다.';
+                                dsp.className = 'blueText';
+                            }
+                        }
+                    }
+                }
+            }
+            xmlhttp.send();
+        }
+
+        function fncGetXMLHttpRequest(){
+            if (window.ActiveXObject){
+                try{
+                    return new ActiveXObject("Msxml2.XMLHTTP");
+                }
+                catch(e){
+                    try{
+                        return new ActiveXObject("Microsoft.XMLHTTP");
+                    } 
+                catch(e1) { return null; }
+                }
+                //IE 외 파이어폭스 오페라 같은 브라우저에서 XMLHttpRequest 객체 구하기
+            } else if (window.XMLHttpRequest){
+                return new XMLHttpRequest();
+            } else{
+                return null;
+            }
+        }
     </script>
 </head>
 <body>
@@ -86,9 +146,9 @@
 
             <p>
                 <label for="u_id">아이디</label>
-                <input type="text" name="u_id" id="u_id">
-                <button type="button" onclick="id_search()">아이디 중복 확인</button>
+                <input type="text" name="u_id" id="u_id" onkeyup="getCont(this.value)">
                 <br>* 아이디는 4~12글자만 입력할 수 있습니다.
+                <br><span id="dsp"></span>
             </p>
 
             <p>
