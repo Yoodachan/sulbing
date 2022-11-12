@@ -43,7 +43,23 @@ let welcome_5 = document.getElementsByClassName('welcome')[5];
 let welcome_if = document.querySelector('.rtty_on_05')
 
 //6초마다 실행댐
-var count = true;
+setInterval ( function () {
+    welcome_0.classList.remove('rtty_on_00');
+    welcome_1.classList.remove('rtty_on_01');
+    welcome_2.classList.remove('rtty_on_02');
+    welcome_3.classList.remove('rtty_on_03');
+    welcome_4.classList.remove('rtty_on_04');
+    welcome_5.classList.remove('rtty_on_05');
+    welcome_0.classList.add('rtty_off_00');
+    welcome_1.classList.add('rtty_off_01');
+    welcome_2.classList.add('rtty_off_02');
+    welcome_3.classList.add('rtty_off_03');
+    welcome_4.classList.add('rtty_off_04');
+    welcome_5.classList.add('rtty_off_05');
+} , 3600 )
+
+
+
 setInterval ( function () {
             welcome_0.classList.remove('rtty_off_00');
             welcome_0.classList.add('rtty_on_00');
@@ -57,24 +73,8 @@ setInterval ( function () {
             welcome_4.classList.add('rtty_on_04');
             welcome_5.classList.remove('rtty_off_05');
             welcome_5.classList.add('rtty_on_05');
-} , 1200 )
+} , 3650 )
 
-
-setInterval ( function () {
-        welcome_0.classList.remove('rtty_on_00');
-        welcome_1.classList.remove('rtty_on_01');
-        welcome_2.classList.remove('rtty_on_02');
-        welcome_3.classList.remove('rtty_on_03');
-        welcome_4.classList.remove('rtty_on_04');
-        welcome_5.classList.remove('rtty_on_05');
-    
-        welcome_0.classList.add('rtty_off_00');
-        welcome_1.classList.add('rtty_off_01');
-        welcome_2.classList.add('rtty_off_02');
-        welcome_3.classList.add('rtty_off_03');
-        welcome_4.classList.add('rtty_off_04');
-        welcome_5.classList.add('rtty_off_05');
-} , 4800 )
 
 
 let welcome_clear = document.getElementsByClassName('welcome_clear')[0];
