@@ -27,6 +27,14 @@
 }
 
 
+main {
+  padding-bottom: 60px;
+}
+
+
+.title_wrap {
+  width: 100%;
+}
 
 .join_wrap {
   margin: 0 auto;
@@ -36,10 +44,6 @@
   border-radius: 8px;
   }
   
-
-.title_wrap {
-  width: 100%;
-}
 
 .common_title {
   display: block;

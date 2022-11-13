@@ -10,13 +10,15 @@ $(".GNB_menu").mouseleave(function(){
 //네브바 픽스드
 function nav_scroll () {
   $(window).scroll(function(){
-    var y = window.scrollY
-    const nav = $(".head_top")
-    if (y>=450) {
-      nav.addClass('head_fix')
-    }
-    else {
-      nav.removeClass('head_fix')
+    if ( document.body.clientHeight >= 2000 ) {
+      var y = window.scrollY
+      const nav = $(".head_top")
+      if (y>=450) {
+        nav.addClass('head_fix')
+      }
+      else {
+        nav.removeClass('head_fix')
+      }
     }
   });
 }

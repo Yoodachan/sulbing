@@ -1072,7 +1072,7 @@ function () {
     }
 })
 
-function form_check() {
+function join_form_check() {
     //이름//
     if( name_check == false ) {
 

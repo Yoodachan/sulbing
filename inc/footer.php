@@ -1,4 +1,3 @@
-<?php include "session.php"; ?>
 
 <footer id="footer">
   <div class="footer_inner">

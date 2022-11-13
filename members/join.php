@@ -79,21 +79,21 @@
         <section class="form_title">
           <h3>가입자 정보</h3>
         </section>
-        <section class="name_wrap">
+        <p class="name_wrap">
             <label for="u_name">이름</label>
             <div class="name_bt_wrap">
-                <input id="u_name" class="n_border" type="text" placeholder="한글 2~20자">
+                <input id="u_name" name="u_name" class="n_border" type="text" placeholder="한글 2~20자">
                 <button id="d_name" class="off_view" type="button" title="입력한 내용 삭제"><i class="fa-solid fa-x"></i></button>
             </div>
             <span id="name_text_wrap"  class="err_txt"> 
 
             </span>
-        </section>
+        </p>
 
         <section class="id_wrap">
             <label for="u_id">아이디</label>
             <div class="id_bt_wrap">
-                <input id="u_id" class="n_border" type="text" placeholder="영소문자, 숫자 4~12자" onkeyup="name_text_on (this.value)">
+                <input id="u_id" name="u_id" class="n_border" type="text" placeholder="영소문자, 숫자 4~12자" onkeyup="name_text_on (this.value)">
                 <button id="d_id" class="off_view" type="button" title="입력한 내용 삭제"><i class="fa-solid fa-x"></i></button>
                 <button id="id_btn"  type="button" onclick="id_search()">중복 확인</button>
             </div>
@@ -104,7 +104,7 @@
         <section class="psw_wrap">
             <label for="pwd">비밀번호</label>
             <div class="pwd_bt_wrap">
-                <input id="pwd" class="n_border" type="password" placeholder="영어,숫자,특수문자 조합 8~24자">
+                <input id="pwd" name="pwd" class="n_border" type="password" placeholder="영어,숫자,특수문자 조합 8~24자">
                 <button id="d_pwd" class="off_view" type="button" title="입력한 내용 삭제"><i class="fa-solid fa-x"></i></button>
                 <button id="pwd_eye_on" class="on_view"  type="button"><i class="fa-solid fa-eye"></i></button>
                 <button id="pwd_eye_off" class="off_view"  type="button"><i class="fa-solid fa-eye-slash"></i></button>
@@ -113,7 +113,7 @@
 
             <label for="re_pwd">비밀번호 확인</label>
             <div class="re_pwd_bt_wrap">
-                <input id="re_pwd" class="n_border" type="password" placeholder="비밀번호 확인">
+                <input id="re_pwd" name="re_pwd" class="n_border" type="password" placeholder="비밀번호 확인">
                 <button id="d_re_pwd" class="off_view" type="button" title="입력한 내용 삭제"><i class="fa-solid fa-x"></i></button>
                 <button id="re_pwd_eye_on" class="on_view"  type="button"><i class="fa-solid fa-eye"></i></button>
                 <button id="re_pwd_eye_off" class="off_view" type="button"><i class="fa-solid fa-eye-slash"></i></button>
@@ -124,7 +124,7 @@
         <section class="mobile_wrap">
             <label for="mobile">연락처</label>
             <div class="mobile_bt_wrap">
-                <input id="mobile" class="n_border" type="text" placeholder="휴대폰 번호 입력 (&#34;-&#34;제외 11자리 입력)">
+                <input id="mobile" name="mobile" class="n_border" type="text" placeholder="휴대폰 번호 입력 (&#34;-&#34;제외 11자리 입력)">
                 <button id="d_mobile" class="off_view" type="button" title="입력한 내용 삭제"><i class="fa-solid fa-x"></i></button>
             </div>
             <span id="mobile_text_wrap"  class="err_txt"></span>
@@ -144,7 +144,7 @@
         <section class="email_wrap">
             <label for="email " >이메일</label>
             <div class="email_bt_wrap">
-              <input id="email_id" class="n_border" type="text" placeholder="이메일에 @를 포함해주세요." />
+              <input id="email_id" name="email" class="n_border" type="text" placeholder="이메일에 @를 포함해주세요." />
               <button id="d_email" class="off_view" type="button" title="입력한 내용 삭제"><i class="fa-solid fa-x"></i></button>
             </div>
             <span id="email_text_wrap"  class="err_txt"></span>
