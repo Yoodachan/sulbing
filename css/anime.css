@@ -154,6 +154,26 @@
 }
 
 
+
+/* login */
+/* 캠페인 배너 확대 축소 */
+.campaign_off {
+  opacity: 0;
+  scale: 200%;
+}
+
+.campaign_on {
+  opacity: 1;
+  transition:all 1.2s;
+  scale: 100%;
+}
+
+
+
+
+
+
+
 @keyframes down {
   0%{
     transform: translateY(-50px)

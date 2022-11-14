@@ -1,0 +1,580 @@
+
+
+.clear_txt {
+    color: #39cab7;
+  }
+  .err_txt {
+    color: #f00;
+  }
+  
+  .n_border {
+    border: 1px solid #f0f0f0;  
+    border-radius: 4px;
+  }
+  
+  .n_border:focus {
+    border: 1px solid #e2e2e2;
+  }
+  
+  
+  
+  .err_border {
+    border: 1px solid #f00;
+    border-radius: 4px;
+  }
+  .err_border:focus {
+    border: 1px solid #f00;
+  }
+  
+  
+  main {
+    padding-bottom: 60px;
+  }
+  
+  
+  .title_wrap {
+    width: 100%;
+  }
+  
+  .join_wrap {
+    margin: 0 auto;
+    width: 100%;
+  
+    background-color: white;
+    border-radius: 8px;
+    }
+    
+  
+  .common_title {
+    display: block;
+    position:relative;
+    width: 1040px;
+    height: 60px;
+    margin: 50px auto;
+  }
+  
+  .inner_title {
+    position: relative;
+    text-align: center;
+    display: block;
+    width: 520px;
+    height: 60px;
+    font-size: 36px;
+    line-height: 60px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  
+  .title_text {
+    display: block;
+    width: 160px;
+    height: 60px;
+    font-size: 36px;
+    line-height: 60px;
+    margin: 0 auto;
+    color: #2d2d2d;
+  }
+  
+  .title_left,
+  .title_right {
+    position: absolute;
+    top: 25px;
+  }
+  
+  .title_left {
+    background-image: url(../IMAGES/ico_tit_arrow_left.jpg);
+    left: 130px;
+    width:44px;
+    height:13px;
+  }
+  
+  .title_right {
+    right: 130px;
+    background-image: url(../IMAGES/ico_tit_arrow_right.jpg);
+    width:44px;
+    height:13px;
+  }
+  
+  
+  .common_title ul {
+    display: flex;
+    position: absolute;
+    top: 0px;
+    right: 30px;
+    width: 140px;
+    height: 60px;
+  }
+  
+  .common_title ul li {
+    margin: 20px auto;
+    height: 20px;
+    line-height: 20px;
+    font-size: 16px;
+    color:#666666;
+  }
+  
+  .common_title li:nth-of-type(2)::before {
+    width: 20px;
+    height: 18px;
+    font-size: 16px;
+    content: ">";
+    position:absolute;
+    top: 19px;
+    left: 45px;
+  } 
+  
+  .common_title li p {
+    font-weight: bold;
+  } 
+  
+  .form_title {
+    width: 1040px;
+    margin: 0 auto;
+  
+  }
+  
+  .form_title h3 {
+    display: block;
+    width: 520px;
+    height: 120px;
+    line-height: 120px;
+    font-size: 24px;
+    margin: 0px auto;
+    border-top: 1px solid #f0f0f0;
+  }
+  
+  .name_wrap label, .id_wrap label,
+  .psw_wrap label,.re_pwd_bt_wrap label,
+  .mobile_wrap label,.email_wrap label,
+  .birth_wrap label   {
+    display: block;
+    width: 520px;
+    text-align: left;
+    margin: 0 auto;
+  }
+  
+  input::placeholder {
+    padding-left: 20px;
+    color:#666666;
+  }
+  
+  /* 인풋 박스 크기 */
+  #u_name,#u_id,#pwd,#re_pwd,#mobile,
+  #email_id,#birth,#ps_code,
+  #addr1,#addr2,#addr3 {
+    display: block;
+    margin: 0px auto;
+    width: 520px;
+    height: 50px;
+    font-size: 20px;
+  }
+  
+  /* 인풋 박스 호버 */
+  /* #u_name:hover,#u_id:hover,
+  #pwd:hover,#re_pwd:hover,
+  #mobile:hover,#email_id:hover,
+  #birth:hover,#ps_code:hover,
+  #addr1:hover,#addr2:hover,#addr3:hover {
+    border: 1px solid #e2e2e2;
+  } */
+  
+  
+  /* 인풋 박스 포커스 */
+  #u_name:focus,#u_id:focus,
+  #pwd:focus,#re_pwd:focus,
+  #mobile:focus,#email_id:focus,
+  #birth:focus,#ps_code:focus,
+  #addr1:focus,#addr2:focus,#addr3:focus {
+    outline: none;
+    /* border: 1px solid #e2e2e2; */
+    z-index:3;
+  }
+  
+  /* 알림 공간 */
+  #name_text_wrap,#id_text_wrap,
+  #pwd_text_wrap,#re_pwd_text_wrap,
+  #mobile_text_wrap,#email_text_wrap,
+  #birth_text_wrap,.clear_txt,.err_txt {
+    display: block;
+    width: 520px;
+    font-size: 18px;
+    margin: 5px auto;
+  }
+  
+  /* 디스플레이 제어 */
+  
+  .on_view {
+    display:block;
+    z-index: 5;
+  }
+  .off_view {
+    display: none;
+    z-index: 1;
+  }
+  
+  #id_btn {
+    position: absolute;
+    bottom: 2px;
+    right: 2px;
+  }
+  
+  #postal_btn {
+    position: absolute;
+    top: 25px;
+    right:2px;
+  }
+  
+  #d_name,#d_mobile,
+  #d_email,#d_birth {
+    top: 12px;
+    right: 10px;
+  }
+  
+  #d_id{
+    bottom: 10px;
+    right: 110px;
+  }
+  
+  #d_addr3 {
+    bottom: 12px;
+    right: 10px;
+  }
+  
+  #d_pwd,#d_re_pwd {
+    bottom: 12px;
+    right: 50px;
+  }
+  
+  .border_off {
+    border: 1px solid #f0f0f0;
+    border-radius: 4px;
+  }
+  
+  .border_on {
+    background-color: #e2e2e2;
+    border-top: 1px solid #e2e2e2;
+    border-left: 1px solid #e2e2e2;
+    border-right: 1px solid #e2e2e2;
+    border-bottom: none;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+  }
+  
+  .email_Area {
+    position: relative;
+    /* border: 3px solid red; */
+    width: 540px;
+    margin: 0 auto;
+  }
+  
+  /* 이메일 신형 */
+  
+  #email_dns {
+    position:absolute;
+    top: 73px;
+    left: 10px;
+    z-index: 10;
+    background-color: #fff;;
+    width: 520px;
+    border-left: 1px solid #e2e2e2;
+    border-right: 1px solid #e2e2e2;
+    border-bottom: 1px solid #e2e2e2;
+    margin: 0 auto;
+    border-bottom-right-radius: 4px;
+    border-bottom-left-radius: 4px;
+  }
+  #email_dns li {
+    height: 50px;
+    margin-top: -1px;
+    margin-left: 0px;
+    cursor: pointer;
+    font-size: 20px;
+  }
+  #email_dns li:hover {
+    background-color: #f0f0f0;
+  }
+  
+  #email_dns li button {
+    width: 518px;
+    height: 50px;
+    font-size: 20px;
+    margin-top: -1px;
+    margin-left: 0px;
+    border: none;
+    background: none;
+    cursor: pointer;
+  }
+  
+  #email_dns li span {
+    color:#000;
+  
+  }
+  
+  #email_dns li strong {
+    color:#39cab7;
+  }
+  
+  
+  #pwd_eye_on,
+  #pwd_eye_off,
+  #re_pwd_eye_on,
+  #re_pwd_eye_off {
+    width: 40px;
+    height: 40px;
+    appearance: none;
+    border-radius: 4px;
+    color: #cacaca;
+    background: none;
+    border: none;
+    font-size: 23px;
+    position: absolute;
+    cursor: pointer;
+    bottom: 4px;
+    right: 4px;
+    border: none;
+  }
+  
+  
+  #id_btn,#postal_btn {
+    display: block;
+    width: 100px;
+    height: 46px;
+    font-size: 18px;
+    font-weight: bold;
+    background-color: #fff;
+    color:#999;
+    border: 1px solid #e2e2e2;
+    border-radius: 4px;
+    cursor:pointer;
+    transition:all 0.3s;
+  } 
+  
+  #id_btn:hover,
+  #postal_btn:hover {
+    color:#fff;
+    background-color: #ad9582;
+  }
+  
+  .name_bt_wrap,.id_bt_wrap,
+  .pwd_bt_wrap,.re_pwd_bt_wrap,
+  .mobile_bt_wrap,.email_bt_wrap,
+  .birth_bt_wrap,.postal_wrap {
+    position:relative;
+    width: 520px;
+    margin: 0 auto;
+  }
+  
+  #d_name,#d_id,#d_pwd,#d_re_pwd,
+  #d_mobile,#d_email,#d_birth,#d_addr3 {
+    width: 26px;
+    height: 26px;
+    appearance: none;
+    border: 1px solid #e2e2e2;
+    border-radius: 50%;
+    color: white;
+    background-color: #e2e2e2;
+    font-size: 14px;
+    position: absolute;
+    cursor: pointer;
+  }
+  
+  
+  
+  #addr1,#addr2,#addr3 {
+    margin-top: 10px;
+  }
+  
+  #ps_code,#addr1,#addr2 {
+    background-color: #f0f0f0;
+  }
+  
+  .apply_wrap {
+    width: 520px;
+    margin: 50px auto;
+  }
+  
+  .apply_all_wrap {
+    position: relative;
+    width: 520px;
+    height: 42px;
+  }
+  #apply_all {
+    display:block;
+    width: 30px;
+    height: 30px;
+    border: 1px solid #e2e2e2;
+    appearance: none;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s;
+    position:absolute;
+    top: 0px;
+    left: 0px;
+  }
+  .apply_all_text {
+    position: absolute;
+    width: 200px;
+    height: 42px;
+    font-size: 16px;
+    cursor:pointer;
+    top: 3px;
+    left: 40px;
+  } 
+  #apply_all::after {
+    display: none;
+    border: 1px solid #fff;
+    border-width: 0 2px 2px 0;
+    width: 15%;
+    height: 40%;
+    position: relative;
+    content: '';
+    top: 20%;
+    left: 40%;
+    transform: rotate(45deg);
+  }
+  #apply_all:checked {
+    background-color:#ad9582;
+  }
+  #apply_all:checked::after {
+    display: block;
+  }
+  
+  .apply_priv_wrap,.apply_medie_wrap,
+  .apply_age_wrap,.apply_marketing_wrap  {
+    position: relative;
+    width: 520px;
+    height: 32px;
+  }
+  
+  #apply_priv,#apply_medie,
+  #apply_age,#apply_marketing  {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+  }
+  
+  .priv_text,.medie_text,
+  .age_text,.marketing_text {
+    display: block;
+    width: 400px;
+    height: 32px;
+    position: absolute;
+    top: 0px;
+    left: 40px;
+    font-size: 13px;
+    /* border: 2px solid red; */
+    line-height: 26px;
+  }
+  
+  
+  
+  .apply_wrap label button {
+    appearance: none;
+    border: none;
+    text-decoration: underline;
+    background-color: white;
+    font-size: 13px;
+    color: #666666;
+    cursor: pointer;
+  }
+  
+  #apply_priv,
+  #apply_medie,
+  #apply_age,
+  #apply_marketing {
+    display:block;
+    width: 25px;
+    height: 25px;
+    border: 1px solid #e2e2e2;
+    appearance: none;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s;
+    position: absolute;
+  }
+  
+  .priv_text,
+  .medie_text,
+  .age_text,
+  .marketing_text {
+    color: #666666;
+  }
+  
+  #apply_priv::after,
+  #apply_medie::after,
+  #apply_age::after,
+  #apply_marketing::after {
+    display: none;
+    border: 1px solid #e2e2e2;
+    border-width: 0 2px 2px 0;
+    width: 15%;
+    height: 40%;
+    position: relative;
+    content: '';
+    top: 20%;
+    left: 40%;
+    transform: rotate(45deg);
+  }
+  
+  #apply_priv:checked,
+  #apply_medie:checked,
+  #apply_age:checked,
+  #apply_marketing:checked {
+    background-color:#ad9582;
+  }
+  
+  #apply_priv:checked::after,
+  #apply_medie:checked::after,
+  #apply_age:checked::after,
+  #apply_marketing:checked::after {
+    display: block;
+  }
+  
+  
+  /* 절취선 */
+  
+  
+  .btn_area {
+    width: 520px;
+    margin: 0 auto;
+  }
+  
+  .sign_off {
+    display: block;
+    width: 520px;
+    height: 50px;
+    appearance: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 18px;
+    top: 0px;
+    transition: all 0.3s;
+  
+    border: 1px solid #f0f0f0;
+    background-color: #f0f0f0;
+    color:#666666;
+  }
+  
+  
+  .sign_on {
+    display: block;
+    width: 520px;
+    height: 50px;
+    appearance: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 18px;
+    top: 0px;
+    transition: all 0.3s;
+  
+    border: 1px solid #f0f0f0;
+    background-color: #fff;
+    color:#000;
+  }
+  
+  .sign_on:hover {
+    border: 1px solid #e2e2e2;
+    background-color: #ad9582;
+    color: #fff;
+  }
+  
