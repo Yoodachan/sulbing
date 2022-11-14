@@ -75,6 +75,7 @@ $array = mysqli_fetch_array($result);
     </script>
 </head>
 <body>
+    <?php include "../inc/sub_header.php"; ?>
     <form name="edit_form" action="edit.php" method="post" onsubmit="return edit_form_check()">
         <fieldset>
             <legend>회원정보</legend>

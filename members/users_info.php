@@ -80,7 +80,7 @@ $array = mysqli_fetch_array($result);
 
     <!-- 헤더 영역 시작 -->
 
-    <?php include "../inc/header.php"; ?>
+    <?php include "../inc/sub_header.php"; ?>
 
     <!-- 헤더 영역 종료 -->
 

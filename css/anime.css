@@ -168,7 +168,19 @@
   scale: 100%;
 }
 
+/* mypage */
 
+/* 호버 애니메이션 */
+.link_btn_off {
+  color: #666;
+  background-color: #fff;
+}
+
+.link_btn_on {
+  color: #fff;
+  background-color: #7b6251;
+  transition: all 0.3s;
+}
 
 
 

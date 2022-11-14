@@ -1,9 +1,9 @@
-<?php
-// 세션으로 데이터 가져오기
-/* session_start();
-$s_idx =  isset($_SESSION["s_idx"])?  $_SESSION["s_idx"] : ""; */
-include "../inc/session.php";
-?>
+  <!-- 헤더 영역 시작 -->
+
+  <?php include "session.php"; ?>
+
+  <!-- 헤더 영역 종료 -->
+  
 <div class="head_top">
     <div class="head_inner">
       <div class="language_wrap">

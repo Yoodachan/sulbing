@@ -116,7 +116,6 @@
     width: 1040px;
     height: 360px;
     display:flex;
-    border: 2px solid red;
     justify-content: center;
   }
 
@@ -126,6 +125,7 @@
 .my_qna {
     width: 350px;
     height: 360px;
+    border: 2px solid red;
 }
 
 .mypage_link i {
@@ -150,6 +150,17 @@
     left: 30px;
 }
 
+.my_qna a p {
+  display: block;
+  content:"";
+  width: 120px;
+  height: 120px;
+  margin: 0 auto;
+  background-repeat: no-repeat;
+  background-position: center;
+  border: 2px solid red;
+}
+
 
 
 .mypage_icon::before {
@@ -159,6 +170,18 @@
 .qna_icon::before {
     background-image: url(../images/ico_cscenter_qna_list.png);
 }
+
+
+
+.my_qna a p {
+  background-image: url(../images/bg_cscenter_intro_on.png);
+}
+
+.qna_icon::after {
+  background-image: url(../images/bg_cscenter_intro_on.png);
+}
+
+
 
 .mypage_link a>strong {
     display: block;
@@ -196,4 +219,5 @@
     font-size: 18px;
     text-align: center;
     color: #666;
+    background-color: #fff;
 }

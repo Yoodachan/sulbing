@@ -15,3 +15,34 @@ function title_anime () {
     title_right.classList.add('right_move_on');
 }
 title_anime ()
+
+
+let private_info = document.getElementsByClassName('private_info')[0];
+let mypage_btn = document.getElementsByClassName('link_btn')[0];
+
+private_info.addEventListener('mouseenter', function () {
+    console.log('on')
+    mypage_btn.classList.remove('link_btn_off');
+    mypage_btn.classList.add('link_btn_on');
+})
+
+private_info.addEventListener('mouseleave', function () {
+    console.log('out')
+    mypage_btn.classList.remove('link_btn_on');
+    mypage_btn.classList.add('link_btn_off');
+})
+
+let my_qna = document.getElementsByClassName('my_qna')[0];
+let qna_btn = document.getElementsByClassName('link_btn')[1];
+
+my_qna.addEventListener('mouseenter', function () {
+    console.log('on')
+    qna_btn.classList.remove('link_btn_off');
+    qna_btn.classList.add('link_btn_on');
+})
+
+my_qna.addEventListener('mouseleave', function () {
+    console.log('out')
+    qna_btn.classList.remove('link_btn_on');
+    qna_btn.classList.add('link_btn_off');
+})

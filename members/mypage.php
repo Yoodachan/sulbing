@@ -88,19 +88,20 @@
               고객님께서 자주 문의하시는 내용에
               <em>대한 답변을 준비하였습니다.</em>
               </span>
-              <em class="link_btn" >바로가기</em>
+              <em class="link_btn link_btn_off" >바로가기</em>
             </a>
 
           </li>
           <li class="my_qna">
             <a href="#" alt="온라인 상담내역 이동">
+              <p></p>
               <i class="qna_icon"></i>
               <strong>온라인 상담내역</strong>
               <span>
               홈페이지를 통해 온라인 상담한
               <em>내역을 확인할수 있습니다.</em>
               </span>
-              <em class="link_btn">바로가기</em>
+              <em class="link_btn link_btn_off">바로가기</em>
             </a>
 
           </li>
