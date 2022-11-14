@@ -1,5 +1,9 @@
-<?php include "session.php"; ?>
-
+<?php
+// 세션으로 데이터 가져오기
+/* session_start();
+$s_idx =  isset($_SESSION["s_idx"])?  $_SESSION["s_idx"] : ""; */
+include "../inc/session.php";
+?>
 <div class="head_top">
     <div class="head_inner">
       <div class="language_wrap">
@@ -24,11 +28,11 @@
         <li class="join_menu"><a href="http://localhost/web_project/members/join.php">회원가입</a></li>
       <?php } else if($s_id == "admin"){ ?>
         <li class="admin_page"><a href="./admin/index.php">관리자 페이지</a></li>
-        <li class="logout"><a href="./login/logout.php">로그아웃</a></li>
-        <li class="user_info"><a href="./members/member_info.php">마이페이지</a></li>
+        <li class="logout"><a href="http://localhost/web_project/login/logout.php">로그아웃</a></li>
+        <li class="user_info"><a href="http://localhost/web_project/members/users_info.php">마이페이지</a></li>
         <?php } else{ ?>
-        <li class="logout"><a href="./login/logout.php">로그아웃</a></li>
-        <li class="user_info"><a href="./members/member_info.php">마이페이지</a></li>
+        <li class="logout"><a href="http://localhost/web_project/login/logout.php">로그아웃</a></li>
+        <li class="user_info"><a href="http://localhost/web_project/members/users_info.php">마이페이지</a></li>
         <?php }; ?>
         <li class="user_help"><a href="#">고객센터</a></li>
       </ul>
