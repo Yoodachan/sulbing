@@ -36,19 +36,19 @@
 
     <!-- 초기값 리셋 css -->
     <link rel="stylesheet" href="../css/reset.css">
-    <!-- 로그인 css -->
-    <link rel="stylesheet" href="../CSS/login.css">
+    <!-- 마이페이지 css -->
+    <link rel="stylesheet" href="../CSS/mypage.css">
     <!-- 애니메이션 css -->
     <link rel="stylesheet" href="../CSS/anime.css">
     <!-- 헤더 & 푸터 css -->
     <link rel="stylesheet" href="../css/header_and_footer.css">
 
-    <!-- 로그인 js -->
-    <script defer src="../JS/login.js"></script>
+    <!-- 마이페이지 js -->
+    <script defer src="../JS/mypage.js"></script>
     <!-- 헤더 & 푸터 js -->
     <script defer src="../JS/header_and_footer.js"></script>
 
-    <title> 로그인 | 설빙</title>
+    <title> 마이페이지 | 설빙</title>
 </head>
 
 <body>
@@ -60,66 +60,70 @@
 <!-- 헤더 영역 종료 -->
 
 <main>
-
   <section class="title_wrap">
     <div class="common_title">
       <div class="inner_title drop_down_off">
         <span class="title_left left_move_off"></span>
-        <h2 class="title_text"><a href="./Sulbing_join_유다찬.html">로그인</a></h2>
+        <h2 class="title_text"><a href="./Sulbing_join_유다찬.html">마이페이지</a></h2>
         <span class="title_right right_move_off"></span>
       </div>
 
       <ul class="location">
         <li><a href="./Sulbing_index_유다찬.html">홈</a></li>
-        <li><p>로그인</p></li>
+        <li><p>마이페이지</p></li>
       </ul>
     </div>
   </section>
-
-  <form name="login_form" action="login_ok.php" method="post" onsubmit="return login_form_check()">
-    <div class="login_wrap">
-      <fieldset class="login_inner">
-        <legend>회원로그인</legend>
-            <p class="id_line">
-                <label for="u_id"><strong>ID</strong></label>
-                <input type="text" name="u_id" id="u_id" placeholder="아이디" autofocus>
-            </p>
-            <p class="pwd_line">
-                <label for="pwd"><strong>PW</strong></label>
-                <input type="password" name="pwd" id="pwd" placeholder="비밀번호">
-            </p>
-            <p class="phone_check">
-              <span class="info_txt">
-                <i>정보보호를 위해</i>
-                아이디, 비밀번호와 함께 자동가입 방지 체크를 해주셔야 합니다.
+  
+  <section class="contents">
+    <div class="inner_page_wrap">
+      <div class="mypage_intro">
+        <h5><strong> 안녕하세요 <em>유다찬 고객님!</em> </strong></h5>
+        <span> 마이페이지에서는 고객님의 정보 및 활동 내용을 확인할 수 있습니다. </span>
+        <ul class="mypage_link">
+          <li class="private_info">
+            <a href="./users_info.php" alt="개인정보 관리 이동">
+              <i class="mypage_icon">
+                <p class="mypage_img_before"></p>
+                <p class="mypage_img_after link_img_off">
+                <i class="fa-light fa-plus"></i>
+                </p>
+              </i>
+              <strong>개인정보 관리</strong>
+              <span>
+              고객님께서 자주 문의하시는 내용에
+              <em>대한 답변을 준비하였습니다.</em>
               </span>
-            </p>
-            <fieldset class="captacha">
-              <legend>자동등록방지</legend>
-              <div class="g-recaptcha" data-sitekey="6Le-vuwiAAAAAN4vjU1juzYfnTVnWaQV1hcE9-Fx"></div>
-            </fieldset>
-            <label id="id_save_wrap" for="id_save">
-              <p  class="id_save_inner">
-                <input id="id_save" name="id_save" type="checkbox">
-                <span>아이디저장</span>
+              <em class="link_btn link_btn_off" >바로가기</em>
+            </a>
+
+          </li>
+          <li class="my_qna">
+            <a href="#" alt="온라인 상담내역 이동">
+              <i class="qna_icon">
+              <p class="qna_img_before"></p>
+              <p class="qna_img_after link_img_off">
+              <i class="fa-light fa-plus"></i>
               </p>
-            </label>
-            <p class="login_btn_wrap">
-              <button class="login_btn" type="submit">로그인</button>
-            </p>
-            <p class="naver_btn_wrap">
-              <button class="naver_btn" type="button">
-                <img src="../images/naver_login_btn.png" alt="네이버 로그인 버튼 이미지">
-                <span>네이버 로그인</span>
-              </button>
-            </p>
-      </fieldset>
-      <div class="login_banner">
-        <img class="campaign campaign_off" src="../images/img_login_banner_w.jpg">
+              </i>
+
+              <strong>온라인 상담내역</strong>
+              <span>
+              홈페이지를 통해 온라인 상담한
+              <em>내역을 확인할수 있습니다.</em>
+              </span>
+              <em class="link_btn link_btn_off">바로가기</em>
+            </a>
+
+          </li>
+
+        </ul>
+
       </div>
 
     </div>
-  </form>
+
+  </section>
 </main>
 
 <!-- 푸터 영역 시작 -->

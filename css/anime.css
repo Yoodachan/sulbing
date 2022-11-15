@@ -1,0 +1,312 @@
+
+/* 드롭다운 애니 */
+
+.drop_down_off {
+    opacity: 0;
+    transform: translate3d(0, -100%, 0);
+  }
+  
+  .drop_down_on {
+    opacity: 1;
+    transform: translateZ(0);
+    transition-duration:  1.2s;
+  }
+
+
+/* 좌우 이동 애니 */
+
+
+.left_move_off {
+    opacity: 0;
+    transform: translate(-80px,0px);
+} 
+
+.left_move_on {
+    opacity: 1;
+    transform: translateZ(0);
+    transition-delay: 1.2s;
+    transition-duration:  1.2s;
+  }
+
+
+.right_move_off {
+    opacity: 0;
+    transform: translate(80px,0px);
+} 
+
+.right_move_on {
+    opacity: 1;
+    transform: translateZ(0);
+    transition-delay: 2.4s;
+    transition-duration:  1.2s;
+}
+
+
+/* 캐릭터 낙하 */
+
+.anime_off {
+  opacity: 0;
+  transform: translate3d(0, -100%, 0);
+  scale: 150%;
+}
+
+.anime_on {
+  opacity: 1;
+  transform: translateZ(0);
+  transition:all 0.8s;
+  scale: 100%;
+}
+
+
+/* Y축 회전 */
+
+.rtty_off_00,
+.rtty_off_01,
+.rtty_off_02,
+.rtty_off_03,
+.rtty_off_04,
+.rtty_off_05 {
+  opacity: 0;
+  transform: translate(0px, -40px) scaleY(-1);
+}
+
+.rtty_on_00,
+.rtty_on_01,
+.rtty_on_02,
+.rtty_on_03,
+.rtty_on_04,
+.rtty_on_05 {
+  opacity: 1;
+  transition-timing-function: ease;
+  transform: translate(0px, 0px);
+  transition-duration:  0.3s;
+}
+
+.rtty_on_01 {
+  transition-delay: 0.3s;
+}
+
+.rtty_on_02 {
+  transition-delay: 0.6s;
+}
+
+.rtty_on_03 {
+  transition-delay: 0.9s;
+}
+
+.rtty_on_04 {
+  transition-delay: 1.2s;
+}
+
+.rtty_on_05 {
+  transition-delay: 1.5s;
+}
+
+/* 글자 낙하 */
+
+.welcome_down_off_00 {
+  opacity: 0;
+  transform: translate3d(0, -100%, 0);
+}
+
+.welcome_down_on_00 {
+  opacity: 1;
+  transform: translateZ(0);
+  transition-duration:  0.8s;
+  transition-delay: 1.2s;
+}
+
+.welcome_down_off_01 {
+  opacity: 0;
+  transform: translate3d(0, -100%, 0);
+}
+
+.welcome_down_on_01 {
+  opacity: 1;
+  transform: translateZ(0);
+  transition-delay: 2.0s;
+  transition-duration:  0.8s;
+}
+
+.welcome_down_off_02 {
+  opacity: 0;
+  transform: translate3d(0, -100%, 0);
+}
+
+.welcome_down_on_02 {
+  opacity: 1;
+  transform: translateZ(0);
+  transition-delay: 2.8s;
+  transition-duration:  0.8s;
+}
+
+
+.btn_left_off {
+  opacity: 0;
+  transform: translate(-80px,0px);
+} 
+
+.btn_left_on {
+  opacity: 1;
+  transform: translateZ(0);
+  transition-delay: 3.6s;
+  transition-duration:  0.8s;
+}
+
+
+
+/* login */
+/* 캠페인 배너 확대 축소 */
+.campaign_off {
+  opacity: 0;
+  scale: 200%;
+}
+
+.campaign_on {
+  opacity: 1;
+  transition:all 1.2s;
+  scale: 100%;
+}
+
+/* mypage */
+
+/* 호버 애니메이션 */
+.link_btn_off {
+  color: #666;
+  background-color: #fff;
+}
+
+.link_btn_on {
+  color: #fff;
+  background-color: #7b6251;
+  transition: all 0.3s;
+}
+
+
+.link_img_off {
+  display: block;
+  opacity:0;
+  scale:calc(200%);
+}
+
+.link_img_on {
+  display: block;
+  opacity:1;
+  scale:calc(100%);
+  transition: all 0.6s;
+}
+
+
+
+
+
+
+@keyframes down {
+  0%{
+    transform: translateY(-50px)
+  }
+  100%{
+    transform: translateY(0px)
+  }
+}
+
+
+@keyframes fadeintext{
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+
+}
+
+@keyframes fadeinicon {
+  0% {
+      opacity: 0;
+      transform: translate3d(0, 100px, 0);
+  }
+  to {
+      opacity: 1;
+      transform: translateZ(0);
+  }
+}
+
+
+@keyframes fadeinimg {
+  0% {
+      opacity: 0;
+      transform: translate3d(0, 100%, 0);
+  }
+  to {
+      opacity: 1;
+      transform: translateZ(0);
+  }
+}
+
+@keyframes fadeinblur {
+  0% {
+      opacity: 0;
+      transform: translate3d(0, 100%, 0);
+      scale: 300%;
+      filter:blur(30px);
+  }
+  to {
+      opacity: 1;
+      scale: 100%;
+      filter:blur(0px);
+      transform: translateZ(0);
+  }
+}
+
+@keyframes fadeinrotate {
+  0% {
+      opacity: 0;
+      transform: scaleY(-1);
+  }
+  to {
+      opacity: 1;
+      transform: scaleY(1);
+  }
+}
+
+@keyframes rotate_inf {
+  0% {
+      opacity: 0;
+      transform: scaleY(-2);
+  }
+  to {
+      opacity: 1;
+      transform: scaleY(1);
+  }
+} 
+
+
+
+@keyframes sns_down {
+  0% {
+      display: none;
+      opacity: 0;
+      transform: translateY(-50%);
+  }
+  to {
+      display: block;
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+@keyframes sns_up {
+  0% {
+      display: block;
+      opacity: 1;
+      transform: translateY(0);
+  }
+  to {
+      display: none;
+      opacity: 0;
+      transform: translateY(-50%);
+  }
+}

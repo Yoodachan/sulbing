@@ -1,0 +1,233 @@
+  .n_border {
+    border: 1px solid #f0f0f0;  
+    border-radius: 4px;
+  }
+  
+  .n_border:focus {
+    border: 1px solid #e2e2e2;
+  }
+  
+  
+  
+  .err_border {
+    border: 1px solid #f00;
+    border-radius: 4px;
+  }
+  .err_border:focus {
+    border: 1px solid #f00;
+  }
+  
+  
+  main {
+    padding-bottom: 60px;
+  }
+  
+  
+  .title_wrap {
+    width: 100%;
+  }
+  
+  .join_wrap {
+    margin: 0 auto;
+    width: 100%;
+  
+    background-color: white;
+    border-radius: 8px;
+    }
+    
+  
+  .common_title {
+    display: block;
+    position:relative;
+    width: 1040px;
+    height: 60px;
+    margin: 50px auto;
+  }
+  
+  .inner_title {
+    position: relative;
+    text-align: center;
+    display: block;
+    width: 520px;
+    height: 60px;
+    font-size: 36px;
+    line-height: 60px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  
+  .title_text {
+    display: block;
+    width: 250px;
+    height: 60px;
+    font-size: 36px;
+    line-height: 60px;
+    margin: 0 auto;
+    color: #2d2d2d;
+  }
+  
+  .title_left,
+  .title_right {
+    position: absolute;
+    top: 25px;
+  }
+  
+  .title_left {
+    background-image: url(../IMAGES/ico_tit_arrow_left.jpg);
+    left: 100px;
+    width:44px;
+    height:13px;
+  }
+  
+  .title_right {
+    right: 100px;
+    background-image: url(../IMAGES/ico_tit_arrow_right.jpg);
+    width:44px;
+    height:13px;
+  }
+  
+  
+  .location {
+    display: flex;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    width: 140px;
+    height: 60px;
+  }
+  
+  .location li {
+    margin: 20px auto;
+    height: 20px;
+    line-height: 20px;
+    font-size: 16px;
+    color:#666666;
+  }
+  
+  .location li:nth-of-type(2)::before {
+    width: 20px;
+    height: 18px;
+    font-size: 16px;
+    content: ">";
+    position:absolute;
+    top: 19px;
+    left: 28px;
+  } 
+  
+  .location li p {
+    font-weight: bold;
+  } 
+  
+  .board_tab {
+    margin: 50px auto;
+    display: flex;
+    width: 1040px;
+    justify-content: center;
+  }
+
+  .board_tab li {
+    display: block;
+    width: 240px;
+    height: 50px;
+    line-height: 50px;
+    border: 1px #796150 solid;
+    text-align: center;
+    margin: 0px 5px;
+  }
+  .board_tab li a {
+    display: block;
+  }
+  .board_tab_off {
+    background-color: #fff;
+    color: #796150;
+    font-weight: lighter;
+  }
+  .board_tab_on {
+    background-color:#796150;
+    color:#fff;
+    font-weight: 400;
+  }
+
+
+  #re_sign_text {
+    display: block;
+    width: 1040px;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 28px;
+    font-family:'Noto Sans KR';
+    color: #222222;
+  }
+  h2 span{
+    display: block;
+    width: 1040px;
+    margin: 0 auto;
+  }
+
+  form a {
+    display: block;
+    width: 250px;
+    height: 40px;
+    line-height: 40px;
+    margin: 20px auto 40px;
+    font-size: 16px;
+    color: #444444;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    text-align: center;
+    font-weight: bold;
+  }
+
+  .mypage_info_text {
+    width: 1040px;
+    margin: 0 auto;
+    background-color: #faf9f5;
+  }
+  .mypage_info_text dl {
+    width: 1000px;
+    height: 210px;
+    margin: 0px auto;
+    padding: 20px;
+  }
+  .mypage_info_text dt {
+    font-size: 18px;
+    color: #000;
+  }
+  .mypage_info_text dd {
+    margin-top: 15px;
+    padding-left: 20px;
+    font-size: 16px;
+    color: #000;
+    font-weight: 100;
+  }
+  
+
+
+.form_btn_wrap {
+  display: flex;
+  width: 1040px;
+  height: 60px;
+  margin: 50px auto 30px;
+  justify-content: center;
+}
+
+.cancel_btn,
+.edit_btn {
+  width: 200px;
+  height: 60px;
+  line-height: 60px;
+  color: #fff;
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+  margin: 0 5px;
+  border: none;
+  cursor: pointer;
+}
+
+.cancel_btn {
+  background-color: #cdbbac;
+}
+.edit_btn {
+  background-color: #796150;
+}

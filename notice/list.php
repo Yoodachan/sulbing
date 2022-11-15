@@ -14,10 +14,10 @@ $result = mysqli_query($dbcon, $sql);
 $total = mysqli_num_rows($result);
 
 // paging : 한 페이지 당 보여질 목록 수
-$list_num = 5;
+$list_num = 15;
 
 // paging : 한 블럭 당 페이지 수
-$page_num = 3;
+$page_num = 7;
 
 // paging : 현재 페이지
 $page = isset($_GET["page"])? $_GET["page"] : 1;
@@ -47,71 +47,110 @@ if($e_pageNum > $total_page){
 };
 
 ?>
+
+
+
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
+  <meta name="description" content="코리안 디저트카페, 인절미설빙, 빙수, 디저트, 음료, 메뉴, 전국매장안내, 이벤트, 고객센터" />
+  <meta name="apple-mobile-web-app-title" content="코리안 디저트 카페, 인절미설빙, 메뉴, 전국매장 안내, 이벤트, 고객센터">
+  <meta property="og:locale" content="ko_KR">
+  <meta property="og:site_name" content="설빙">
+  <meta property="og:title" content="설빙">
+  <meta property="og:url" content="http://">
+  <meta property="og:image" content="https://sulbing.com/theme/cntt/img/logo_300x300.png">
+  <meta property="og:description" content="코리안 디저트 카페, 인절미설빙, 메뉴, 전국매장 안내, 이벤트, 고객센터">
+  <meta name="twitter:title" content="코리안 디저트 카페, 인절미설빙, 메뉴, 전국매장 안내, 이벤트, 고객센터">
+  <meta name="twitter:site" content="http://">
+  <meta name="twitter:image" content="https://sulbing.com/theme/cntt/img/logo_300x300.png">
+  <meta name="twitter:description" content="코리안 디저트 카페, 인절미설빙, 메뉴, 전국매장 안내, 이벤트, 고객센터">
+  <meta name="naver-site-verification" content="4c28a9c772921b16e3cf7cc13b6f11e959f283b8"/> 
+  <meta name="robots" content="noindex" />
+  <link rel="shortcut icon" type="image/x-icon" href="https://sulbing.com/theme/cntt/img/favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="/img/apple-icon-180x180.png" />
+  <link rel="icon" type="image/png" href="/img/android-icon-192x192.png" sizes="192x192">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Hahmlet:wght@100;200;300;400;500;600;700;800;900&family=Noto+Sans+KR&display=swap" rel="stylesheet">
+  <!-- 폰트어썸 -->
+  <script src="https://kit.fontawesome.com/73110e26f5.js" crossorigin="anonymous"></script>
+  <!-- 제이쿼리 -->
+  <script src="https://code.jquery.com/jquery-3.6.1.min.js"
+  integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ="
+  crossorigin="anonymous"></script>
+
+  <!-- 초기값 리셋 css -->
+  <link rel="stylesheet" href="../css/reset.css">
+  <!-- 뉴스&공지사항 css -->
+  <link rel="stylesheet" href="../css/notice.css">
+  <!-- 애니메이션 css -->
+  <link rel="stylesheet" href="../css/anime.css">
+  <!-- 헤더 & 푸터 css -->
+  <link rel="stylesheet" href="../css/header_and_footer.css">
+
+  <!-- 뉴스&공지사항 js -->
+  <script defer src="../JS/notice.js"></script>
+  <!-- 헤더 & 푸터 js -->
+  <script defer src="../JS/header_and_footer.js"></script>
+
+
+
     <title>공지사항</title>
-    <style>
-        body{font-size:20px}
-        a{text-decoration:none;margin:0 5px}
 
-        table, td{
-            border-collapse:collapse
-        }
-        th, td, .pager{
-            padding:10px;
-            text-align:center
-        }
-        .notice_list_set, .pager{
-            width:860px
-        }
-        .notice_list_title{
-            border-top:2px solid #999;
-            border-bottom:1px solid #999
-        }
-        .notice_list_content{
-            border-bottom:1px solid #999;
-        }
-        .no{width:60px}
-        .n_title{width:500px}
-        .writer{width:100px}
-        .w_date{width:120px}
-        .cnt{width:80px}
-        .notice_content_title{text-align:left;padding-left:10px}
-
-        a:hover{color:rgb(255, 128, 0)}
-
-        <?php if($s_id == "admin"){ ?>
-        .write_area{
-            width:860px;
-            display:flex;
-            justify-content:space-between
-        }
-        <?php }; ?>
-    </style>
 </head>
 <body>
-    <?php include "../inc/sub_header.html"; ?>
-    <!-- 콘텐트 -->
-    <h2>공지사항</h2>
-    <?php if($s_id == "admin"){ ?>
-    <p class="write_area">
-        <span>전체 <?php echo $total; ?>개</span>
-        <span><a href="write.php">[글쓰기]</a></span>
-    </p>
-    <?php } else{ ?>
-    <p>전체 <?php echo $total; ?>개</p>
-    <?php }; ?>
-    <table class="notice_list_set">
+    <!-- 헤더 영역 시작 -->
+
+    <?php include "../inc/sub_header.php"; ?>
+
+    <!-- 헤더 영역 종료 -->
+
+    <!-- 콘텐트 영역 시작 -->
+
+    <section class="title_wrap">
+    <div class="common_title">
+      <div class="inner_title drop_down_off">
+        <span class="title_left left_move_off"></span>
+        <h2 class="title_text"><a href="./list.php">뉴스 & 공지사항</a></h2>
+        <span class="title_right right_move_off"></span>
+      </div>
+
+      <ul class="location">
+        <li><a href="./Sulbing_index_유다찬.html">홈</a></li>
+        <li><p>뉴스 & 공지사항</p></li>
+      </ul>
+    </div>
+  </section>
+
+  <ul class="tab_menu">
+      <li class="tab_menu_on"><a href="./user_info.php">전체</a></li>
+      <li class="tab_menu_off"><a href="./pwd_change.php">뉴스</a></li>
+      <li class="tab_menu_off"><a href="./user_delete.php">공지사항</a></li>
+  </ul>
+  <div class="list_top">
+    <form class="notice_seach_wrap">
+            <select>
+                <option>제목</option>
+                <option>내용</option>
+                <option>제목+내용</option>
+            </select>
+            <input type="text" placeholder="검색어를 입력해주세요.">
+            <button type="button"><i class="fa-solid fa-magnifying-glass"></i></button>
+    </form>
+  </div>
+  
+
+    <table class="notice_list_board">
         <tr class="notice_list_title">
-            <th class="no">번호</th>
+            <th class="cate">카테고리</th>
             <th class="n_title">제목</th>
-            <th class="writer">작성자</th>
             <th class="w_date">날짜</th>
-            <th class="cnt">조회수</th>
+            <th class="n_cnt">조회수</th>
         </tr>
         <?php
             // paging : 해당 페이지의 글 시작 번호 = (현재 페이지 번호 - 1) * 페이지 당 보여질 목록 수
@@ -133,47 +172,77 @@ if($e_pageNum > $total_page){
             while($array = mysqli_fetch_array($result)){
         ?>
         <tr class="notice_list_content">
-            <td><?php echo $i; ?></td>
+            <td class="notice_cate">
+            <a href="view.php?n_idx=<?php echo $array["idx"]; ?>">
+                <!-- 카테고리명 -->
+            </a>
+            </td>
             <td class="notice_content_title">
                 <a href="view.php?n_idx=<?php echo $array["idx"]; ?>">
                 <?php echo $array["n_title"]; ?>
                 </a>
             </td>
-            <td><?php echo $array["writer"]; ?></td>
             <?php $w_date = substr($array["w_date"], 0, 10); ?>
-            <td><?php echo $w_date; ?></td>
-            <td><?php echo $array["cnt"]; ?></td>
+            <td class="date"><?php echo $w_date; ?></td>
+            <td class="cnt"><?php echo $array["cnt"]; ?></td>
         </tr>
         <?php
                 $i--;
             }; 
         ?>
     </table>
-    <p class="pager">
-    <?php
-    // pager : 이전 페이지
-    if($page <= 1){
-    ?>
-    <a href="list.php?page=1">이전</a>
-    <?php } else{ ?>
-    <a href="list.php?page=<?php echo ($page - 1); ?>">이전</a>
-    <?php }; ?>
 
-    <?php
-    // pager : 페이지 번호 출력
-    for($print_page = $s_pageNum;  $print_page <= $e_pageNum; $print_page++){
-    ?>
-    <a href="list.php?page=<?php echo $print_page; ?>"><?php echo $print_page; ?></a>
-    <?php }; ?>
+    <div class="pager_wrap">
+        <p class="pager_inner">
 
-    <?php
-    // pager : 다음 페이지
-    if($page >= $total_page){
-    ?>
-    <a href="list.php?page=<?php echo $total_page; ?>">다음</a>
-    <?php } else{ ?>
-    <a href="list.php?page=<?php echo ($page + 1); ?>">다음</a>
-    <?php }; ?>
+        <?php
+        // pager : 이전 페이지
+        if($page <= 1){
+        ?>
+        <a class="prev_btn btn_off" href="list.php?page=1">
+            <i class="fa-solid fa-chevron-left"></i>
+        </a>
+        <?php } else{ ?>
+        <a class="prev_btn"href="list.php?page=<?php echo ($page - 1); ?>">
+            <i class="fa-solid fa-chevron-left"></i>
+        </a>
+        <?php }; ?>
+
+        <?php
+        // pager : 페이지 번호 출력
+        for($print_page = $s_pageNum;  $print_page <= $e_pageNum; $print_page++){
+        ?>
+        <a class="page_num" href="list.php?page=<?php echo $print_page; ?>"><?php echo $print_page; ?> ㅇ</a>
+        <?php }; ?>
+
+        <?php
+        // pager : 다음 페이지
+        if($page >= $total_page){
+        ?>
+        <a class="next_btn btn_off" href="list.php?page=<?php echo $total_page; ?>">
+            <i class="fa-solid fa-chevron-right"></i>
+        </a>
+        <?php } else{ ?>
+        <a class="next_btn" href="list.php?page=<?php echo ($page + 1); ?>">
+            <i class="fa-solid fa-chevron-right"></i>
+        </a>
+        <?php }; ?>
+        </p>
+
+    </div>
+
+
+
+    <p class="write_area">
+        <span>전체 <?php echo $total; ?>개</span>
+        <span><a href="write.php">[글쓰기]</a></span>
     </p>
+
+    <!-- 푸터 영역 시작 -->
+
+    <?php include "../inc/footer.php"; ?>
+
+    <!-- 푸터 영역 종료 -->
+
 </body>
 </html>
