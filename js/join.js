@@ -304,60 +304,6 @@ function id_button_off () {
 }
 );
 
-//아이디
-
-// let id_text_wrap = document.getElementById("id_text_wrap");
-// let id_text = document.createElement('p');
-
-// //chap1. p태그를 변수에 저장
-// u_id.addEventListener('input', 
-// function name_text_on () {
-//     if(!u_id_reg.test(u_id.value) ) {
-//             u_id.classList.remove('n_border');
-//             u_id.classList.add('err_border');
-//             id_text.innerText = "아이디를 양식에 맞게 작성 해주세요";
-//             //chap2. 저장된 p태그에 텍스트 작성
-//             id_text_wrap.appendChild(id_text);
-//             //chap3. 부모요소에 텍스트가 저장된 변수를 자식요소로 삽입
-//             id_text.classList.remove('clear_txt');
-//             id_text.classList.add('err_txt');
-//             id_check = false;
-//     } 
-//     else {
-//         u_id.classList.remove('err_border');
-//         u_id.classList.add('n_border');
-//         id_text.innerText = "아이디가 정상이네요";
-//         id_text_wrap.appendChild(id_text);
-//         id_text.classList.remove('err_txt');
-//         id_text.classList.add('clear_txt');
-//         id_check = true;
-//     }
-// }
-// );
-
-// u_id.addEventListener('change',
-// function id_text_out() {
-//     if(u_id_reg.test(u_id.value)) {
-//         id_text_wrap.removeChild(id_text);
-//     //   name_check = false;
-//    } 
-//     else {
-//         // name_check = true;
-//     }
-// }
-// );
-
-// u_id.addEventListener('input',
-// function id_button_on () {
-//     if (u_id.value) {
-//         d_id.classList.remove('off_view');
-//         d_id.classList.add('on_view');
-//     }
-//     else {
-//         d_id.classList.add('off_view');
-//         d_id.classList.remove('on_view');
-//     }
-// });
 
 
 

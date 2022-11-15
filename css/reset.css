@@ -52,7 +52,7 @@ body,h1,h2,h3,h4,h5,p,div,ul,li,dl,dt,dd{
     margin: 0;
     padding: 0;
 }
-h1,h4,h5,dt,strong,body,i,em,p,div,ul,li,dl,dt,dd,input {
+h1,h4,h5,dt,strong,body,i,em,p,div,ul,li,dl,dt,dd,input,button {
   font-family: 'Noto Sans KR',sans-serif;
 }
 h2,h3 {

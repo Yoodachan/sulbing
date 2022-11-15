@@ -200,6 +200,23 @@
     font-weight: 400;
     font-size: 16px;
   }
+  .user_mobile_wrap td,
+  .user_email_wrap td {
+    display: block;
+  }
+
+  .now_mobile,
+  .now_email {
+    display: block;
+    width: 520px;
+    height: 50px;
+    margin: 5px 0px;
+    color: #444;
+    font-weight: 400;
+    font-size: 16px;
+    position: relative;
+
+  }
 
   .user_postal_wrap td {
     width: 830px;
@@ -211,25 +228,68 @@
     font-size: 16px;
   }
 
-  .user_pwd_wrap a{
-    display: block;
-    width: 120px;
-    padding: 0px 20px;
-    height: 40px;
-    line-height: 40px;
-    background-color: #fff;
-    color: #444;
-    font-size: 14px;
-    text-align: center;
-    font-weight: bold;
-    border: 1px solid #ddd;
+  .postal_bt_wrap {
+    position:relative;
+    width: 520px;
+    height: 220px;
   }
 
-  .user_pwd_wrap a:hover {
-    transition: all 0.3s;
-    background-color: #796150;
-    color: #fff;
+  .mobile_cg_wrap,.email_cg_wrap,
+  .add3_cg_wrap {
+    position:relative;
+    width: 520px;
+}
+
+  #postal_btn,.user_pwd_wrap a,
+  .mobile_cg_btn,
+  .email_cg_btn,
+  .addr3_cg_btn {
+    display: block;
+    width: 100px;
+    height: 46px;
+    line-height: 46px;
+    text-align: center;
+    font-size: 16px;
+    background-color: #fff;
+    color:#999;
+    border: 1px solid #e2e2e2;
+    border-radius: 4px;
+  } 
+
+  #postal_btn,
+  .mobile_cg_btn,
+  .email_cg_btn,
+  .addr3_cg_btn {
+    position: absolute;
+    cursor:pointer;
+    z-index: 6;
   }
+
+  #postal_btn,
+  .mobile_cg_btn,
+  .email_cg_btn {
+    top: 2px;
+    right: 2px;
+  }
+  .addr3_cg_btn {
+    bottom: 8px;
+    right: 2px;
+  }
+
+  #postal_btn:hover,.user_pwd_wrap a:hover,
+  .mobile_cg_btn:hover,
+  .email_cg_btn:hover,
+  .addr3_cg_btn:hover {
+    color:#fff;
+    background-color: #ad9582;
+    transition:all 0.3s;
+  }
+
+  .now_email,.now_mobile,.now_addr3,
+  #ps_code,#addr1,#addr2 {
+    background-color: #f0f0f0;
+  }
+
   
   input::placeholder {
     padding-left: 20px;
@@ -247,7 +307,18 @@
     color: #444;
     font-weight: 400;
     font-size: 16px;
+    position: relative;
   }
+
+/* 인풋 박스 포커스 */
+.now_email,.now_mobile,.now_addr3,
+#mobile:focus,#email_id:focus,
+#ps_code:focus,#addr1:focus,#addr2:focus,
+#addr3:focus {
+  outline: none;
+  /* border: 1px solid #e2e2e2; */
+  z-index:3;
+}
 
 
   /* 알림 공간 */
@@ -260,6 +331,32 @@
   margin: 5px 0px;
   font-size: 16px;
 }
+
+
+#d_mobile,#d_email,#d_addr3 {
+  width: 26px;
+  height: 26px;
+  appearance: none;
+  border: 1px solid #e2e2e2;
+  border-radius: 50%;
+  color: white;
+  background-color: #e2e2e2;
+  font-size: 14px;
+  position: absolute;
+  cursor: pointer;
+}
+
+
+#d_mobile,#d_email {
+  top: 12px;
+  right: 10px;
+}
+
+#d_addr3 {
+  bottom: 15px;
+  right: 10px;
+}
+
 
 
 .user_check_board th {

@@ -341,7 +341,9 @@ input::placeholder {
   display: block;
   width: 100px;
   height: 46px;
-  font-size: 18px;
+  text-align: center;
+  line-height: 46px;
+  font-size: 16px;
   font-weight: bold;
   background-color: #fff;
   color:#999;
@@ -360,7 +362,8 @@ input::placeholder {
 .name_bt_wrap,.id_bt_wrap,
 .pwd_bt_wrap,.re_pwd_bt_wrap,
 .mobile_bt_wrap,.email_bt_wrap,
-.birth_bt_wrap,.postal_wrap {
+.birth_bt_wrap,.postal_wrap,
+.postal_bt_wrap {
   position:relative;
   width: 520px;
   margin: 0 auto;

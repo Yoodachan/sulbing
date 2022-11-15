@@ -165,8 +165,10 @@
             <!-- <label for="addr2">참고 항목</label> -->
             <input type="text" name="addr2" id="addr2" class="n_border" placeholder="참고 항목"  readonly>
             <!-- <label for="addr3">나머지 주소</label> -->
-            <input type="text" name="addr3" id="addr3" class="n_border" placeholder="나머지 주소" maxlength="100">
-            <button id="d_addr3" class="off_view" type="button" title="입력한 내용 삭제"><i class="fa-solid fa-x"></i></button>
+              <div class="postal_bt_wrap">
+              <input type="text" name="addr3" id="addr3" class="n_border" placeholder="나머지 주소" maxlength="100">
+              <button id="d_addr3" class="off_view" type="button" title="입력한 내용 삭제"><i class="fa-solid fa-x"></i></button>
+              </div>
             <span id="addr_text_wrap"  class="err_txt"></span>
         </section>
 

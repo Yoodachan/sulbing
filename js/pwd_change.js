@@ -13,6 +13,24 @@ function title_anime () {
 title_anime ()
 
 
+
+
+
+// 비밀번호
+var pwd_reg = /^(?=.*[a-zA-Z])(?=.*[^a-zA-Z0-9]|.*[0-9]).{8,24}$/;
+var d_pwd = document.getElementById("d_pwd");
+
+let pwd_check = false;
+
+// 비밀번호 확인
+var d_re_pwd = document.getElementById("d_re_pwd");
+
+let re_pwd_check = false;
+
+
+
+
+
 function edit_form_check(){
     var pwd = document.getElementById("pwd");
     var repwd = document.getElementById("repwd");

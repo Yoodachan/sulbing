@@ -113,11 +113,11 @@ $array = mysqli_fetch_array($result);
 
           <tr class="user_name_wrap">
               <th>이름</th>
-              <td><?php echo $array["u_name"]; ?></td>
+              <td><p><?php echo $array["u_name"]; ?></p></td>
           </tr>
           <tr class="user_id_wrap">
               <th>아이디</th>
-              <td><?php echo $array["u_id"]; ?></td>
+              <td><p><?php echo $array["u_id"]; ?></p></td>
           </tr>
           <tr class="user_pwd_wrap">
               <th>비밀번호</th>
@@ -125,40 +125,58 @@ $array = mysqli_fetch_array($result);
           </tr>
           <tr class="user_birth_wrap">
               <th>생년월일</th>
-              <td><?php echo $array["birth"]; ?></td>
+              <td><p><?php echo $array["birth"]; ?></p></td>
           </tr>
           <tr class="user_mobile_wrap">
               <th><label for="mobile">연락처</label></th>
               <td>
-                <div class="mobile_bt_wrap">
+                <div class="mobile_cg_wrap change_off">
+                <input class="now_mobile n_border" name="now_mobile" type="text" placeholder="<?php echo $array["mobile"]; ?>" readonly ></input>
+                <button class="mobile_cg_btn" type="button">변경</button>
+                </div>
+              </td>
+              <!-- <td>
+                <div class="mobile_cg_wrap change_on">
                     <input id="mobile" name="mobile" class="n_border" type="text" placeholder="휴대폰 번호 입력 (&#34;-&#34;제외 11자리 입력)" value="<?php echo $array["mobile"]; ?>">
-                    <!-- <button id="d_mobile" class="off_view" type="button" title="입력한 내용 삭제"><i class="fa-solid fa-x"></i></button> -->
+                    <button id="d_mobile" class="off_view" type="button" title="입력한 내용 삭제"><i class="fa-solid fa-x"></i></button>
                 </div>
                 <span id="mobile_text_wrap"  class="err_txt"></span>
-              </td>
+              </td> -->
           </tr>
           <tr class="user_email_wrap">
               <th><label for="email">이메일</label></th>
               <td>
-                <div class="email_bt_wrap">
+               <div class="email_cg_wrap change_off">
+                <input class="now_email n_border" name="now_email" type="text" placeholder="<?php echo $array["email"]; ?>" readonly ></input>
+                <button class="email_cg_btn" type="button">변경</button>
+                </div>
+              </td>
+              <!-- <td>
+                <div class="email_cg_wrap change_on">
                   <input id="email_id" name="email" class="n_border" type="text" placeholder="이메일에 @를 포함해주세요." value="<?php echo $array["email"]; ?>" />
-                  <!-- <button id="d_email" class="off_view" type="button" title="입력한 내용 삭제"><i class="fa-solid fa-x"></i></button> -->
+                  <button id="d_email" class="off_view" type="button" title="입력한 내용 삭제"><i class="fa-solid fa-x"></i></button>
                 </div>
                 <span id="email_text_wrap"  class="err_txt"></span>
-              </td>
+              </td> -->
           </tr>
 
           <tr class="user_postal_wrap">
               <th><label for="ps_code">주소</label></th>
               <td>
-                <section class="postal_wrap">
+                <section class="postal_bt_wrap">
                   <input type="text" name="ps_code" id="ps_code" class="n_border" placeholder="우편 번호" value="<?php echo $array["ps_code"]?>"  readonly>
-                  <!-- <button id="postal_btn" type="button" >주소 검색</button> -->
+                  <button id="postal_btn" type="button" >주소 검색</button>
 
                   <input type="text" name="addr1" id="addr1" class="n_border" placeholder="기본 주소" value="<?php echo $array["addr1"]?>"  readonly>
                   <input type="text" name="addr2" id="addr2" class="n_border" placeholder="참고 항목" value="<?php echo $array["addr2"]?>"  readonly>
-                  <input type="text" name="addr3" id="addr3" class="n_border" placeholder="나머지 주소" maxlength="100" value="<?php echo $array["addr3"]?>">
-                  <!-- <button id="d_addr3" class="off_view" type="button" title="입력한 내용 삭제"><i class="fa-solid fa-x"></i></button> -->
+                   <div class="addr3_cg_wrap change_off">
+                      <input type="text" name="now_addr3" id="addr3" class="now_addr3 n_border" placeholder="나머지 주소" maxlength="100" value="<?php echo $array["addr3"]?>" readonly>
+                      <button class="addr3_cg_btn" type="button">변경</button>
+                    </div>
+                    <!-- <div class="addr3_cg_wrap change_on">
+                    <input type="text" name="addr3" id="addr3" class="n_border" placeholder="나머지 주소" maxlength="100" value="<?php echo $array["addr3"]?>">
+                    <button id="d_addr3" class="off_view" type="button" title="입력한 내용 삭제"><i class="fa-solid fa-x"></i></button>
+                    </div> -->
                   <span id="addr_text_wrap"  class="err_txt"></span>
                 </section>
               </td>
