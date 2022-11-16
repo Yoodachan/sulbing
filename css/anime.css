@@ -196,7 +196,16 @@
   transition: all 0.6s;
 }
 
+/* user_info */
 
+.cg_on {
+  display:none;
+}
+
+
+.cg_off {
+  display:block;
+}
 
 
 

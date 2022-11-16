@@ -95,7 +95,7 @@
               
               <strong class="welcome_clear welcome_down_off_00">설빙 회원 가입이 완료 되었습니다.</strong>
               <strong class="welcome_service welcome_down_off_01">설빙의 다양한 서비스를 이용해 보세요!</strong>
-              <i class="welcome_user welcome_down_off_02"><em><?php echo $s_name; ?></em>님의 설빙 아이디는<em><?php echo $s_name; ?></em>입니다.</i>
+              <i class="welcome_user welcome_down_off_02"><em><?php echo $s_name; ?></em>님의 설빙 아이디는<em><?php echo $s_id; ?></em>입니다.</i>
               <a class="home_btn btn_left_off" href="../index.php">홈으로 이동</a>
             </div>
         </div>

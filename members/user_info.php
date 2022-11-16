@@ -60,6 +60,9 @@ $array = mysqli_fetch_array($result);
   integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ="
   crossorigin="anonymous"></script>
 
+  <!-- 다음 주소 api -->
+  <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script> 
+
   <!-- 초기값 리셋 css -->
   <link rel="stylesheet" href="../css/reset.css">
   <!-- 회원 정보 css -->
@@ -73,6 +76,7 @@ $array = mysqli_fetch_array($result);
   <script defer src="../JS/user_info.js"></script>
   <!-- 헤더 & 푸터 js -->
   <script defer src="../JS/header_and_footer.js"></script>
+  
 
 
 </head>
@@ -105,7 +109,7 @@ $array = mysqli_fetch_array($result);
       <li class="board_tab_off"><a href="./user_delete.php">회원탈퇴</a></li>
     </ul>
 
-    <form name="edit_form" action="edit.php" method="post" onsubmit="return edit_form_check()">
+    <form name="edit_form" action="edit_info.php" method="post" onsubmit="return edit_info_check()">
       <h5> 기본 정보 </h5>
 
       <table class="user_info_board">
@@ -129,35 +133,40 @@ $array = mysqli_fetch_array($result);
           </tr>
           <tr class="user_mobile_wrap">
               <th><label for="mobile">연락처</label></th>
-              <td>
-                <div class="mobile_cg_wrap change_off">
-                <input class="now_mobile n_border" name="now_mobile" type="text" placeholder="<?php echo $array["mobile"]; ?>" readonly ></input>
-                <button class="mobile_cg_btn" type="button">변경</button>
+              <td class="mobile_readonly_wrap cg_off">
+                <div class="mobile_cg_wrap">
+                  <input class="now_mobile n_border" name="now_mobile" type="text" placeholder="<?php echo $array["mobile"]; ?>" value="<?php echo $array["mobile"]; ?>" readonly ></input>
+                  <button class="mobile_cg_btn" type="button">변경</button>
                 </div>
               </td>
-              <!-- <td>
-                <div class="mobile_cg_wrap change_on">
+              <td class="mobile_input_wrap cg_on">
+                <div class="mobile_cg_wrap">
                     <input id="mobile" name="mobile" class="n_border" type="text" placeholder="휴대폰 번호 입력 (&#34;-&#34;제외 11자리 입력)" value="<?php echo $array["mobile"]; ?>">
                     <button id="d_mobile" class="off_view" type="button" title="입력한 내용 삭제"><i class="fa-solid fa-x"></i></button>
+                    <button class="mobile_cg_btn" type="button">취소</button>
                 </div>
                 <span id="mobile_text_wrap"  class="err_txt"></span>
-              </td> -->
+              </td>
           </tr>
           <tr class="user_email_wrap">
               <th><label for="email">이메일</label></th>
-              <td>
-               <div class="email_cg_wrap change_off">
-                <input class="now_email n_border" name="now_email" type="text" placeholder="<?php echo $array["email"]; ?>" readonly ></input>
+              
+              <td class="email_readonly_wrap cg_off">
+               <div class="email_cg_wrap">
+                <input class="now_email n_border" name="now_email" type="text" placeholder="<?php echo $array["email"]; ?>" value="<?php echo $array["email"]; ?>" readonly ></input>
                 <button class="email_cg_btn" type="button">변경</button>
                 </div>
               </td>
-              <!-- <td>
-                <div class="email_cg_wrap change_on">
+
+              <td class="email_input_wrap cg_on">
+                <div class="email_cg_wrap">
                   <input id="email_id" name="email" class="n_border" type="text" placeholder="이메일에 @를 포함해주세요." value="<?php echo $array["email"]; ?>" />
                   <button id="d_email" class="off_view" type="button" title="입력한 내용 삭제"><i class="fa-solid fa-x"></i></button>
+                  <button class="email_cg_btn" type="button">취소</button>
                 </div>
                 <span id="email_text_wrap"  class="err_txt"></span>
-              </td> -->
+              </td>
+
           </tr>
 
           <tr class="user_postal_wrap">
@@ -169,14 +178,15 @@ $array = mysqli_fetch_array($result);
 
                   <input type="text" name="addr1" id="addr1" class="n_border" placeholder="기본 주소" value="<?php echo $array["addr1"]?>"  readonly>
                   <input type="text" name="addr2" id="addr2" class="n_border" placeholder="참고 항목" value="<?php echo $array["addr2"]?>"  readonly>
-                   <div class="addr3_cg_wrap change_off">
-                      <input type="text" name="now_addr3" id="addr3" class="now_addr3 n_border" placeholder="나머지 주소" maxlength="100" value="<?php echo $array["addr3"]?>" readonly>
-                      <button class="addr3_cg_btn" type="button">변경</button>
-                    </div>
-                    <!-- <div class="addr3_cg_wrap change_on">
+                  <div class="addr3_readonly_wrap cg_off">
+                    <input type="text" name="now_addr3" class="now_addr3 n_border" placeholder="나머지 주소" maxlength="100" value="<?php echo $array["addr3"]?>" readonly>
+                    <button class="addr3_cg_btn" type="button">변경</button>
+                  </div>
+                  <div class="addr3_input_wrap cg_on">
                     <input type="text" name="addr3" id="addr3" class="n_border" placeholder="나머지 주소" maxlength="100" value="<?php echo $array["addr3"]?>">
                     <button id="d_addr3" class="off_view" type="button" title="입력한 내용 삭제"><i class="fa-solid fa-x"></i></button>
-                    </div> -->
+                    <button class="addr3_cg_btn" type="button">취소</button>
+                  </div>
                   <span id="addr_text_wrap"  class="err_txt"></span>
                 </section>
               </td>
@@ -191,7 +201,8 @@ $array = mysqli_fetch_array($result);
               <td>
                 <p>이벤트/상품 소식등을 전해드립니다.(공지목적의 발송되는 메일은 제외)</p>
                 <div>
-                  <input type="checkbox" name="apply_marketing" id="apply_marketing" value="y">
+                  <input type="checkbox" name="apply_marketing" id="apply_marketing" value="y" <?php if($array["marketing"] == "y") echo "checked";?>>
+                  <input type="hidden" name="apply_marketing" id="apply_marketing_hidden" value="n" >
                   <label class="marketing_text" for="apply_marketing">[선택] 마케팅 활용 및 광고성 정보 수신 동의 
                     <button type="button">자세히</button>
                   </label>
@@ -204,85 +215,6 @@ $array = mysqli_fetch_array($result);
         <button type="submit" class="edit_btn">수정</button>
       </div>
     </form>
-      
-
-
-
-        <!-- <fieldset>
-            <legend>회원정보</legend>
-            <input type="hidden" name="g_idx" value="<?php echo $array["idx"]; ?>">
-            <p>
-                이름 <?php echo $array["u_name"]; ?>
-            </p>
-
-            <p>
-                아이디 <?php echo $array["u_id"]; ?>
-            </p>
-
-            <p>
-                <label for="pwd">비밀번호</label>
-                <input type="text" name="pwd" id="pwd">
-                <br>* 비밀번호는 4~12글자만 입력할 수 있습니다.
-            </p>
-
-            <p>
-                <label for="repwd">비밀번호 확인</label>
-                <input type="text" name="repwd" id="repwd">
-            </p>
-
-            <p>
-                <label for="mobile">전화번호</label>
-                <input type="text" name="mobile" id="mobile" value="<?php echo $array["mobile"]; ?>">
-                <br>* "-" 없이 숫자만 입력
-            </p>
-
-            <?php
-                // 문자 치환 : str_replace
-                // 변수 = str_replace("어떤 문자를", "어떤 문자로", "어떤 값에서");
-                // DB에 입력된 YYYY-MM-DD 형식을 YYYYMMDD로 치환
-                $birth = str_replace("-", "", $array["birth"]);
-            ?>
-            <p>
-                <label for="birth">생년월일</label>
-                <input type="text" name="birth" id="birth" value="<?php echo $birth; ?>">
-                <br>ex)20221031
-            </p>
-
-            <?php
-                // 문자 분리 : explode
-                // 변수 = explode("기준문자", "어떤 값에서");
-                // 변수가 배열처리되어 분리된 값 사용
-                // DB에서 가져온 이메일을 @ 기준으로 분리
-                $email = explode("@", $array["email"]);
-            ?>
-            <p>
-                <label for="email_id">이메일</label>
-                <input type="text" name="email_id" id="email_id" value="<?php echo $email[0]; ?>"> @
-                <input type="text" name="email_dns" id="email_dns" value="<?php echo $email[1]; ?>">
-                <select name="email_sel" id="email_sel" onchange="change_email()">
-                    <option value="">직접입력</option>
-                    <option value="naver.com">네이버</option>
-                    <option value="hanmail.net">다음</option>
-                    <option value="gmail.com">구글</option>
-                </select>
-            </p>
-
-            <p>
-                <label for="ps_code">주소</label>
-                <input type="text" name="ps_code" id="ps_code" value="<?php echo $array["ps_code"]; ?>">
-                <button type="text">주소검색</button><br>
-                <label for="addr_b">기본주소</label>
-                <input type="text" name="addr_b" id="addr_b" value="<?php echo $array["addr_b"]; ?>"><br>
-                <label for="addr_d">상세주소</label>
-                <input type="text" name="addr_d" id="addr_d" value="<?php echo $array["addr_d"]; ?>">
-            </p>
-
-            <p>
-                <button type="button" onclick="history.back()">이전 페이지</button>
-                <button type="submit">정보수정</button>
-                <button type="button" onclick="mem_del()">회원탈퇴</button>
-            </p>
-        </fieldset> -->
     </main>
 
     <!-- 푸터 영역 시작 -->

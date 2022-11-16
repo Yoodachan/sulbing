@@ -42,16 +42,13 @@ let apply_marketing = document.getElementById("apply_marketing");
 var mobile_reg = /^[0-9]{2,3}[0-9]{3,4}[0-9]{4}$/;
 var d_mobile = document.getElementById("d_mobile");
 
-let mobile_check = false;
 
 // 이메일
 var email_reg = regExp = /^[a-zA-Z0-9+-\_.]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/;
 var d_email = document.getElementById("d_email");
 
-let email_check = false;
 
 // 주소
-let addr_check = false;
 var d_addr3 = document.getElementById("d_addr3");
 
 // 버튼 포커스
@@ -98,9 +95,8 @@ mobile.addEventListener('change',
 function mobile_text_out() {
     if(mobile_reg.test(mobile.value)) {
         mobile_text_wrap.removeChild(mobile_text);
+        mobile_check = true;
    } 
-    else {
-    }
 }
 );
 
@@ -127,7 +123,6 @@ function mobile_button_off () {
     d_mobile.classList.add('off_view');
     mobile_text.innerText = "연락처는 필수 정보입니다.";
     mobile_text_wrap.appendChild(mobile_text);
-
     mobile_check = false;
 }
 );
@@ -154,7 +149,7 @@ function email_text_on () {
         else {
             email.classList.remove('err_border');
             email.classList.add('n_border');
-            email_text.innerText = "이메일이 정상이네요";
+            email_text.innerText = "이메일가 정상이네요";
             email_text_wrap.appendChild(email_text);
             email_text.classList.remove('err_txt');
             email_text.classList.add('clear_txt');
@@ -167,17 +162,17 @@ email.addEventListener('change',
     function mobile_text_out() {
         if (email_reg.test(email.value)) {
             email_text_wrap.removeChild(email_text);
-            //   name_check = false;
-        }
-        else {
-            // name_check = true;
+            email_check = true;
         }
     }
 );
-console.log('dd')
+
+
+
+
 email.addEventListener('input',
     function email_button_on() {
-        if (email_reg.test(email.value)) {
+        if (email.value) {
             d_email.classList.remove('off_view');
             d_email.classList.add('on_view');
         }
@@ -206,28 +201,28 @@ d_email.addEventListener('click',
 
 
 
+
 // 나머지 주소 삭제 버튼
 
-// addr3.addEventListener('input',
-// function addr3_button_on () {
-//     if (addr3.value) {
-//         d_addr3.classList.remove('off_view');
-//         d_addr3.classList.add('on_view');
-//     }
-//     else {
-//         d_addr3.classList.add('off_view');
-//         d_addr3.classList.remove('on_view');
-//     }
-// });
+addr3.addEventListener('input',
+function addr3_button_on () {
+    if (addr3.value) {
+        d_addr3.classList.remove('off_view');
+        d_addr3.classList.add('on_view');
+    }
+    else {
+        d_addr3.classList.add('off_view');
+        d_addr3.classList.remove('on_view');
+    }
+});
 
-// d_addr3.addEventListener('click',
-// function addr3_button_off () {
-//     addr3.value = ""
-//     d_addr3.classList.remove('on_view');
-//     d_addr3.classList.add('off_view');
-// }
-// );
-
+d_addr3.addEventListener('click',
+function addr3_button_off () {
+    addr3.value = ""
+    d_addr3.classList.remove('on_view');
+    d_addr3.classList.add('off_view');
+}
+);
 
 //주소
 
@@ -273,20 +268,8 @@ function addrFind() {
 
       // 조합된 참고항목을 해당 필드에 넣는다.
       addr2.value = extraAddr;
-      addr_check = true;
       } else {
         addr2.value = '';
-        addr_check = true;
-      }
-
-      if ( name_check && id_check && pwd_check && re_pwd_check && mobile_check && email_check && birth_check && addr_check && apply_priv.checked && apply_medie.checked && apply_age.checked == true ) {
-        join_btn.disabled = false;
-        join_btn.classList.remove('sign_off');
-        join_btn.classList.add('sign_on');
-      } else {
-        join_btn.disabled = true;
-        join_btn.classList.remove('sign_on');
-        join_btn.classList.add('sign_off');
       }
       // 우편번호와 주소 정보를 해당 필드에 넣는다.
       ps_code.value = data.zonecode;
@@ -299,45 +282,130 @@ function addrFind() {
 )
 
 
+let now_moble = document.getElementsByClassName('now_mobile')[0];
+let now_email = document.getElementsByClassName('now_email')[0];
+let now_addr3 = document.getElementsByClassName('now_addr3')[0];
+// console.log(now_moble.placeholder)
+let mobile_readonly_wrap = document.getElementsByClassName('mobile_readonly_wrap')[0]
+let mobile_input_wrap = document.getElementsByClassName('mobile_input_wrap')[0]
+
+let mobile_cg_on = document.getElementsByClassName('mobile_cg_btn')[0]
+let mobile_cg_off = document.getElementsByClassName('mobile_cg_btn')[1]
+
+mobile_cg_on.addEventListener('click',function(){
+    mobile_readonly_wrap.classList.remove('cg_off');
+    mobile_readonly_wrap.classList.add('cg_on');
+
+    mobile.value = "";
+
+    mobile_input_wrap.classList.remove('cg_on');
+    mobile_input_wrap.classList.add('cg_off');
+})
+
+mobile_cg_off.addEventListener('click',function(){
+    mobile_input_wrap.classList.remove('cg_off');
+    mobile_input_wrap.classList.add('cg_on');
+
+    mobile.value = now_moble.placeholder;
+
+    mobile_readonly_wrap.classList.remove('cg_on');
+    mobile_readonly_wrap.classList.add('cg_off');
+})
 
 
+let email_readonly_wrap = document.getElementsByClassName('email_readonly_wrap')[0]
+let email_input_wrap = document.getElementsByClassName('email_input_wrap')[0]
+
+let email_cg_on = document.getElementsByClassName('email_cg_btn')[0]
+let email_cg_off = document.getElementsByClassName('email_cg_btn')[1]
+
+email_cg_on.addEventListener('click',function(){
+    email_readonly_wrap.classList.remove('cg_off');
+    email_readonly_wrap.classList.add('cg_on');
+
+    email.value = "";
+
+    email_input_wrap.classList.remove('cg_on');
+    email_input_wrap.classList.add('cg_off');
+})
+
+email_cg_off.addEventListener('click', function(){
+    email_input_wrap.classList.remove('cg_off');
+    email_input_wrap.classList.add('cg_on');
+
+    email.value = now_email.placeholder;
+
+    email_readonly_wrap.classList.remove('cg_on');
+    email_readonly_wrap.classList.add('cg_off');
+})
 
 
+let addr3_readonly_wrap = document.getElementsByClassName('addr3_readonly_wrap')[0]
+let addr3_input_wrap = document.getElementsByClassName('addr3_input_wrap')[0]
 
+let addr3_cg_on = document.getElementsByClassName('addr3_cg_btn')[0]
+let addr3_cg_off = document.getElementsByClassName('addr3_cg_btn')[1]
 
+addr3_cg_on.addEventListener('click',function(){
+    addr3_readonly_wrap.classList.remove('cg_off');
+    addr3_readonly_wrap.classList.add('cg_on');
 
+    addr3.value = "";
 
+    addr3_input_wrap.classList.remove('cg_on');
+    addr3_input_wrap.classList.add('cg_off');
+})
 
+addr3_cg_off.addEventListener('click', function(){
+    addr3_input_wrap.classList.remove('cg_off');
+    addr3_input_wrap.classList.add('cg_on');
 
+    addr3.value = now_addr3.placeholder;
 
+    addr3_readonly_wrap.classList.remove('cg_on');
+    addr3_readonly_wrap.classList.add('cg_off');
+})
 
+var apply_marketing_hidden = document.getElementById('apply_marketing_hidden');
 
+function edit_info_check() {
 
+    //연락처//
+    if( mobile_check = false ) {
 
+        mobile.classList.remove('n_border');
+        mobile.classList.add('err_border');
+        mobile_text.innerText = "연락처를 양식에 맞게 작성 해주세요";
+        mobile_text_wrap.appendChild(mobile_text);
+        mobile_text.classList.remove('clear_txt');
+        mobile_text.classList.add('err_txt');
 
+        mobile.focus();
+        return false;
+    }
+    //이메일//
+    if( email_check = false ) {
 
+        email.classList.remove('n_border');
+        email.classList.add('err_border');
+        email_text.innerText = "이메일을 양식에 맞게 작성 해주세요";
+        email_text_wrap.appendChild(email_text);
+        email_text.classList.remove('clear_txt');
+        email_text.classList.add('err_txt');
 
-function edit_form_check(){
-    var pwd = document.getElementById("pwd");
-    var repwd = document.getElementById("repwd");
+        email.focus();
+        return false;
+    }
 
-    if(pwd.value){
-        var pw_len = pwd.value.length;
-        if(pw_len < 4 || pw_len > 12){
-            alert("비밀번호는 4~12글자만 입력할 수 있습니다.");
-            pwd.focus();
-            return false;
-        };
-    };
-    
-    if(pwd.value){
-        if(pwd.value != repwd.value){
-            alert("비밀번호를 확인해 주세요.");
-            repwd.focus();
-            return false;
-        };
-    };           
-};
+    if( apply_marketing.checked ) {
+        apply_marketing_hidden.disabled = true;
+    }
+    else {
+        apply_marketing.disabled = true;
+        apply_marketing_hidden.disabled = false;
+    }
+}
+
 
 function mem_del(){
     var rtn_val = confirm("정말 탈퇴하시겠습니까?");

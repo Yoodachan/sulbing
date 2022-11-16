@@ -27,7 +27,7 @@
         <li class="login_menu"><a href="http://localhost/web_project/login/login.php">로그인</a></li>
         <li class="join_menu"><a href="http://localhost/web_project/members/join.php">회원가입</a></li>
       <?php } else if($s_id == "admin"){ ?>
-        <li class="admin_page"><a href="./admin/index.php">관리자 페이지</a></li>
+        <li class="admin_page"><a href="http://localhost/web_project/admin/index.php">관리자 페이지</a></li>
         <li class="logout"><a href="http://localhost/web_project/login/logout.php">로그아웃</a></li>
         <li class="user_info"><a href="http://localhost/web_project/members/user_info.php">마이페이지</a></li>
         <?php } else{ ?>

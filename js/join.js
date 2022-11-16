@@ -181,7 +181,7 @@ let id_text_wrap = document.getElementById("id_text_wrap");
 let id_text = document.createElement('p');
 
 //chap1. p태그를 변수에 저장
-function name_text_on ( g_id ) {
+function u_id_text_on ( g_id ) {
     if(!u_id_reg.test(u_id.value) ) {
             u_id.classList.remove('n_border');
             u_id.classList.add('err_border');

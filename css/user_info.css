@@ -1,4 +1,11 @@
-
+.on_view {
+  display:block;
+  z-index: 5;
+}
+.off_view {
+  display: none;
+  z-index: 1;
+}
 
 .clear_txt {
     color: #39cab7;
@@ -193,20 +200,16 @@
   .user_pwd_wrap td,.user_birth_wrap td,
   .user_mobile_wrap td,.user_email_wrap td {
     width: 830px;
-    height: 60px;
     border-bottom: 1px #e2e2e2 solid;
     padding-left: 20px;
     color: #666666;
     font-weight: 400;
     font-size: 16px;
   }
-  .user_mobile_wrap td,
-  .user_email_wrap td {
-    display: block;
-  }
 
   .now_mobile,
-  .now_email {
+  .now_email,
+  .now_addr3 {
     display: block;
     width: 520px;
     height: 50px;
@@ -234,10 +237,10 @@
     height: 220px;
   }
 
-  .mobile_cg_wrap,.email_cg_wrap,
-  .add3_cg_wrap {
+  .mobile_cg_wrap,.email_cg_wrap {
     position:relative;
     width: 520px;
+    margin: 5px 0px;
 }
 
   #postal_btn,.user_pwd_wrap a,
@@ -272,7 +275,7 @@
     right: 2px;
   }
   .addr3_cg_btn {
-    bottom: 8px;
+    bottom: 7px;
     right: 2px;
   }
 
@@ -323,8 +326,7 @@
 
   /* 알림 공간 */
 #pwd_text_wrap,#mobile_text_wrap,
-#email_text_wrap,.addr_text_wrap,
-.clear_txt,.err_txt {
+#email_text_wrap,.addr_text_wrap {
   display: block;
   width: 520px;
   line-height: 24px;
@@ -349,12 +351,12 @@
 
 #d_mobile,#d_email {
   top: 12px;
-  right: 10px;
+  right: 120px;
 }
 
 #d_addr3 {
-  bottom: 15px;
-  right: 10px;
+  bottom: 12px;
+  right: 120px;
 }
 
 

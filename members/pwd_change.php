@@ -21,6 +21,10 @@ $result = mysqli_query($dbcon, $sql);
 // mysqi_fetch_array(쿼리실행문) -- 필드이름
 // mysqi_num_rows(쿼리실행문) -- 전체 행 개수
 $array = mysqli_fetch_array($result);
+
+
+
+
 ?>
 
 
@@ -105,7 +109,7 @@ $array = mysqli_fetch_array($result);
       <li class="board_tab_off"><a href="./user_delete.php">회원탈퇴</a></li>
     </ul>
 
-    <form name="edit_form" action="edit.php" method="post" onsubmit="return edit_form_check()">
+    <form name="edit_form" action="edit_pwd.php" method="post" onsubmit="return edit_pwd_check()">
 
       <table class="pwd_change_board">
           <caption>비밀번호 변경</caption>
@@ -113,33 +117,40 @@ $array = mysqli_fetch_array($result);
           <tr class="pwd_wrap">
               <th><label for="pwd">현재 비밀번호</label></th>
               <td>
-                <div class="pwd_bt_wrap">
-                    <input id="pwd" name="pwd" class="n_border" type="password" placeholder="현재 비밀번호 입력">
-                    <!-- <button id="d_mobile" class="off_view" type="button" title="입력한 내용 삭제"><i class="fa-solid fa-x"></i></button> -->
+                <div class="now_pwd_bt_wrap">
+                  <input id="pwd_val" name="pwd_val" class="n_border" type="hidden" value="<?php echo $array["pwd"]; ?>"  <?php //onkeyup="now_pwd_text_on (this.value)"?>>
+                  <input id="now_pwd" name="nowpwd" class="n_border" type="password" placeholder="영어,숫자,특수문자 조합 8~24자" <?php //onkeyup="now_pwd_text_on (this.value)"?>>
+                  <button id="d_now_pwd" class="off_view" type="button" title="입력한 내용 삭제"><i class="fa-solid fa-x"></i></button>
+                  <button id="now_pwd_eye_on" class="on_view"  type="button"><i class="fa-solid fa-eye"></i></button>
+                  <button id="now_pwd_eye_off" class="off_view"  type="button"><i class="fa-solid fa-eye-slash"></i></button>
                 </div>
-                <span id="mobile_text_wrap"  class="err_txt"></span>
+                <span id="now_pwd_text_wrap"  class="err_txt"></span>
               </td>
           </tr>
 
-          <tr class="npwd_wrap">
+          <tr class="pwd_wrap">
               <th><label for="mobile">새 비밀번호</label></th>
               <td>
-                <div class="npwd_bt_wrap">
-                    <input id="mobile" name="mobile" class="n_border" type="text" placeholder="새 비밀번호 입력">
-                    <!-- <button id="d_mobile" class="off_view" type="button" title="입력한 내용 삭제"><i class="fa-solid fa-x"></i></button> -->
+                <div class="pwd_bt_wrap">
+                  <input id="pwd" name="pwd" class="n_border" type="password" placeholder="영어,숫자,특수문자 조합 8~24자">
+                  <button id="d_pwd" class="off_view" type="button" title="입력한 내용 삭제"><i class="fa-solid fa-x"></i></button>
+                  <button id="pwd_eye_on" class="on_view"  type="button"><i class="fa-solid fa-eye"></i></button>
+                  <button id="pwd_eye_off" class="off_view"  type="button"><i class="fa-solid fa-eye-slash"></i></button>
                 </div>
-                <span id="mobile_text_wrap"  class="err_txt"></span>
+                <span id="pwd_text_wrap"  class="err_txt"></span>
               </td>
           </tr>
 
-          <tr class="repwd_wrap">
+          <tr class="pwd_wrap">
               <th><label for="mobile">새 비밀번호 확인</label></th>
               <td>
-                <div class="repwd_bt_wrap">
-                    <input id="mobile" name="mobile" class="n_border" type="text" placeholder="새 비밀번호 재입력">
-                    <!-- <button id="d_mobile" class="off_view" type="button" title="입력한 내용 삭제"><i class="fa-solid fa-x"></i></button> -->
+                <div class="re_pwd_bt_wrap">
+                  <input id="re_pwd" name="re_pwd" class="n_border" type="password" placeholder="비밀번호 확인">
+                  <button id="d_re_pwd" class="off_view" type="button" title="입력한 내용 삭제"><i class="fa-solid fa-x"></i></button>
+                  <button id="re_pwd_eye_on" class="on_view"  type="button"><i class="fa-solid fa-eye"></i></button>
+                  <button id="re_pwd_eye_off" class="off_view" type="button"><i class="fa-solid fa-eye-slash"></i></button>
                 </div>
-                <span id="mobile_text_wrap"  class="err_txt"></span>
+                <span id="re_pwd_text_wrap"  class="err_txt"></span>
               </td>
           </tr>
 

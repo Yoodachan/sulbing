@@ -105,7 +105,7 @@ $array = mysqli_fetch_array($result);
       <li class="board_tab_on"><a href="./users_delete.php">회원탈퇴</a></li>
     </ul>
 
-    <form name="edit_form" action="edit.php" method="post" onsubmit="return edit_form_check()">
+    <form name="edit_form" action="edit_user_del.php" method="post" onsubmit="return user_del()">
       <h2 id="re_sign_text">
       설빙 회원 탈퇴를 하시면 설빙 회원 약관 및 개인정보 제공, 활용에 관한 약관
       <span>동의가 모두 철회되며 설빙 회원 서비스 및 웹사이트로부터 탈퇴됩니다.</span>
