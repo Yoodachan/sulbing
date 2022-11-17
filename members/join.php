@@ -95,7 +95,6 @@
             <div class="id_bt_wrap">
                 <input id="u_id" name="u_id" class="n_border" type="text" placeholder="영소문자, 숫자 4~12자" onkeyup="u_id_text_on (this.value)">
                 <button id="d_id" class="off_view" type="button" title="입력한 내용 삭제"><i class="fa-solid fa-x"></i></button>
-                <button id="id_btn"  type="button" onclick="id_search()">중복 확인</button>
             </div>
             <span id="id_text_wrap"  class="err_txt">
             </span>
@@ -193,6 +192,7 @@
             </div>
             <div class="apply_marketing_wrap">
               <input type="checkbox" name="apply_marketing" id="apply_marketing" value="y">
+              <input type="hidden" name="apply_marketing" id="apply_marketing_hidden" value="n" >
               <label class="marketing_text" for="apply_marketing">[선택] 마케팅 활용 및 광고성 정보 수신 동의 <button type="button">자세히</button></label>
             </div>
             <span id="apply_text_wrap"  class="err_txt"></span>

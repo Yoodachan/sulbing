@@ -130,9 +130,6 @@ font-weight: bold;
   margin: 0 auto;
   position: relative;
 }
-.write_area {
-
-}
 .notice_seach_wrap {
   width: 350px;
   height: 40px;
@@ -236,12 +233,13 @@ font-weight: bold;
 
 .pager_wrap {
   width: 1040px;
-  margin: 0 auto;
+  margin: 0 auto 60px;
+  display: flex;
 }
 
 .pager_inner {
-  display: flex;
-  width: 800px;
+  display: block;
+  width: 500px;
   height: 35px;
   line-height: 35px;
   font-size: 16px;
@@ -253,7 +251,7 @@ font-weight: bold;
 
 .page_num {
   width: 35px;
-  height: 36px;
+  height: 35px;
   padding: 0 5px;
 }
 
@@ -263,4 +261,30 @@ font-weight: bold;
 
 .btn_off {
   display: none;
+}
+
+.admin_area {
+  width: 200px;
+  height: 35px;
+  line-height: 30px;
+  font-size: 14px;
+  color: #666666;
+}
+
+.admin_area h3 {
+  text-align: left;
+}
+
+.admin_area a {
+  width: 120px;
+  height: 31px;
+  color: #fff;
+  background-color: #796150;
+  border: 1px solid #ddd;
+  border-radius:2px;
+  display: block;
+  font-size: 14px;
+  font-weight: 400;
+  text-align: center;
+  margin: 2px 0px 2px 80px;
 }

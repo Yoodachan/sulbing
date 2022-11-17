@@ -366,7 +366,7 @@ addr3_cg_off.addEventListener('click', function(){
     addr3_readonly_wrap.classList.add('cg_off');
 })
 
-var apply_marketing_hidden = document.getElementById('apply_marketing_hidden');
+let apply_marketing_hidden = document.getElementById('apply_marketing_hidden');
 
 function edit_info_check() {
 
@@ -406,11 +406,3 @@ function edit_info_check() {
     }
 }
 
-
-function mem_del(){
-    var rtn_val = confirm("정말 탈퇴하시겠습니까?");
-    if(rtn_val == true){
-        // location.href = "member_delete.php?g_idx=<?php echo $array["idx"]; ?>";
-        location.href = "member_delete.php";
-    };
-};

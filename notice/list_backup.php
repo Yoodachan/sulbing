@@ -94,7 +94,6 @@ if($e_pageNum > $total_page){
     </style>
 </head>
 <body>
-    <?php include "../inc/sub_header.html"; ?>
     <!-- 콘텐트 -->
     <h2>공지사항</h2>
     <?php if($s_id == "admin"){ ?>

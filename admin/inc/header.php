@@ -58,7 +58,7 @@
               <a class="instagram" href="#"><i class="fa-brands fa-instagram"></i></a>
               <a class="facebook" href="#"><i class="fa-brands fa-facebook"></i></a>
               <a class="youtube" href="#"><i class="fa-brands fa-youtube"></i></a>
-              <a class="tiktok" href="#"><i class="fa-brands"></i></a>
+              <a class="tiktok" href="#"><i class="fa-brands fa-tiktok"></i></a>
             </div>
           </div>
         </nav>
@@ -73,7 +73,7 @@
               <ul class="gnb_brand">
                 <li><a href="#">브랜드</a></li>
                 <li><a href="#">설빙 광고/영상</a></li>
-                <li><a href="http://localhost/web_project/notice/list_all.php">뉴스&공지사항</a></li>
+                <li><a href="http://localhost/web_project/notice/list_all.php">뉴스/공지사항</a></li>
               </ul>
             </li>
       

@@ -1,0 +1,95 @@
+*** UI 설계 : 공지사항 - 파일첨부 ***
+
+================================================
+
+* 디렉토리 추가
+
+1. root 디렉토리에 "data" 폴더 추가
+
+2. 폴더에 쓰기 권한 설정
+
+================================================
+
+* form 요소 enctype 추가
+
+1. HTML 폼을 POST 방식으로 전송할 때
+<input type="file">이 포함된 폼을 전송하기 위한 
+인코딩 타입 명시
+
+2. <form>요소에
+- enctype="multipart/form-data" 추가
+
+================================================
+
+* 공지사항 : web_project/notice
+
+1. 글 쓰기 : write.php -- 수정
+
+2. 글 쓰기 처리 페이지 : insert.php -- 수정
+
+3. 목록 페이지 : list.php -- 수정
+
+4. 내용 보기 : view.php
+
+5. 글 수정 : modify.php -- 수정
+
+6. 글 수정 처리 : edit.php -- 수정
+
+7. 글 삭제 : delete.php
+
+---------------------------------------------------------------------------------
+
+* 공통 파일 : web_project/inc
+1. DB 연결 객체
+dbcon.php
+
+2. 세션 객체
+session.php
+
+3. 관리자 로그인 체크
+admin_check.php
+
+================================================
+
+* 입력 항목 *
+---------------------------------------------------------------------
+항목 | 요소 | type | value | name | id | class | 제약
+---------------------------------------------------------------------
+제목 | input | text |  | n_title | n_title | n_title | 필수입력
+내용 | textarea |  |  | n_content | n_content | n_content | 필수입력
+첨부파일 | input | file |  | up_file | up_file | up_file -- 추가
+
+================================================
+
+** 데이터 베이스 설계 **
+DB명 : front
+
+** 테이블 설계 **
+Table명 : notice
+-------------------------------------------------------------------
+항목 | 필드명 | 데이터타입(길이) | 제약
+-------------------------------------------------------------------
+인덱스 | idx | int | AI, PK
+제목 | n_title | varchar(255) | NN
+내용 | n_content | text | NN
+작성자 | writer | varchar(20) | NN
+작성일자 | w_date | datetime | NN
+파일명 | f_name | varchar(50) | 
+파일형식 | f_type | varchar(50) | 
+파일용량 | f_data | varchar(50) | 
+조회수 | cnt | int | default 0
+
+
+* 테이블 수정
+alter table notice add column f_name varchar(50) after w_date;
+alter table notice add column f_type varchar(50) after f_name;
+alter table notice add column f_size varchar(50) after f_type;
+
+-- alter table notice change column f_data f_size varchar(50);
+
+* 테이블 목록 확인
+show tables;
+
+
+* 테이블 구조 확인
+desc notice;

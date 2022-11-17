@@ -84,7 +84,7 @@ $array = mysqli_fetch_array($result);
 
     <!-- 헤더 영역 시작 -->
 
-    <?php include "../inc/sub_header.php"; ?>
+    <?php include "../inc/header_ns.php"; ?>
 
     <!-- 헤더 영역 종료 -->
 

@@ -1,0 +1,200 @@
+
+/* 타이틀 배너 */
+
+.title_wrap {
+  width: 100%;
+}
+.common_title {
+display: block;
+position:relative;
+width: 1040px;
+height: 60px;
+margin: 50px auto;
+
+}
+
+.inner_title {
+position: relative;
+text-align: center;
+display: block;
+width: 520px;
+height: 60px;
+font-size: 36px;
+line-height: 60px;
+margin: 0 auto;
+text-align: center;
+}
+
+.title_text {
+display: block;
+width: 340px;
+height: 60px;
+font-size: 36px;
+line-height: 60px;
+margin: 0 auto;
+color: #2d2d2d;
+}
+
+.title_left,
+.title_right {
+position: absolute;
+top: 25px;
+}
+
+.title_left {
+background-image: url(../IMAGES/ico_tit_arrow_left.jpg);
+left: 40px;
+width:44px;
+height:13px;
+}
+
+.title_right {
+right: 40px;
+background-image: url(../IMAGES/ico_tit_arrow_right.jpg);
+width:44px;
+height:13px;
+}
+
+
+.location {
+display: flex;
+position: absolute;
+top: 0px;
+right: 0px;
+width: 200px;
+height: 60px;
+}
+
+.location li {
+margin: 20px auto;
+height: 20px;
+line-height: 20px;
+font-size: 16px;
+color:#666666;
+}
+
+.common_title li:nth-of-type(2)::before {
+width: 20px;
+height: 18px;
+font-size: 16px;
+content: ">";
+position:absolute;
+top: 19px;
+left: 30px;
+} 
+
+.common_title li p {
+font-weight: bold;
+} 
+
+/* 본문 */
+
+/* 본문 타이틀 */
+
+.notice_list_set {
+  width: 100%;
+}
+
+.notice_list_title {
+  display: block;
+  width: 900px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 20px;
+  border-top: 2px solid #000;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.v_title {
+  display: block;
+  width: 900px;
+  margin: 0 auto;
+  padding: 20px 160px 20px 20px;
+  position:relative;
+}
+
+.v_title h2 {
+  display: inline;
+  height:50px;
+  line-height: 50px;
+  font-size: 28px;
+}
+.v_title span {
+  height:50px;
+  line-height: 50px;
+  font-size: 14px;
+  color: #666666;
+  margin-left: 10px;
+}
+
+.sns_link {
+  display: flex;
+  font-size: 0px;
+  position:absolute;
+  width: 150px;
+  height: 50px;
+  top: 50%;
+  right: 10px;
+  margin-top: -22px;
+}
+.sns_link a {
+  display:block;
+  width: 44px;
+  height: 44px;
+  margin: 0 auto;
+  background-color: #999999;
+  border-radius: 50%;
+}
+.sns_link p {
+  display: block;
+  width: 24px;
+  height: 24px;
+  margin: 10px auto;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.link_kakaostory p {
+  background-image: url(../IMAGES/ico_share_kakaoStory.jpg);
+}
+.link_kakao p {
+  background-image: url(../IMAGES/ico_share_kakao.jpg);
+}
+.link_facebook p {
+  background-image: url(../IMAGES/ico_share_facebook.jpg);
+}
+
+
+
+.notice_view_content {
+  display: block;
+  width: 900px;
+  padding: 60px;
+  margin: 0 auto;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.notice_view_content td {
+  display: block;
+  margin: 0 auto;
+  font-size: 16px;
+  text-align: center;
+}
+
+.notice_list {
+  display: flex;
+  width: 900px;
+  margin: 50px auto;
+  justify-content: center;
+}
+.notice_list_btn {
+  width: 200px;
+  height: 60px;
+  display: block;
+  margin: 0 10px;
+  line-height: 60px;
+  background-color: #796150;
+  color: #fff;
+  font-size: 20px;
+  text-align: center;
+}

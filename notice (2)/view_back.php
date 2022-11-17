@@ -54,11 +54,13 @@ mysqli_query($dbcon, $sql);
 
         a:hover{color:rgb(255, 128, 0)}
 
+        <?php if($s_id == "admin"){ ?>
         .write_area{
             width:860px;
             display:flex;
             flex-direction:row-reverse
         }
+        <?php }; ?>
     </style>
     <script>
         function remove_notice(){
@@ -80,26 +82,24 @@ mysqli_query($dbcon, $sql);
     <?php }; ?>
     <table class="notice_list_set">
         <tr class="notice_list_title">
-            <th>제목</th>
-            <td class="v_title">
-                <h2><?php echo $array["n_title"]; ?></h2>
-            </td>
+            <th class="v_title">제목</th>
+            <td class="v_content"><?php echo $array["n_title"]; ?></td>
         </tr>
         <tr class="notice_view_content">
-            <th>작성자</th>
+            <th class="v_title">작성자</th>
             <td class="v_content"><?php echo $array["writer"]; ?></td>
         </tr>
         <tr class="notice_view_content">
-            <th>날짜</th>
+            <th class="v_title">날짜</th>
             <td class="v_content">
             <?php 
-            $w_date = substr($array["w_date"], 0, 10);
-            echo $w_date; 
+            $n_title = substr($array["n_title"], 0, 10);
+            echo $n_title; 
             ?>
             </td>
         </tr>
         <tr class="notice_view_content">
-            <th>조회수</th>
+            <th class="v_title">조회수</th>
             <td class="v_content"><?php echo $cnt; ?></td>
         </tr>
         <tr class="notice_view_text">
@@ -121,6 +121,14 @@ mysqli_query($dbcon, $sql);
             $n_content = str_replace(" ", "&nbsp;", $n_content);
             echo $n_content; 
             ?>
+            </td>
+        </tr>
+        <tr class="notice_view_content">
+            <th class="v_title">첨부파일</th>
+            <td class="v_content">
+                <a href="../data/<?php echo $array["f_name"]; ?>" download="<?php echo $array["f_name"]; ?>">
+                <?php echo $array["f_name"]; ?>
+                </a>
             </td>
         </tr>
     </table>

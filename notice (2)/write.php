@@ -1,6 +1,6 @@
 <?php 
 include "../inc/session.php"; 
-include "../inc/login_check.php";
+include "../inc/admin_check.php";
 ?>
 <!DOCTYPE html>
 <html lang="ko">
@@ -35,7 +35,6 @@ include "../inc/login_check.php";
 </head>
 <body>
     <?php include "../inc/sub_header.html"; ?>
-    <!-- enctype="multipart/form-data" 파일 업로드할때 사용함 -->
     <form name="notice_form" action="insert.php" method="post" enctype="multipart/form-data" onsubmit="return notice_check()">
         <fieldset>
             <legend>공지사항</legend>
@@ -52,6 +51,11 @@ include "../inc/login_check.php";
             <p>
                 <label for="n_content">내용</label>
                 <textarea cols="60" rows="10" name="n_content" id="n_content"></textarea>
+            </p>
+
+            <p>
+                <label for="up_file">파일첨부</label>
+                <input type="file" name="up_file" id="up_file">
             </p>
 
             <p>

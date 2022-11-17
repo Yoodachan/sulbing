@@ -1,0 +1,36 @@
+/* body {
+    background-color: #0b0c10;
+    color: #fff;
+} */
+
+
+.nav_wrap {
+    width: 100%;
+}
+
+.nav_admin {
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    width: 1040px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+}
+
+.nav_admin li {
+    display: block;
+    width: 200px;
+}
+
+.main_admin {
+    display: flex;
+    width: 100%;
+}
+
+.main_admin img {
+    display: block;
+    width: 200px;
+    height: 400px;
+    margin: 30px auto;
+}

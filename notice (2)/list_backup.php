@@ -65,8 +65,8 @@ if($e_pageNum > $total_page){
             padding:10px;
             text-align:center
         }
-        .notice_list_set, .pager, .write_area{
-            width:1020px
+        .notice_list_set, .pager{
+            width:860px
         }
         .notice_list_title{
             border-top:2px solid #999;
@@ -80,33 +80,31 @@ if($e_pageNum > $total_page){
         .writer{width:100px}
         .w_date{width:120px}
         .cnt{width:80px}
-        .modify{width:160px}
         .notice_content_title{text-align:left;padding-left:10px}
 
         a:hover{color:rgb(255, 128, 0)}
 
+        <?php if($s_id == "admin"){ ?>
         .write_area{
+            width:860px;
             display:flex;
             justify-content:space-between
         }
+        <?php }; ?>
     </style>
-    <script>
-        function remove_notice(g_no){
-            var ck = confirm("정말 삭제하시겠습니까?");
-            if(ck){
-                location.href="delete.php?n_idx="+g_no;
-            };
-        };
-    </script>
 </head>
 <body>
     <?php include "../inc/sub_header.html"; ?>
     <!-- 콘텐트 -->
     <h2>공지사항</h2>
+    <?php if($s_id == "admin"){ ?>
     <p class="write_area">
         <span>전체 <?php echo $total; ?>개</span>
         <span><a href="write.php">[글쓰기]</a></span>
     </p>
+    <?php } else{ ?>
+    <p>전체 <?php echo $total; ?>개</p>
+    <?php }; ?>
     <table class="notice_list_set">
         <tr class="notice_list_title">
             <th class="no">번호</th>
@@ -114,7 +112,6 @@ if($e_pageNum > $total_page){
             <th class="writer">작성자</th>
             <th class="w_date">날짜</th>
             <th class="cnt">조회수</th>
-            <th class="modify">관리</th>
         </tr>
         <?php
             // paging : 해당 페이지의 글 시작 번호 = (현재 페이지 번호 - 1) * 페이지 당 보여질 목록 수
@@ -146,10 +143,6 @@ if($e_pageNum > $total_page){
             <?php $w_date = substr($array["w_date"], 0, 10); ?>
             <td><?php echo $w_date; ?></td>
             <td><?php echo $array["cnt"]; ?></td>
-            <td>
-                <a href="modify.php?n_idx=<?php echo $array["idx"]; ?>">[수정]</a>
-                <a href="#" onclick="remove_notice(<?php echo $array["idx"]; ?>)">[삭제]</a>
-            </td>
         </tr>
         <?php
                 $i--;

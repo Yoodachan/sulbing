@@ -46,6 +46,7 @@ let apply_priv = document.getElementById("apply_priv");
 let apply_medie = document.getElementById("apply_medie");
 let apply_age = document.getElementById("apply_age");
 let apply_marketing = document.getElementById("apply_marketing");
+let apply_marketing_hidden = document.getElementById('apply_marketing_hidden');
 
 // 이름
 var u_name_reg = /^[가-힣]{2,20}$/;
@@ -1129,6 +1130,16 @@ function join_form_check() {
 
         apply_priv.focus();
         return false;
+    }
+    
+    // 마케팅 체크 여부 확인 y/n
+
+    if( apply_marketing.checked ) {
+        apply_marketing_hidden.disabled = true;
+    }
+    else {
+        apply_marketing.disabled = true;
+        apply_marketing_hidden.disabled = false;
     }
     
 }   
