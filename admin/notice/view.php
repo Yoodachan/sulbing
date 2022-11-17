@@ -160,9 +160,9 @@ $w_date = substr($array["w_date"], 0, 10);
         </tbody>
     </table>
     <div class="notice_list">
-      <a class="notice_list_btn"href="list.php">수정</a>
+      <a class="notice_list_btn"href="modify.php">수정</a>
       <a class="notice_list_btn"href="list_all.php">목록</a>
-      <a class="notice_list_btn"href="list.php">삭제</a>
+      <a class="notice_list_btn"href="delete.php">삭제</a>
     </div>
 
 
