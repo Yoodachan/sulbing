@@ -70,7 +70,7 @@ mysqli_query($dbcon, $sql);
     </script>
 </head>
 <body>
-    <?php include "../inc/sub_header.html"; ?>
+    <?php include "../inc/header_ns.php"; ?>
     <!-- 콘텐트 -->
     <h2>공지사항</h2>
     <?php if($s_id == "admin"){ ?>

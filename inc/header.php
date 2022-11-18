@@ -32,7 +32,7 @@
         <li class="user_info"><a href="http://localhost/web_project/members/user_info.php">마이페이지</a></li>
         <?php } else{ ?>
         <li class="logout"><a href="http://localhost/web_project/login/logout.php">로그아웃</a></li>
-        <li class="user_info"><a href="http://localhost/web_project/members/users_info.php">마이페이지</a></li>
+        <li class="user_info"><a href="http://localhost/web_project/members/user_info.php">마이페이지</a></li>
         <?php }; ?>
         <li class="user_help"><a href="#">고객센터</a></li>
       </ul>
@@ -58,7 +58,7 @@
               <a class="instagram" href="#"><i class="fa-brands fa-instagram"></i></a>
               <a class="facebook" href="#"><i class="fa-brands fa-facebook"></i></a>
               <a class="youtube" href="#"><i class="fa-brands fa-youtube"></i></a>
-              <a class="tiktok" href="#"><i class="fa-brands"></i></a>
+              <a class="tiktok" href="#"><i class="fa-brands fa-tiktok"></i></a>
             </div>
           </div>
         </nav>
