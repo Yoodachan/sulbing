@@ -73,22 +73,29 @@ exit;
 </head>
 
 <body>
-    <nav class="side_bar bar_off">
+    <nav class="side_bar bar_on">
         <h1 class="logo_wrap" title="로고">
             <span class="logo_img" title="로고 이미지"></span>
         </h1>
 
         <ul>
-            <li class="menu_label">홈으로</li>
-            <li><p>사용자 관리</p>
+            <li class="menu_label"><a href="">홈으로</a></li>
+
+            <li class="user_label">
+                <span>
+                <p>사용자 관리</p>
+                <i class="fa-solid fa-caret-down"></i>
+                </span>
+                
                 <ul class="user_menu">
-                    <li><a href="">
-                        사용자 목록
-                    </a></li>
+                    <li><span>
+                        <a href="">사용자 목록</a>
+                    </span></li>
                 </ul>
             </li>
 
-            <li><p>게시판 관리</p>
+            <li class="board_label"><span>게시판 관리</span>
+                <i class="fa-solid fa-caret-down"></i>
                 <ul class="board_menu">
                     <li><a href="">
                         공지사항 목록
@@ -117,7 +124,7 @@ exit;
             </li>
         </ul>
     </div>
-    <div class="gnb_bottom">
+    <div class="gnb_bottom margin_on">
             <span class="nav_menu_btn"><i class="fa-solid fa-bars"></i></span>
     </div>
 </body>
