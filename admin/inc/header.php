@@ -32,7 +32,7 @@
         <li class="user_info"><a href="http://localhost/web_project/members/user_info.php">마이페이지</a></li>
         <?php } else{ ?>
         <li class="logout"><a href="http://localhost/web_project/login/logout.php">로그아웃</a></li>
-        <li class="user_info"><a href="http://localhost/web_project/members/users_info.php">마이페이지</a></li>
+        <li class="user_info"><a href="http://localhost/web_project/members/user_info.php">마이페이지</a></li>
         <?php }; ?>
         <li class="user_help"><a href="#">고객센터</a></li>
       </ul>
@@ -73,7 +73,7 @@
               <ul class="gnb_brand">
                 <li><a href="#">브랜드</a></li>
                 <li><a href="#">설빙 광고/영상</a></li>
-                <li><a href="http://localhost/web_project/notice/list_all.php">뉴스/공지사항</a></li>
+                <li><a href="http://localhost/web_project/notice/list_all.php">뉴스&공지사항</a></li>
               </ul>
             </li>
       

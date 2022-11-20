@@ -221,9 +221,13 @@ font-weight: bold;
 
 .n_title,
 .notice_content_title {
+  display: block;
   width: 500px;
   font-size: 16px;
   color: #222222;
+  overflow: hidden;  		
+  text-overflow: ellipsis;  	
+  white-space: nowrap; 
 }
 .w_date,.date,
 .n_cnt,.cnt {
@@ -337,3 +341,4 @@ font-weight: bold;
   text-align: center;
   margin: 2px 0px 2px 80px;
 }
+

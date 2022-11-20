@@ -1,6 +1,6 @@
 <?php 
 include "../inc/session.php"; 
-// include "../inc/admin_check.php";
+include "../inc/admin_check.php";
 
 // 데이터 가져오기
 $n_idx = $_GET["n_idx"];
@@ -66,78 +66,108 @@ mysqli_close($dbcon);
   <!-- 애니메이션 css -->
   <link rel="stylesheet" href="../../css/anime.css">
   <!-- 헤더 & 푸터 css -->
-  <link rel="stylesheet" href="../../css/header_and_footer_a.css">
+  <link rel="stylesheet" href="../../css/header_and_footer.css">
 
   <!-- 뉴스&공지사항 js -->
   <script defer src="../../JS/modify_notice.js"></script>
   <!-- 헤더 & 푸터 js -->
   <script defer src="../../JS/header_and_footer.js"></script>
 
-    <title>공지사항</title>
-    <style>
-        body,input,button,textarea{font-size:20px}
-        input[type=checkbox]{width:20px;height:20px}
-        a{text-decoration:none;margin:0 5px}
-    </style>
-    <script>
-        function notice_check(){
-            var n_title = document.getElementById("n_title");
-            var n_content = document.getElementById("n_content");
-
-            if(!n_title.value){
-                alert("제목을 입력하세요.");
-                n_title.focus();
-                return false;
-            };
-
-            if(!n_content.value){
-                alert("내용을 입력하세요.");
-                n_content.focus();
-                return false;
-            };
-        };
-    </script>
+    <title> 뉴스&공지사항 수정 | 설빙 </title>
 </head>
 <body>
-    <?php include "../inc/sub_header.html"; ?>
+
+    <!-- 헤더 영역 시작 -->
+
+    <?php include "../inc/header_ns.php"; ?>
+
+    <!-- 헤더 영역 종료 -->
+
+    <!-- 타이틀 영역 시작 -->
+
+    <section class="title_wrap">
+      <div class="common_title">
+        <div class="inner_title drop_down_off">
+          <span class="title_left left_move_off"></span>
+          <h2 class="title_text"><a href="../../index.php">뉴스&공지사항 수정</a></h2>
+          <span class="title_right right_move_off"></span>
+        </div>
+        <ul class="location">
+          <li><a href="./Sulbing_index_유다찬.html">홈</a></li>
+          <li><p>뉴스&공지사항 수정</p></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- 타이틀 영역 종료 -->
+
+    <!-- 콘텐츠 영역 시작 -->
+
     <form name="notice_form" action="edit.php?n_idx=<?php echo $n_idx; ?>" method="post" enctype="multipart/form-data" onsubmit="return notice_check()">
-        <fieldset>
-            <legend>공지사항</legend>
-            <p>
-                작성자 <?php echo $s_name; ?>
-                <!-- <input type="hidden" name="n_idx" value="idx 값"> -->
-            </p>
+        <table class="notice_modify_board">
+            <caption>뉴스&공지사항 수정</caption>
 
-            <p>
-                <label for="n_title">제목</label>
-                <input type="text" name="n_title" id="n_title" value="<?php echo $array["n_title"]; ?>">
-            </p>
+            <tr class="notice_title_wrap">
+                <th><label for="n_title">제목</label></th>
+                <td><input type="text" name="n_title" id="n_title" value="<?php echo $array["n_title"]; ?>"></td>
+            </tr>
 
-            <p>
-                <label for="n_content">내용</label>
-                <textarea cols="60" rows="10" name="n_content" id="n_content"><?php echo $array["n_content"]; ?></textarea>
-            </p>
+            <tr class="notice_content_wrap">
+                <th>
+                    <label for="n_content">내용</label>
+                </th>
+                <td>
+                    <textarea cols="60" rows="10" name="n_content" id="n_content"><?php echo $array["n_content"]; ?></textarea>
+                </td>
+            </tr>
+            <tr class="notice_file_wrap">
+                <th>
+                    <p> 첨부파일 </p>
+                </th>
 
-            <p>
-                <?php if($array["f_name"]){ ?>
-                <label for="up_file">
-                    첨부파일 [<?php echo $array["f_name"]; ?>]
-                </label>
-                <input type="checkbox" name="file_del"> 파일삭제
-                <?php } else{ ?>
-                <label for="up_file">
-                    첨부파일 
-                </label>
-                <?php }; ?>
-                <br>
+                <td>
+                <!-- 파일 업로드 인풋 -->
+                <label for="up_file" id="up_file_btn">
+                <span>파일 업로드</span>
                 <input type="file" name="up_file" id="up_file">
-            </p>
+                </label>
 
-            <p>
-                <button type="button" onclick="history.back()">이전 페이지</button>
-                <button type="submit">수정하기</button>
-            </p>
-        </fieldset>
-    </form>
+                <!-- 파일이 있을 경우 -->
+                <?php if($array["f_name"]){ ?>
+
+
+                <div class="file_wrap">
+                <!-- 파일명 -->
+                <p class="file_name"> <?php echo $array["f_name"]; ?> <p>
+                <!-- 파일 삭제 -->
+                <input id="file_del" type="checkbox" name="file_del">
+                </div>
+
+
+                <?php } else { ?>    
+
+                <div class="file_wrap">
+                <!-- 파일명 -->
+                <p class="file_name"><p>
+                </div>   
+
+                <?php } ?>
+                </td>
+            </tr>
+        </table>
+
+        <div class="notice_list">
+        <a class="notice_list_btn" href="view.php?n_idx=<?php echo $array["idx"]; ?>">이전</a>
+        <button class="notice_list_btn" type="submit">수정</button>
+        </div>
+
+    <!-- 콘텐츠 영역 종료  -->  
+    
+    <!-- 푸터 영역 시작 -->
+
+    <?php include "../../inc/footer.php"; ?>
+
+    <!-- 푸터 영역 종료 -->
+
 </body>
 </html>

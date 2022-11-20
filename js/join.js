@@ -1263,4 +1263,3 @@ join_form.addEventListener('change', function() {
 });
 
 
-

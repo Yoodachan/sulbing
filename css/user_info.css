@@ -7,9 +7,9 @@
   z-index: 1;
 }
 
-.clear_txt {
-    color: #39cab7;
-  }
+  .clear_txt {
+      color: #39cab7;
+    }
   .err_txt {
     color: #f00;
   }
@@ -319,7 +319,7 @@
 #ps_code:focus,#addr1:focus,#addr2:focus,
 #addr3:focus {
   outline: none;
-  /* border: 1px solid #e2e2e2; */
+  border: 1px solid #e2e2e2;
   z-index:3;
 }
 

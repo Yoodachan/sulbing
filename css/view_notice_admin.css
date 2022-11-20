@@ -198,3 +198,38 @@ font-weight: bold;
   font-size: 20px;
   text-align: center;
 }
+
+
+.notice_list_nav {
+  margin: 0px auto 60px;
+  width: 1040px;
+  border-top: 1px solid #e6e6e6;
+  color: #666666;
+  
+}
+.notice_list_nav li {
+  border-bottom: 1px solid #e6e6e6;
+  position: relative;
+}
+
+.notice_list_nav li a {
+  display: block;
+  height: 40px;
+  line-height: 16px;
+  font-size: 16px;
+  margin: 0 auto;
+  padding: 12px 12px 12px 96px;
+}
+.notice_list_nav strong {
+  position: absolute;
+  width: 66px;
+  height: 18px;
+  top: 11px;
+  left: 8px;
+}
+
+strong i {
+  font-size: 12px;
+  font-weight: normal;
+  margin-right: 5px;
+}
