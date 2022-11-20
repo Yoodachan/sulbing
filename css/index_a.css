@@ -1,36 +1,125 @@
-/* body {
-    background-color: #0b0c10;
+body {
+    position:relative;
+}
+
+.side_bar {
+    position:absolute;
+    top:0px;
+    left: 0px;
+    width: 300px;
+    background-color: #fff;
+    height: 100%;
+    border-right: 1px #f0f0f0 solid;
     color: #fff;
-} */
+    text-align: center;
+    font-size: 24px;
+}
+
+.menu_label {
+    height: 60px;
+    line-height: 60px;
+    text-align: left;
+    font-size: 22px;
+    color: #666666;
+    padding-left: 20px;
+    border-bottom: 1px #f0f0f0 solid;
+}
+
+.logo_wrap {
+    display: flex;
+    font-size: 0;
+    height: 80px;
+    padding-left: 40px;
+    border-bottom: 1px #f0f0f0 solid;
+    background-color: #fff;
+}
+
+.logo_img {
+    width: 80px;
+    height: 80px;
+    display: block;
+    background-image: url(../IMAGES/logo.png);
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
 
 
-.nav_wrap {
+
+.gnb {
     width: 100%;
+    padding-left: 300px;
+    height: 80px;
+    border-bottom: 1px #f0f0f0 solid;
+    color: #797979;
+    font-size: 16px;
+    font-weight: 600;
 }
 
 .nav_admin {
     margin: 0 auto;
     display: flex;
-    justify-content: space-between;
     width: 1040px;
-    height: 50px;
-    line-height: 50px;
+    height: 80px;
     text-align: center;
+    justify-content: space-between;
+    padding: 10px;
 }
 
 .nav_admin li {
     display: block;
-    width: 200px;
 }
 
-.main_admin {
-    display: flex;
-    width: 100%;
+.btn_wrap {
+    display:flex;
 }
 
-.main_admin img {
+.nav_title {
+    width: 250px;
+    height: 40px;
+    line-height: 40px;
+    margin: 10px;
+    font-size: 24px;
+}
+
+.btn_wrap a {
+    display:block;
+    width: 120px;
+    height: 40px;
+    line-height: 40px;
+    border: 1px #796150 solid;
+    margin: 10px;
+}
+
+.admin_add_btn {
+    background-color: #796150;
+    color: #fff;
+}
+
+.btn_wrap a:active {
+    scale: 95%;
+    transition:all 0.3s;
+}
+
+
+.gnb_bottom {
+    border:2px solid red;
+    height: 60px;
+    position: relative;
+
+}
+
+.gnb_bottom span {
     display: block;
-    width: 200px;
-    height: 400px;
-    margin: 30px auto;
+    border: 1px solid #f0f0f0;
+    width: 60px;
+    height: 60px;
+    line-height: 60px;
+    text-align: center;
+    font-size: 24px;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    color: #666666;
+    cursor:pointer;
 }

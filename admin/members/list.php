@@ -100,7 +100,7 @@ if($e_pageNum > $total_page){
     </script>
 </head>
 <body>
-    <?php include "../inc/sub_header.html"; ?>
+    <?php include "../inc/header_ns.php"; ?>
     
     <!-- 콘텐트 -->
     <p>전체 회원수 <?php echo $total; ?>명</p>

@@ -47,9 +47,6 @@ if($e_pageNum > $total_page){
 };
 
 ?>
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -85,35 +82,34 @@ if($e_pageNum > $total_page){
   crossorigin="anonymous"></script>
 
   <!-- 초기값 리셋 css -->
-  <link rel="stylesheet" href="../css/reset.css">
+  <link rel="stylesheet" href="../../css/reset.css">
   <!-- 뉴스&공지사항 css -->
-  <link rel="stylesheet" href="../css/list_all_notice_user.css">
+  <link rel="stylesheet" href="../../css/list_all_notice_admin.css">
   <!-- 애니메이션 css -->
-  <link rel="stylesheet" href="../css/anime.css">
+  <link rel="stylesheet" href="../../css/anime.css">
   <!-- 헤더 & 푸터 css -->
-  <link rel="stylesheet" href="../css/header_and_footer.css">
+  <link rel="stylesheet" href="../../css/header_and_footer_a.css">
 
   <!-- 뉴스&공지사항 js -->
-  <script defer src="../JS/list_all_notice_user.js"></script>
+  <script defer src="../../JS/list_all_notice_admin.js"></script>
   <!-- 헤더 & 푸터 js -->
-  <script defer src="../JS/header_and_footer.js"></script>
+  <script defer src="../../JS/header_and_footer.js"></script>
 
 
 
     <title>설빙 | 뉴스&공지사항</title>
-
-    
 </head>
 <body>
+
     <!-- 헤더 영역 시작 -->
 
-    <?php include "../inc/sub_header.php"; ?>
+    <?php include "../inc/header_ns.php"; ?>
 
     <!-- 헤더 영역 종료 -->
 
     <!-- 콘텐트 영역 시작 -->
 
-    <section class="title_wrap">
+ <section class="title_wrap">
     <div class="common_title">
       <div class="inner_title drop_down_off">
         <span class="title_left left_move_off"></span>
@@ -129,9 +125,9 @@ if($e_pageNum > $total_page){
   </section>
 
   <ul class="tab_menu">
-      <li class="tab_menu_on"><a href=".list_all.php">전체</a></li>
-      <li class="tab_menu_off"><a href=".list_news.php">뉴스</a></li>
-      <li class="tab_menu_off"><a href=".list_notice.php">공지사항</a></li>
+      <li class="tab_menu_on"><a href="./user_info.php">전체</a></li>
+      <li class="tab_menu_off"><a href="./pwd_change.php">뉴스</a></li>
+      <li class="tab_menu_off"><a href="./user_delete.php">공지사항</a></li>
   </ul>
   <div class="list_top">
     <form class="notice_seach_wrap">
@@ -151,6 +147,7 @@ if($e_pageNum > $total_page){
             <th class="n_title">제목</th>
             <th class="w_date">날짜</th>
             <th class="n_cnt">조회수</th>
+            <th class="n_mod_del">수정&삭제</th>
         </tr>
         <?php
             // paging : 해당 페이지의 글 시작 번호 = (현재 페이지 번호 - 1) * 페이지 당 보여질 목록 수
@@ -171,20 +168,31 @@ if($e_pageNum > $total_page){
             $i = $total - (($page - 1) * $list_num);
             while($array = mysqli_fetch_array($result)){
         ?>
+
+
+
         <tr class="notice_list_content">
+            <!-- 카테고리명 -->
             <td class="notice_cate">
             <a href="view.php?n_idx=<?php echo $array["idx"]; ?>">
-                <!-- 카테고리명 -->
             </a>
             </td>
+            <!-- 제목 -->
             <td class="notice_content_title">
                 <a href="view.php?n_idx=<?php echo $array["idx"]; ?>">
                 <?php echo $array["n_title"]; ?>
                 </a>
             </td>
+            <!-- 작성일 -->
             <?php $w_date = substr($array["w_date"], 0, 10); ?>
             <td class="date"><?php echo $w_date; ?></td>
+            <!-- 조회수 -->
             <td class="cnt"><?php echo $array["cnt"]; ?></td>
+            <!-- 수정 및 삭제 -->
+            <td class="mod_del">
+                <a class="list_mod" href="modify.php?n_idx=<?php echo $array["idx"]; ?>">수정</a>
+                <a class="list_del" href="#" onclick="remove_notice(<?php echo $array["idx"]; ?>)">삭제</a>
+            </td>
         </tr>
         <?php
                 $i--;
@@ -240,10 +248,12 @@ if($e_pageNum > $total_page){
 
     </div>
 
+    <!-- 콘텐트 영역 종료 -->
+
 
     <!-- 푸터 영역 시작 -->
 
-    <?php include "../inc/footer.php"; ?>
+    <?php include "../../inc/footer.php"; ?>
 
     <!-- 푸터 영역 종료 -->
 

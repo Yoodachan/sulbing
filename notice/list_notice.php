@@ -87,7 +87,7 @@ if($e_pageNum > $total_page){
   <!-- 초기값 리셋 css -->
   <link rel="stylesheet" href="../css/reset.css">
   <!-- 뉴스&공지사항 css -->
-  <link rel="stylesheet" href="../css/list_all_notice_user.css">
+  <link rel="stylesheet" href="../css/list_notice_notice_user.css">
   <!-- 애니메이션 css -->
   <link rel="stylesheet" href="../css/anime.css">
   <!-- 헤더 & 푸터 css -->
