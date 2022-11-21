@@ -5,12 +5,15 @@ $n_idx = $_GET["n_idx"];
 // 데이터 가져오기 - 세션 활용
 // include "../inc/session.php";
 
+// 테이블 이름
+$table_name = "notice";
+
 // DB 연결
 include "../inc/dbcon.php";
 
 // 쿼리 작성
 // delete from 테이블명 where 필드명='값';
-$sql = "delete from notice where idx=$n_idx;";
+$sql = "delete from $table_name where idx=$n_idx;";
 
 // 쿼리 전송
 mysqli_query($dbcon, $sql);

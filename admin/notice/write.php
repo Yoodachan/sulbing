@@ -39,14 +39,14 @@ include "../inc/admin_check.php";
   <!-- 초기값 리셋 css -->
   <link rel="stylesheet" href="../../css/reset.css">
   <!-- 뉴스&공지사항 css -->
-  <link rel="stylesheet" href="../../css/modify_notice.css">
+  <link rel="stylesheet" href="../../css/write_notice.css">
   <!-- 애니메이션 css -->
   <link rel="stylesheet" href="../../css/anime.css">
   <!-- 헤더 & 푸터 css -->
   <link rel="stylesheet" href="../../css/header_and_footer.css">
 
-  <!-- 뉴스&공지사항 js -->
-  <script defer src="../../JS/modify_notice.js"></script>
+  <!-- 뉴스&공지사항 작성 js -->
+  <script defer src="../../JS/write_notice.js"></script>
   <!-- 헤더 & 푸터 js -->
   <script defer src="../../JS/header_and_footer.js"></script>
 
@@ -82,7 +82,29 @@ include "../inc/admin_check.php";
 
     <form name="notice_form" action="insert.php" method="post" enctype="multipart/form-data" onsubmit="return notice_check()">
         <table class="notice_modify_board">
+
             <caption>뉴스&공지사항 작성</caption>
+
+            <tr class="notice_cate_wrap">
+                <th><label for="cate">카테고리</label></th>
+                <td>
+                    <div class="cate_news_btn check_off">
+                    <span>
+                    <i class="fa-solid fa-check"></i>
+                        뉴스
+                    </span>
+                    <input id="n_cate_news" type="hidden" name="cate" value="news" disabled>
+                    </div>
+
+                    <div class="cate_notice_btn check_off">
+                    <span>
+                    <i class="fa-solid fa-check"></i>
+                        공지
+                    </span>
+                    <input id="n_cate_notice" type="hidden" name="cate" value="notice" disabled>
+                    </div>
+                </td>
+            </tr>
 
             <tr class="notice_title_wrap">
                 <th><label for="n_title">제목</label></th>
@@ -118,8 +140,8 @@ include "../inc/admin_check.php";
         </table>
 
         <div class="notice_list">
-        <a class="notice_list_btn" href="list_all.php">이전</a>
-        <button class="notice_list_btn" type="submit">등록</button>
+        <a class="notice_list_btn btn_prev" href="list_all.php">이전</a>
+        <button class="notice_list_btn btn_submit" type="submit">등록</button>
         </div>
 
     <!-- 콘텐츠 영역 종료  -->  

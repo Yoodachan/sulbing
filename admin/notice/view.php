@@ -7,9 +7,13 @@ include "../inc/dbcon.php";
 // 데이터 가져오기
 $n_idx = $_GET["n_idx"];
 
+//카테고리
+
+// 테이블 이름
+$table_name = "notice";
 
 // 쿼리 작성
-$sql = "select * from notice where idx=$n_idx;";
+$sql = "select * from $table_name where idx=$n_idx;";
 /* echo $sql;
 exit; */
 
@@ -23,13 +27,12 @@ $array = mysqli_fetch_array($result);
 $cnt = $array["cnt"]+1;
 /* echo $cnt;
 exit; */
-$sql = "update notice set cnt = $cnt where idx = $n_idx;";
+$sql = "update $table_name set cnt = $cnt where idx = $n_idx;";
 /* echo $sql;
 exit; */
 mysqli_query($dbcon, $sql);
 
 $w_date = substr($array["w_date"], 0, 10);
-
 
 ?>
 
@@ -110,17 +113,22 @@ $w_date = substr($array["w_date"], 0, 10);
 
    <!-- 콘텐트 -->
 
-    <!-- <?php //if($s_id == "admin"){ ?>
-    <p class="write_area">
-        <span><a href="write.php">[글쓰기]</a></span>
-    </p>
-    <?php //}; ?> -->
-
     <table class="notice_list_set">
         <thead>
         <tr class="notice_list_title">
             <th class="v_title">
-                <h2 title="제목"><?php echo $array["n_title"]; ?></h2>
+                <h2 title="제목">
+                    <?php 
+                        if($array["cate"] == ""){
+                            echo "[전체] ";
+                        } else if($array["cate"] == "news"){
+                            echo "[뉴스] ";
+                        } else if($array["cate"] == "notice"){
+                            echo "[공지] "; 
+                        };
+                        echo $array["n_title"]; 
+                    ?>
+                </h2>
                 <span><?php echo $w_date; ?></span>
                 <div class="sns_link">
                     <a class="link_kakaostory" href="https://accounts.kakao.com/login/?continue=https://story.kakao.com">
@@ -161,9 +169,9 @@ $w_date = substr($array["w_date"], 0, 10);
         </tbody>
     </table>
     <div class="notice_list">
-      <a class="notice_list_btn" href="modify.php?n_idx=<?php echo $array["idx"]; ?>">수정</a>
+      <a class="notice_list_btn btn_submit" href="modify.php?n_idx=<?php echo $array["idx"]; ?>">수정</a>
       <a class="notice_list_btn" href="list_all.php">목록</a>
-      <a class="notice_list_btn" href="delete.php?n_idx=<?php echo $array["idx"]; ?>">삭제</a>
+      <a class="notice_list_btn btn_del" href="delete.php?n_idx=<?php echo $array["idx"]; ?>">삭제</a>
     </div>
 
 

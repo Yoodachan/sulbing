@@ -7,9 +7,13 @@ include "../inc/dbcon.php";
 
 // 이전 페이지에서 값 가져오기
 $n_idx = $_GET["n_idx"];
+$cate = $_POST["cate"];
 $n_title = $_POST["n_title"];
 $n_content = $_POST["n_content"];
 $file_del = isset($_POST["file_del"])? $_POST["file_del"]:"off";
+
+// 테이블 이름
+$table_name = "notice";
 
 // 작성일자
 $w_date = date("Y-m-d");
@@ -32,7 +36,8 @@ if($_FILES["up_file"]["name"] != NULL){
     $f_size = $_FILES["up_file"]["size"];
     
     // 쿼리 작성
-    $sql = "update notice set ";
+    $sql = "update $table_name set ";
+    $sql .= "cate='$cate', ";
     $sql .= "n_title='$n_title', ";
     $sql .= "n_content='$n_content', ";
     $sql .= "w_date='$w_date', ";
@@ -44,7 +49,7 @@ if($_FILES["up_file"]["name"] != NULL){
     exit; */
 } else{
     if($file_del == "on"){
-        $sql = "select f_name from notice where idx=$n_idx";
+        $sql = "select f_name from $table_name where idx=$n_idx";
         $result = mysqli_query($dbcon, $sql);
         $array = mysqli_fetch_array($result);
         $f_name = $array["f_name"];
@@ -55,7 +60,8 @@ if($_FILES["up_file"]["name"] != NULL){
             unlink($path);
         };
 
-        $sql = "update notice set ";
+        $sql = "update $table_name set ";
+        $sql .= "cate='$cate', ";
         $sql .= "n_title='$n_title', ";
         $sql .= "n_content='$n_content', ";
         $sql .= "w_date='$w_date', ";
@@ -67,7 +73,8 @@ if($_FILES["up_file"]["name"] != NULL){
         exit; */
     } else{
         // 쿼리 작성
-        $sql = "update notice set ";
+        $sql = "update $table_name set ";
+        $sql .= "cate='$cate', ";
         $sql .= "n_title='$n_title', ";
         $sql .= "n_content='$n_content', ";
         $sql .= "w_date='$w_date' ";

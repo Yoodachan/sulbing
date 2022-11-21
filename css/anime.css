@@ -230,6 +230,25 @@
 }
 
 
+/* write_a,modify_a  */
+
+.check_off {
+  border: 1px #e2e2e2 solid;
+  color: #999999;
+  background-color: #fff;
+}
+
+.check_on {
+  border: 1px #e2e2e2 solid;
+  color:#fff;
+  background-color: #796150;
+  transition:all 0.3s;
+}
+
+
+
+
+
 
 
 

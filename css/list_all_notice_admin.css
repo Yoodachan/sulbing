@@ -93,15 +93,6 @@ font-weight: bold;
   width: 1040px;
   justify-content: center;
 }
-
-.tab_menu li {
-  display: block;
-  width: 120px;
-  height: 50px;
-  line-height: 50px;
-  text-align: center;
-  font-size: 15px;
-}
 .tab_menu li:nth-of-type(1),
 .tab_menu li:nth-of-type(3) {
   border: 1px solid #dddddd;
@@ -110,14 +101,29 @@ font-weight: bold;
   border-top: 1px solid #dddddd;
   border-bottom: 1px solid #dddddd;
 }
-.tab_menu li a {
+.tab_menu li button {
+  cursor: pointer;
   display: block;
+  border: none;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  font-size: 16px;
+  width: 120px;
 }
 .tab_menu_off {
   background-color: #fff;
   color: #796150;
   font-weight: lighter;
 }
+
+.tab_menu_off:hover {
+  background-color:#796150;
+  color:#fff;
+  transition: all 0.3s;
+
+}
+
 .tab_menu_on {
   background-color:#796150;
   color:#fff;
@@ -214,9 +220,14 @@ font-weight: bold;
   display: block;
   width: 40px;
   height: 40px;
+  line-height: 40px;
+  font-weight: 800;
   margin: 0 auto;
   border-radius:50%;
   background-color: #796150;
+  font-size: 13px;
+  color: #fff;
+  text-align: center;
 }
 
 .n_title,
@@ -228,6 +239,7 @@ font-weight: bold;
   overflow: hidden;  		
   text-overflow: ellipsis;  	
   white-space: nowrap; 
+  font-weight: bold;
 }
 .w_date,.date,
 .n_cnt,.cnt {
@@ -266,6 +278,13 @@ font-weight: bold;
 .list_mod {
   background-color: #fff;
   color: #ad9582;
+}
+
+.list_mod:hover {
+  background-color: #796150;
+  color: #fff;
+  transition: all 0.3s;
+
 }
 
 .list_del {

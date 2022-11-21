@@ -4,8 +4,22 @@ include "../inc/session.php";
 // DB 연결
 include "../inc/dbcon.php";
 
+//카테고리
+$cate = isset($_GET["cate"])? $_GET["cate"]: "";
+
+// 테이블 이름
+$table_name = "notice";
+
 // 쿼리 작성
-$sql = "select * from notice;";
+if($cate){
+    $sql = "select * from $table_name where cate='$cate';";
+} else{
+    $sql = "select * from $table_name;";
+};
+/* echo $sql;
+exit; */
+
+
 
 // 쿼리 전송
 $result = mysqli_query($dbcon, $sql);
@@ -88,7 +102,7 @@ if($e_pageNum > $total_page){
   <!-- 애니메이션 css -->
   <link rel="stylesheet" href="../../css/anime.css">
   <!-- 헤더 & 푸터 css -->
-  <link rel="stylesheet" href="../../css/header_and_footer_a.css">
+  <link rel="stylesheet" href="../../css/header_and_footer.css">
 
   <!-- 뉴스&공지사항 js -->
   <script defer src="../../JS/list_all_notice_admin.js"></script>
@@ -125,9 +139,9 @@ if($e_pageNum > $total_page){
   </section>
 
   <ul class="tab_menu">
-      <li class="tab_menu_on"><a href="./user_info.php">전체</a></li>
-      <li class="tab_menu_off"><a href="./pwd_change.php">뉴스</a></li>
-      <li class="tab_menu_off"><a href="./user_delete.php">공지사항</a></li>
+      <li><button type="button" class="tab_all">전체</button></li>
+      <li><button type="button" class="tab_news">뉴스</button></li>
+      <li><button type="button" class="tab_notice">공지사항</button></li>
   </ul>
   <div class="list_top">
     <form class="notice_seach_wrap">
@@ -155,7 +169,11 @@ if($e_pageNum > $total_page){
 
             // paging : 시작번호부터 페이지 당 보여질 목록수 만큼 데이터 구하는 쿼리 작성
             // limit 몇번부터, 몇 개
-            $sql = "select * from notice order by idx desc limit $start, $list_num;";
+            if($cate){
+                $sql = "select * from $table_name where cate='$cate' order by idx desc limit $start, $list_num;";
+            } else{
+                $sql = "select * from $table_name order by idx desc limit $start, $list_num;";
+            };
             // echo $sql;
             /* exit; */
 
@@ -175,11 +193,22 @@ if($e_pageNum > $total_page){
             <!-- 카테고리명 -->
             <td class="notice_cate">
             <a href="view.php?n_idx=<?php echo $array["idx"]; ?>">
+            <?php 
+                if($array["cate"] == ""){
+                    echo "전체";
+                } else if($array["cate"] == "news"){
+                    echo "뉴스";
+                } else if($array["cate"] == "notice"){
+                    echo "공지"; 
+                };
+            ?>
             </a>
             </td>
             <!-- 제목 -->
             <td class="notice_content_title">
                 <a href="view.php?n_idx=<?php echo $array["idx"]; ?>">
+                <?php echo $i; ?>
+                .
                 <?php echo $array["n_title"]; ?>
                 </a>
             </td>
@@ -191,7 +220,7 @@ if($e_pageNum > $total_page){
             <!-- 수정 및 삭제 -->
             <td class="mod_del">
                 <a class="list_mod" href="modify.php?n_idx=<?php echo $array["idx"]; ?>">수정</a>
-                <a class="list_del" href="#" onclick="remove_notice(<?php echo $array["idx"]; ?>)">삭제</a>
+                <a class="list_del" href="#" onclick=" remove_notice( <?php echo $array['idx']; ?> ) "> 삭제 </a>
             </td>
         </tr>
         <?php

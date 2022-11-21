@@ -8,8 +8,13 @@ $n_idx = $_GET["n_idx"];
 // DB 연결
 include "../inc/dbcon.php";
 
+// 테이블 이름
+$table_name = "notice";
+
 // 쿼리 작성
-$sql = "select * from notice where idx = $n_idx;";
+// $sql = "select * from notice where idx = $n_idx;";
+$sql = "select * from $table_name where idx = $n_idx;";
+
 
 // 쿼리 전송
 $result = mysqli_query($dbcon, $sql);
@@ -107,6 +112,27 @@ mysqli_close($dbcon);
         <table class="notice_modify_board">
             <caption>뉴스&공지사항 수정</caption>
 
+            <tr class="notice_cate_wrap">
+                <th><label for="cate">카테고리</label></th>
+                <td>
+                    <div class="cate_news_btn">
+                    <span>
+                    <i class="fa-solid fa-check"></i>
+                        뉴스
+                    </span>
+                    <input id="n_cate_news" type="hidden" name="cate" value="news" <?php if($array["cate"] == "news") echo "checked"; ?>>
+                    </div>
+
+                    <div class="cate_notice_btn">
+                    <span>
+                    <i class="fa-solid fa-check"></i>
+                        공지
+                    </span>
+                    <input id="n_cate_notice" type="hidden" name="cate" value="notice" <?php if($array["cate"] == "notice") echo "checked"; ?>>
+                    </div>
+                </td>
+            </tr>
+
             <tr class="notice_title_wrap">
                 <th><label for="n_title">제목</label></th>
                 <td><input type="text" name="n_title" id="n_title" value="<?php echo $array["n_title"]; ?>"></td>
@@ -157,8 +183,8 @@ mysqli_close($dbcon);
         </table>
 
         <div class="notice_list">
-        <a class="notice_list_btn" href="view.php?n_idx=<?php echo $array["idx"]; ?>">이전</a>
-        <button class="notice_list_btn" type="submit">수정</button>
+        <a class="notice_list_btn btn_prev" href="view.php?n_idx=<?php echo $array["idx"]; ?>">이전</a>
+        <button class="notice_list_btn btn_submit" type="submit">수정</button>
         </div>
 
     <!-- 콘텐츠 영역 종료  -->  

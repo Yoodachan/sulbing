@@ -79,7 +79,7 @@ exit;
         </h1>
 
         <ul>
-            <li class="menu_label"><a href="">홈으로</a></li>
+            <li class="menu_label"><a href="index.php">관리자 페이지</a></li>
 
             <li class="user_label">
                 <span>

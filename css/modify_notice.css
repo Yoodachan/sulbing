@@ -138,6 +138,11 @@ caption {
   font-weight: bold;
 }
 
+.notice_cate_wrap th {
+  height: 60px;
+}
+
+
 .notice_title_wrap th {
   height: 60px;
 }
@@ -150,31 +155,32 @@ caption {
   height: 60px;
 }
 
+.notice_cate_wrap td,
 .notice_title_wrap td,
 .notice_content_wrap td {
-  width: 750px;
   border-bottom: 1px #e2e2e2 solid;
-  padding-left: 20px;
+}
+.notice_title_wrap td,
+.notice_content_wrap td,
+.notice_file_wrap td {
+  width: 750px;
   color: #666666;
   font-weight: 400;
   font-size: 16px;
 }
+.notice_title_wrap td,
+.notice_content_wrap td {
+  padding-left: 20px;
+}
 
+.notice_cate_wrap td,
 .notice_file_wrap td {
   display: flex;
-  width: 750px;
-  border-bottom: 1px #e2e2e2 solid;
   padding: 10px 10px 10px 20px;
-  color: #666666;
-  font-weight: 400;
-  font-size: 16px;
 }
 
-
-
-input::placeholder {
-  padding-left: 20px;
-  color:#666666;
+.notice_cate_wrap td {
+  justify-content: left;
 }
 
 /* 인풋 박스 포커스 */
@@ -186,6 +192,30 @@ z-index:3;
 }
 
 /* 인풋 박스 */
+
+
+.cate_news_btn,
+.cate_notice_btn {
+  width: 80px;
+  height: 40px;
+  line-height: 40px;
+  border: 1px #e2e2e2 solid;
+  color: #999999;
+  border-radius: 2px;
+  margin: 0 5px;
+  cursor:pointer;
+  font-weight: 400;
+}
+
+
+.cate_news_btn span,
+.cate_notice_btn span {
+  display: block;
+  text-align: center;
+}
+
+
+
 #n_title {
   display: block;
   margin: 5px 0px;
@@ -232,14 +262,32 @@ z-index:3;
 
 
 
+
+.cate_news_btn:hover,
+.cate_notice_btn:hover,
 #up_file_btn:hover {
   color:#fff;
-  background-color: #ad9582;
+  background-color: #796150;
   transition:all 0.3s;
+}
+
+.cate_news_btn:active,
+.cate_notice_btn:active,
+#up_file_btn:active {
+  scale: 90%;
+  transition:all 0.3s;
+}
+
+#up_file_btn i {
+  display: block;
 }
 
 #up_file_btn span {
   display: block;
+}
+
+.fa-check {
+  display: none;
 }
 
 .file_wrap {
@@ -249,15 +297,18 @@ z-index:3;
   line-height: 40px;
   margin: 5px 5px;
   position:relative;
+  background-color: #faf9f5;
+  border: 1px solid #e2e2e2;
 }
 
 .file_name {
-  width: 545px;
-  background-color: #faf9f5;
-  border: 1px solid #e2e2e2;
+  width: 505px;
   padding-left: 20px;
   border-radius: 2px;
   color: #666666;
+  overflow: hidden;  		
+  text-overflow: ellipsis;  	
+  white-space: nowrap; 
 }
 
 #file_del {
@@ -309,8 +360,23 @@ z-index:3;
   display: block;
   margin: 0 10px;
   line-height: 60px;
-  background-color: #796150;
-  color: #fff;
   font-size: 20px;
   text-align: center;
+  border: 1px solid #e2e2e2;
+  border-radius: 2px;
+}
+
+.btn_prev {
+  color: #999;
+  background-color: #fff;
+}
+.btn_submit {
+  background-color: #796150;
+  color: #fff;
+}
+
+.btn_prev:hover {
+  background-color: #796150;
+  color: #fff;
+  transition:all 0.3s;
 }

@@ -2,7 +2,11 @@
 // 작성자 입력을 위한 session 가져오기
 include "../inc/session.php";
 
+// 테이블 이름
+$table_name = "notice";
+
 // 이전 페이지에서 값 가져오기
+$cate = $_POST["cate"];
 $n_title = $_POST["n_title"];
 $n_content = $_POST["n_content"];
 
@@ -36,11 +40,11 @@ exit; */
 include "../inc/dbcon.php";
 
 // 쿼리 작성
-$sql = "insert into notice(";
-$sql .= "n_title, n_content, writer, w_date, ";
+$sql = "insert into $table_name(";
+$sql .= "cate, n_title, n_content, writer, w_date, ";
 $sql .= "f_name, f_type, f_size";
 $sql .= ") values(";
-$sql .= "'$n_title', '$n_content', '$s_name', '$w_date', ";
+$sql .= "'$cate', '$n_title', '$n_content', '$s_name', '$w_date', ";
 $sql .= "'$f_name', '$f_type', '$f_size'";
 $sql .= ");";
 /* echo $sql;

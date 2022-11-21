@@ -100,13 +100,12 @@ font-weight: bold;
   width: 900px;
   margin: 0 auto;
   text-align: center;
-  padding: 20px;
   border-top: 2px solid #000;
   border-bottom: 1px solid #e5e5e5;
 }
 
 .v_title {
-  display: block;
+  display: flex;
   width: 900px;
   margin: 0 auto;
   padding: 20px 160px 20px 20px;
@@ -195,6 +194,7 @@ font-weight: bold;
   line-height: 60px;
   background-color: #796150;
   color: #fff;
+  border: 1px solid #e2e2e2;
   font-size: 20px;
   text-align: center;
 }
@@ -233,3 +233,21 @@ strong i {
   font-weight: normal;
   margin-right: 5px;
 }
+
+
+.btn_submit {
+  color: #999;
+  background-color: #fff;
+}
+.btn_del {
+  background-color: #999;
+  color: #fff;
+}
+
+.btn_del:hover,
+.btn_submit:hover {
+  background-color: #796150;
+  color: #fff;
+  transition:all 0.3s;
+}
+
