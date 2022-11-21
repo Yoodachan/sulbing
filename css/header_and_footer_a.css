@@ -10,12 +10,11 @@
     display: block;
     width:100%;
     height: 150px;
-    background-color: #0b0c10;
+    background-color: #fff;
     border-bottom: 1px solid #f0f0f0;
     top:0px;
     left: 0px;
 }
-/* 
 .head_fix {
     position:fixed;
     animation: down 0.5s ease;
@@ -36,9 +35,7 @@
     top: 500px;
     right: 80px;
     z-index: 10;
-} */
-/* 
-
+} 
 .top_on {
     transform: scale(0);
     width: 60px;
@@ -68,7 +65,7 @@
     position: absolute;
     top: 18px;
     left: -11px;
-} */
+}
 
 .head_inner {
     display:flex;
@@ -181,9 +178,9 @@
 .GNB {
     width: 100%;
     height: 100px;
-    background-color: #292a2d;
-    border-top: 1px solid #393b3b;
-    border-bottom: 1px solid #393b3b;
+    background-color: #fff;
+    border-top: 1px solid #f0f0f0;
+    border-bottom: 1px solid #f0f0f0;
     top:0;
     left:0;
     color: #84664d;
@@ -204,11 +201,11 @@
 
 #logo a {
     text-indent: -9999px;
-    color: white;
+    color: #fff;
     display: block;
     height: 70px;
     width: 90px;
-    background-image: url(../images/logo_a.png);
+    background-image: url(../images/logo.jpg);
     background-size: 77px 66px;
     background-repeat: no-repeat;
     margin-top: 20px;
@@ -220,6 +217,7 @@
     justify-content: space-between;
     font-size: 1.3em;
     font-weight: 600;
+    color:#666666;
 }
 
 .gnb_list a {
@@ -311,10 +309,10 @@
     display: none;
     width: 100%;
     height: 250px;
-    box-shadow: 0 8px 8px -2px #79797900;
+    box-shadow: 0 8px 8px -2px #79797970;
     z-index: 10;
     position:absolute;
-    background-color: #292a2d;
+    background-color:#fff;
 }
 .gnb_menu_wrap {
     display: flex;

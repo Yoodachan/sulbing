@@ -207,6 +207,29 @@
   display:block;
 }
 
+/* index_a  */
+
+.bar_off {
+  opacity: 0;
+  transform: translate( -300px, 0px);
+}
+
+.bar_on {
+  opacity: 1;
+  transform: translate( 0px, 0px);
+  transition:all 0.6s;
+}
+
+.margin_off {
+  margin-left: 0px;
+}
+
+.margin_on {
+  margin-left: 300px;
+  transition:all 0.6s;
+}
+
+
 
 
 

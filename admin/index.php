@@ -65,27 +65,68 @@ exit;
     <!-- Bx 슬라이더 -->
     <script defer src="../JS/jquery.bxslider.js"></script>
     <!-- 메인 js -->
-    <script defer src="../JS/index.js"></script>
+    <script defer src="../JS/index_a.js"></script>
     <!-- 헤더 & 푸터 js -->
     <script defer src="../JS/header_and_footer.js"></script>
 
     <title>설빙 | 관리자 페이지</title>
 </head>
+
 <body>
-    <?php include "../inc/header_ns.php"; ?>
-    <div class="nav_wrap">
+    <nav class="side_bar bar_on">
+        <h1 class="logo_wrap" title="로고">
+            <span class="logo_img" title="로고 이미지"></span>
+        </h1>
+
+        <ul>
+            <li class="menu_label"><a href="">홈으로</a></li>
+
+            <li class="user_label">
+                <span>
+                <p>사용자 관리</p>
+                <i class="fa-solid fa-caret-down"></i>
+                </span>
+                
+                <ul class="user_menu">
+                    <li><span>
+                        <a href="">사용자 목록</a>
+                    </span></li>
+                </ul>
+            </li>
+
+            <li class="board_label"><span>게시판 관리</span>
+                <i class="fa-solid fa-caret-down"></i>
+                <ul class="board_menu">
+                    <li><a href="">
+                        공지사항 목록
+                        </a>
+                    </li>
+
+                    <li><a href="">
+                        게시판 목록
+                        </a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+
+
+    <div class="gnb">
         <ul class="nav_admin">
-            <li><a href="members/list.php">회원관리</a></li>
-            <li><a href="notice/list_all.php">공지사항</a></li>
-            <li><a href="members/list.php">상품등록</a></li>
+            <li class="nav_title"><a href="index.php">관리자 페이지</a></li>
+
+            <li >
+                <div class="btn_wrap"> 
+                    <a class="admin_add_btn" href="members/list.php">사용자 추가</a>
+                    <a class="logout_btn" href="members/list.php">로그아웃</a>
+                </div>
+            </li>
         </ul>
     </div>
-    <div class="main_admin">
-        <img src="../images/img_01.png">
-        <img src="../images/img_02.png">
+    <div class="gnb_bottom margin_on">
+            <span class="nav_menu_btn"><i class="fa-solid fa-bars"></i></span>
     </div>
-
-    <?php include "../inc/footer.php"; ?>
-
 </body>
+
 </html>
