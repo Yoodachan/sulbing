@@ -103,7 +103,7 @@ if($e_pageNum > $total_page){
 
     <!-- 헤더 영역 시작 -->
 
-    <?php include "../inc/header_ns_a.php"; ?>
+    <?php include "../inc/header_ns.php"; ?>
 
     <!-- 헤더 영역 종료 -->
 

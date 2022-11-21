@@ -56,7 +56,7 @@ mysqli_close($dbcon);
 // 리디렉션
 echo "
     <script type=\"text/javascript\">
-        location.href = \"list.php\";
+        location.href = \"list_all.php\";
     </script>
     ";
 ?>

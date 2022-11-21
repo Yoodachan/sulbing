@@ -1,11 +1,12 @@
 <?php
 include "../inc/session.php";
 
+// DB 연결
+include "../inc/dbcon.php";
+
 // 데이터 가져오기
 $n_idx = $_GET["n_idx"];
 
-// DB 연결
-include "../inc/dbcon.php";
 
 // 쿼리 작성
 $sql = "select * from notice where idx=$n_idx;";
@@ -80,7 +81,7 @@ $w_date = substr($array["w_date"], 0, 10);
   <!-- 헤더 & 푸터 js -->
   <script defer src="../../JS/header_and_footer.js"></script>
 
-    <title>공지사항</title>
+    <title> 뉴스&공지사항 상세 | 설빙 </title>
 
 </head>
 
@@ -160,12 +161,36 @@ $w_date = substr($array["w_date"], 0, 10);
         </tbody>
     </table>
     <div class="notice_list">
-      <a class="notice_list_btn"href="modify.php">수정</a>
-      <a class="notice_list_btn"href="list_all.php">목록</a>
-      <a class="notice_list_btn"href="delete.php">삭제</a>
+      <a class="notice_list_btn" href="modify.php?n_idx=<?php echo $array["idx"]; ?>">수정</a>
+      <a class="notice_list_btn" href="list_all.php">목록</a>
+      <a class="notice_list_btn" href="delete.php?n_idx=<?php echo $array["idx"]; ?>">삭제</a>
     </div>
 
 
+    <ul class="notice_list_nav">
+        <li class="notice_list_prev">
+            <a href="">
+                <span>
+                    <strong>
+                        <i class="fa-solid fa-chevron-up"></i>
+                        이전글
+                    </strong>
+                    이전 글이 없습니다.
+                </span>
+            </a>
+        </li>
+        <li class="notice_list_next">
+            <a href="">
+                <span>
+                    <strong>
+                        <i class="fa-solid fa-chevron-down"></i>
+                        다음글
+                    </strong>
+                    이전 글이 없습니다.
+                </span>
+            </a>
+        </li>
+    </ul>
 
    
     <?php include "../../inc/footer.php"; ?>
