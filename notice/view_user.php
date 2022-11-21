@@ -31,10 +31,12 @@ $w_date = substr($array["w_date"], 0, 10);
 
 ?>
 
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
-  <meta charset="utf-8">
+
+<meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
   <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
   <meta name="description" content="코리안 디저트카페, 인절미설빙, 빙수, 디저트, 음료, 메뉴, 전국매장안내, 이벤트, 고객센터" />
@@ -66,29 +68,28 @@ $w_date = substr($array["w_date"], 0, 10);
   crossorigin="anonymous"></script>
 
   <!-- 초기값 리셋 css -->
-  <link rel="stylesheet" href="../../css/reset.css">
-  <!-- 뉴스&공지사항 내부 css -->
-  <link rel="stylesheet" href="../../css/view_notice_admin.css">
+  <link rel="stylesheet" href="../css/reset.css">
+  <!-- 뉴스&공지사항 상세 css -->
+  <link rel="stylesheet" href="../css/view_notice_user.css">
   <!-- 애니메이션 css -->
-  <link rel="stylesheet" href="../../css/anime.css">
+  <link rel="stylesheet" href="../css/anime.css">
   <!-- 헤더 & 푸터 css -->
-  <link rel="stylesheet" href="../../css/header_and_footer.css">
+  <link rel="stylesheet" href="../css/header_and_footer.css">
 
-  <!-- 뉴스&공지사항 js -->
-  <script defer src="../../JS/view_notice_admin.js"></script>
+  <!-- 뉴스&공지사항 상세 js -->
+  <script defer src="../JS/view_notice_user.js"></script>
   <!-- 헤더 & 푸터 js -->
-  <script defer src="../../JS/header_and_footer.js"></script>
+  <script defer src="../JS/header_and_footer.js"></script>
 
     <title> 뉴스&공지사항 상세 | 설빙 </title>
 
 </head>
 
-
 <body>
 
     <!-- 헤더 영역 시작 -->
 
-    <?php include "../../inc/header_ns.php"; ?>
+    <?php include "../inc/header_ns.php"; ?>
 
     <!-- 헤더 영역 종료 -->
 
@@ -165,9 +166,7 @@ $w_date = substr($array["w_date"], 0, 10);
         </tbody>
     </table>
     <div class="notice_list">
-      <a class="notice_list_btn btn_submit" href="modify.php?n_idx=<?php echo $array["idx"]; ?>">수정</a>
-      <a class="notice_list_btn" href="list_all.php">목록</a>
-      <a class="notice_list_btn btn_del" href="delete.php?n_idx=<?php echo $array["idx"]; ?>">삭제</a>
+      <a class="notice_list_btn" href="list_user.php">목록</a>
     </div>
 
 
@@ -200,7 +199,7 @@ $w_date = substr($array["w_date"], 0, 10);
 
     <!-- 푸터 영역 시작 -->
 
-    <?php include "../../inc/footer.php"; ?>
+    <?php include "../inc/footer.php"; ?>
 
     <!-- 푸터 영역 종료 -->
 

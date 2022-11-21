@@ -1,3 +1,4 @@
+
 .title_wrap {
   width: 100%;
 }
@@ -7,6 +8,7 @@ position:relative;
 width: 1040px;
 height: 60px;
 margin: 50px auto;
+
 }
 
 .inner_title {
@@ -91,15 +93,6 @@ font-weight: bold;
   width: 1040px;
   justify-content: center;
 }
-
-.tab_menu li {
-  display: block;
-  width: 120px;
-  height: 50px;
-  line-height: 50px;
-  text-align: center;
-  font-size: 15px;
-}
 .tab_menu li:nth-of-type(1),
 .tab_menu li:nth-of-type(3) {
   border: 1px solid #dddddd;
@@ -108,14 +101,29 @@ font-weight: bold;
   border-top: 1px solid #dddddd;
   border-bottom: 1px solid #dddddd;
 }
-.tab_menu li a {
+.tab_menu li button {
+  cursor: pointer;
   display: block;
+  border: none;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  font-size: 16px;
+  width: 120px;
 }
 .tab_menu_off {
   background-color: #fff;
   color: #796150;
   font-weight: lighter;
 }
+
+.tab_menu_off:hover {
+  background-color:#796150;
+  color:#fff;
+  transition: all 0.3s;
+
+}
+
 .tab_menu_on {
   background-color:#796150;
   color:#fff;
@@ -199,42 +207,98 @@ font-weight: bold;
 }
 
 .notice_list_content td {
-  padding: 0 20px;
+  padding: 10px;
 }
 
 
 .cate,
 .notice_cate {
-  width: 110px;
+  width: 80px;
 }
 
 .notice_cate a {
   display: block;
   width: 40px;
   height: 40px;
+  line-height: 40px;
+  font-weight: 800;
   margin: 0 auto;
   border-radius:50%;
   background-color: #796150;
+  font-size: 13px;
+  color: #fff;
+  text-align: center;
 }
 
 .n_title,
 .notice_content_title {
-  width: 670px;
+  display: block;
+  width: 500px;
+  line-height: 50px;
+  height:70px;
   font-size: 16px;
   color: #222222;
+  overflow: hidden;  		
+  text-overflow: ellipsis;  	
+  white-space: nowrap; 
+  font-weight: bold;
 }
 .w_date,.date,
 .n_cnt,.cnt {
-  width: 130px;
+  width: 120px;
   text-align: right;
   font-size: 14px;
   color:#666666;
 }
+.n_mod_del,
+.mod_del {
+  width: 150px;
+  text-align: center;
+  font-size: 14px;
+  color:#666666;
+}
+
+.mod_del {
+  margin: 0 auto;
+  display: flex;
+  height: 70px;
+  align-items: center;
+  justify-content: center;
+}
+
+.list_mod,
+.list_del {
+  width:68px;
+  height: 28px;
+  line-height: 28px;
+  font-size: 14px;
+  border: 1px solid #ad9582;
+  border-radius: 2px;
+  margin: auto 5px;
+}
+
+.list_mod {
+  background-color: #fff;
+  color: #ad9582;
+}
+
+.list_mod:hover {
+  background-color: #796150;
+  color: #fff;
+  transition: all 0.3s;
+
+}
+
+.list_del {
+  background-color: #796150;
+  color: #fff;
+}
+
 
 .pager_wrap {
   width: 1040px;
-  margin: 0 auto 60px;
   display: flex;
+  margin: 0 auto 60px;
 }
 
 .pager_inner {
@@ -253,10 +317,6 @@ font-weight: bold;
   width: 35px;
   height: 35px;
   padding: 0 5px;
-}
-
-.prev_btn {
-
 }
 
 .btn_off {
@@ -288,3 +348,4 @@ font-weight: bold;
   text-align: center;
   margin: 2px 0px 2px 80px;
 }
+

@@ -2,14 +2,19 @@ body {
     position:relative;
 }
 
+/* 사이드바  */
+
+
+/* 로고 시작 */
+
 .side_bar {
     position:absolute;
+    display: block;
     top:0px;
     left: 0px;
     width: 300px;
     background-color: #fff;
-    height: 100%;
-    border-right: 1px #f0f0f0 solid;
+    border-right: 1px solid #f0f0f0;
     color: #666666;
     text-align: left;
     font-size: 24px;
@@ -17,11 +22,18 @@ body {
 
 .logo_wrap {
     display: flex;
-    font-size: 0;
+    width: 300px;
     height: 80px;
+    font-size: 0;
     padding-left: 40px;
     border-bottom: 1px #f0f0f0 solid;
     background-color: #fff;
+}
+
+.logo_wrap a {
+    display: block; 
+    width: 300px;
+    height: 80px;
 }
 
 .logo_img {
@@ -34,34 +46,92 @@ body {
     background-repeat: no-repeat;
 }
 
-.side_bar>ul {
-    padding-left: 20px;
-}
-.side_bar>ul>li:hover {
-    background-color: #f0f0f0;
-    transition: all 1.2s;
-}
+/* 로고 종료 */
 
-.side_bar>ul>li {
+
+/* 사이드바 메뉴 */
+
+.admin_label,
+.user_label {
     display: block;
-    min-height: 60px;
-    line-height: 60px;
-    border-bottom: 1px solid #f0f0f0;
-}
-
-.menu_label {
+    width: 300px;
     height: 60px;
     line-height: 60px;
-    text-align: left;
     font-size: 22px;
     color: #666666;
-    border-bottom: 1px #f0f0f0 solid;
-}
-.menu_label a {
-    display: block;
 }
 
-.user_label>span {
+
+/* 관리자 페이지 이동 시작 */
+
+
+.admin_label a {
+    display: block;
+    width: 300px;
+    height: 60px;
+    border-bottom: 1px #f0f0f0 solid;
+    padding-left: 20px;
+    text-align: left;
+}
+
+/* 관리자 페이지 이동 종료 */
+
+/* 사용자 관리 시작 */
+
+
+.user_menu_wrap {
+    display: flex;
+    width: 300px;
+    height: 60px;
+    line-height: 60px;
+    border-left: none;
+    border-top: none;
+    border-right: 1px #f0f0f0 solid;
+    border-bottom: 1px #f0f0f0 solid;
+    cursor: pointer;
+    background-color: #fff;
+    text-align: left;
+    padding-left: 20px;
+    position: relative;
+}
+
+.user_menu_wrap span {
+    display: block;
+    width: 220px;
+    height: 60px;
+    line-height: 60px;
+    font-size: 22px;
+    color: #666666;
+}
+
+.user_menu_wrap i {
+    width: 60px;
+    height: 60px;
+    line-height: 60px;
+    font-size: 24px;
+    text-align: center;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+}
+
+.user_menu_inner {
+    width: 300px;
+    min-height: 60px;
+    line-height: 60px;
+    font-size: 22px;
+    color: #666666;
+}
+.user_menu_inner a {
+    display: block;
+    padding-left: 20px;
+    border-bottom: 1px #f0f0f0 solid;
+    border-right: 1px #f0f0f0 solid;
+}
+
+
+
+/* .user_label>span {
     display: block;
     border: 2px solid red;
     position: relative;
@@ -81,7 +151,7 @@ body {
     bottom: 18px;
     right: 30%;
 }
-
+ */
 
 
 .gnb {
@@ -154,7 +224,8 @@ body {
 
 .gnb_bottom span {
     display: block;
-    border: 1px solid #f0f0f0;
+    border-right: 1px solid #f0f0f0;
+    border-bottom: 1px solid #f0f0f0;
     width: 60px;
     height: 60px;
     line-height: 60px;

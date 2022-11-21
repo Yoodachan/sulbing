@@ -1,6 +1,6 @@
 <?php
 include "../inc/session.php";
-
+include "../inc/admin_check.php";
 // DB 연결
 include "../inc/dbcon.php";
 
@@ -16,9 +16,6 @@ if($cate){
 } else{
     $sql = "select * from $table_name;";
 };
-/* echo $sql;
-exit; */
-
 
 
 // 쿼리 전송
@@ -97,14 +94,14 @@ if($e_pageNum > $total_page){
 
   <!-- 초기값 리셋 css -->
   <link rel="stylesheet" href="../../css/reset.css">
-  <!-- 뉴스&공지사항 css -->
-  <link rel="stylesheet" href="../../css/list_all_notice_admin.css">
+  <!-- 뉴스&공지사항 리스트 css -->
+  <link rel="stylesheet" href="../../css/list_notice_admin.css">
   <!-- 애니메이션 css -->
   <link rel="stylesheet" href="../../css/anime.css">
   <!-- 헤더 & 푸터 css -->
   <link rel="stylesheet" href="../../css/header_and_footer.css">
 
-  <!-- 뉴스&공지사항 js -->
+  <!-- 뉴스&공지사항 리스트 js -->
   <script defer src="../../JS/list_all_notice_admin.js"></script>
   <!-- 헤더 & 푸터 js -->
   <script defer src="../../JS/header_and_footer.js"></script>
@@ -132,7 +129,7 @@ if($e_pageNum > $total_page){
       </div>
 
       <ul class="location">
-        <li><a href="./Sulbing_index_유다찬.html">홈</a></li>
+      <li><a href="../index.php">홈</a></li>
         <li><p>뉴스 & 공지사항</p></li>
       </ul>
     </div>

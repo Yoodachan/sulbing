@@ -55,16 +55,15 @@ exit;
 
     <!-- 초기값 리셋 css -->
     <link rel="stylesheet" href="../css/reset.css">
-    <!-- 메인 css -->
+    <!-- 메인 어드민 css -->
     <link rel="stylesheet" href="../css/index_a.css">
     <!-- 애니메이션 css -->
     <link rel="stylesheet" href="../css/anime.css">
     <!-- 헤더 & 푸터 css -->
     <link rel="stylesheet" href="../css/header_and_footer.css">
 
-    <!-- Bx 슬라이더 -->
-    <script defer src="../JS/jquery.bxslider.js"></script>
-    <!-- 메인 js -->
+
+    <!-- 메인 어드민 js -->
     <script defer src="../JS/index_a.js"></script>
     <!-- 헤더 & 푸터 js -->
     <script defer src="../JS/header_and_footer.js"></script>
@@ -74,27 +73,35 @@ exit;
 
 <body>
     <nav class="side_bar bar_on">
+
         <h1 class="logo_wrap" title="로고">
-            <span class="logo_img" title="로고 이미지"></span>
+            <a href="../index.php">
+                <span class="logo_img" title="로고 이미지">
+                </span>
+            </a>
         </h1>
 
-        <ul>
-            <li class="menu_label"><a href="index.php">관리자 페이지</a></li>
+        <ul class="bar_menu_wrap">
+
+            <li class="admin_label">
+                <a href="index.php">관리자 페이지</a>
+            </li>
 
             <li class="user_label">
-                <span>
-                <p>사용자 관리</p>
+                <button type="button" class="user_menu_wrap">
+                <span>사용자 관리</span>
+                <i class="fa-solid fa-caret-up"></i>
                 <i class="fa-solid fa-caret-down"></i>
-                </span>
+                </button>
                 
-                <ul class="user_menu">
-                    <li><span>
+                <ul class="user_menu_inner">
+                    <li>
                         <a href="">사용자 목록</a>
-                    </span></li>
+                    </li>
                 </ul>
             </li>
 
-            <li class="board_label"><span>게시판 관리</span>
+            <!-- <li class="board_label"><span>게시판 관리</span>
                 <i class="fa-solid fa-caret-down"></i>
                 <ul class="board_menu">
                     <li><a href="">
@@ -107,7 +114,7 @@ exit;
                         </a>
                     </li>
                 </ul>
-            </li>
+            </li> -->
         </ul>
     </nav>
 

@@ -4,8 +4,19 @@ include "../inc/session.php";
 // DB 연결
 include "../inc/dbcon.php";
 
+//카테고리
+$cate = isset($_GET["cate"])? $_GET["cate"]: "";
+
+// 테이블 이름
+$table_name = "notice";
+
 // 쿼리 작성
-$sql = "select * from notice;";
+if($cate){
+    $sql = "select * from $table_name where cate='$cate';";
+} else{
+    $sql = "select * from $table_name;";
+};
+
 
 // 쿼리 전송
 $result = mysqli_query($dbcon, $sql);
@@ -86,15 +97,15 @@ if($e_pageNum > $total_page){
 
   <!-- 초기값 리셋 css -->
   <link rel="stylesheet" href="../css/reset.css">
-  <!-- 뉴스&공지사항 css -->
-  <link rel="stylesheet" href="../css/list_notice_notice_user.css">
+  <!-- 뉴스&공지사항 리스트 css -->
+  <link rel="stylesheet" href="../css/list_notice_user.css">
   <!-- 애니메이션 css -->
   <link rel="stylesheet" href="../css/anime.css">
   <!-- 헤더 & 푸터 css -->
   <link rel="stylesheet" href="../css/header_and_footer.css">
 
-  <!-- 뉴스&공지사항 js -->
-  <script defer src="../JS/list_all_notice_user.js"></script>
+  <!-- 뉴스&공지사항 리스트 js -->
+  <script defer src="../JS/list_notice_user.js"></script>
   <!-- 헤더 & 푸터 js -->
   <script defer src="../JS/header_and_footer.js"></script>
 
@@ -107,7 +118,7 @@ if($e_pageNum > $total_page){
 <body>
     <!-- 헤더 영역 시작 -->
 
-    <?php include "../inc/sub_header.php"; ?>
+    <?php include "../inc/header_ns.php"; ?>
 
     <!-- 헤더 영역 종료 -->
 
@@ -122,16 +133,16 @@ if($e_pageNum > $total_page){
       </div>
 
       <ul class="location">
-        <li><a href="./Sulbing_index_유다찬.html">홈</a></li>
+        <li><a href="../index.php">홈</a></li>
         <li><p>뉴스 & 공지사항</p></li>
       </ul>
     </div>
   </section>
 
   <ul class="tab_menu">
-      <li class="tab_menu_on"><a href=".list_all.php">전체</a></li>
-      <li class="tab_menu_off"><a href=".list_news.php">뉴스</a></li>
-      <li class="tab_menu_off"><a href=".list_notice.php">공지사항</a></li>
+      <li><button type="button" class="tab_all">전체</button></li>
+      <li><button type="button" class="tab_news">뉴스</button></li>
+      <li><button type="button" class="tab_notice">공지사항</button></li>
   </ul>
   <div class="list_top">
     <form class="notice_seach_wrap">
@@ -158,7 +169,11 @@ if($e_pageNum > $total_page){
 
             // paging : 시작번호부터 페이지 당 보여질 목록수 만큼 데이터 구하는 쿼리 작성
             // limit 몇번부터, 몇 개
-            $sql = "select * from notice order by idx desc limit $start, $list_num;";
+            if($cate){
+                $sql = "select * from $table_name where cate='$cate' order by idx desc limit $start, $list_num;";
+            } else{
+                $sql = "select * from $table_name order by idx desc limit $start, $list_num;";
+            };
             // echo $sql;
             /* exit; */
 
@@ -171,20 +186,35 @@ if($e_pageNum > $total_page){
             $i = $total - (($page - 1) * $list_num);
             while($array = mysqli_fetch_array($result)){
         ?>
-        <tr class="notice_list_content">
+
+
+
+<tr class="notice_list_content">
+            <!-- 카테고리명 -->
             <td class="notice_cate">
-            <a href="view.php?n_idx=<?php echo $array["idx"]; ?>">
-                <!-- 카테고리명 -->
+            <a href="view_user.php?n_idx=<?php echo $array["idx"]; ?>">
+            <?php 
+                if($array["cate"] == ""){
+                    echo "전체";
+                } else if($array["cate"] == "news"){
+                    echo "뉴스";
+                } else if($array["cate"] == "notice"){
+                    echo "공지"; 
+                };
+            ?>
             </a>
             </td>
+            <!-- 제목 -->
             <td class="notice_content_title">
-                <a href="view.php?n_idx=<?php echo $array["idx"]; ?>">
+                <a href="view_user.php?n_idx=<?php echo $array["idx"]; ?>">
+                <?php echo $i; ?>
+                .
                 <?php echo $array["n_title"]; ?>
                 </a>
             </td>
+            <!-- 작성일 -->
             <?php $w_date = substr($array["w_date"], 0, 10); ?>
             <td class="date"><?php echo $w_date; ?></td>
-            <td class="cnt"><?php echo $array["cnt"]; ?></td>
         </tr>
         <?php
                 $i--;
@@ -207,7 +237,7 @@ if($e_pageNum > $total_page){
                 <i class="fa-solid fa-chevron-left"></i>
             </a>
             <?php } else{ ?>
-            <a class="prev_btn"href="list_all.php?page=<?php echo ($page - 1); ?>">
+            <a class="prev_btn"href="list_user.php?page=<?php echo ($page - 1); ?>">
                 <i class="fa-solid fa-chevron-left"></i>
             </a>
             <?php }; ?>
@@ -216,29 +246,32 @@ if($e_pageNum > $total_page){
             // pager : 페이지 번호 출력
             for($print_page = $s_pageNum;  $print_page <= $e_pageNum; $print_page++){
             ?>
-            <a class="page_num" href="list_all.php?page=<?php echo $print_page; ?>"><?php echo $print_page; ?></a>
+            <a class="page_num" href="list_user.php?page=<?php echo $print_page; ?>"><?php echo $print_page; ?></a>
             <?php }; ?>
 
             <?php
             // pager : 다음 페이지
             if($page >= $total_page){
             ?>
-            <a class="next_btn btn_off" href="list_all.php?page=<?php echo $total_page; ?>">
+            <a class="next_btn btn_off" href="list_user.php?page=<?php echo $total_page; ?>">
                 <i class="fa-solid fa-chevron-right"></i>
             </a>
             <?php } else{ ?>
-            <a class="next_btn" href="list_all.php?page=<?php echo ($page + 1); ?>">
+            <a class="next_btn" href="list_user.php?page=<?php echo ($page + 1); ?>">
                 <i class="fa-solid fa-chevron-right"></i>
             </a>
             <?php }; ?>
         </p>
         <?php if($s_id == "admin"){ ?>
         <p class="admin_area">
-        <a href="write.php">글 작성</a>
+        <a href="write_user.php">글 작성</a>
         </p>
         <?php }; ?>
 
     </div>
+
+
+    <!-- 콘텐트 영역 종료 -->
 
 
     <!-- 푸터 영역 시작 -->
