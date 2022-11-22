@@ -14,7 +14,6 @@ function quick_banner () {
   $(window).scroll(function(){
     var y = window.scrollY
     const quick = $(".quick_on")
-    console.log (y)
     if (y>=700 && y<=2800) {
       quick.fadeIn()
     }

@@ -22,6 +22,8 @@ let cate_main = undefined;
 let cate_news = "cate=news";
 let cate_notice = "cate=notice";
 
+// ? 뒤에 텍스트가 얘라면
+// ? 뒤에 텍스트에 얘가 있다면
 
 
 tab_main.addEventListener('click', function () {
@@ -74,3 +76,8 @@ function remove_notice(g_no){
 };
 
 
+
+console.log(window.location.href)
+console.log(location.href.split("?")[1])
+
+console.log(location.href.includes("?"))

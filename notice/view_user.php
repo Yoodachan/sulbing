@@ -149,7 +149,7 @@ $w_date = substr($array["w_date"], 0, 10);
                 $f_name = $array["f_name"];
                 echo "
                     <p>
-                        <img src=\"../../data/$f_name\" alt=\"\">
+                        <img src=\"../data/$f_name\" alt=\"\">
                     </p>
                 ";
             };

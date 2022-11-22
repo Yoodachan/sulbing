@@ -1,22 +1,11 @@
 <?php
 include "../inc/session.php";
-include "../inc/admin_check.php";
+
 // DB 연결
 include "../inc/dbcon.php";
 
-//카테고리
-$cate = isset($_GET["cate"])? $_GET["cate"]: "";
-
-// 테이블 이름
-$table_name = "notice";
-
 // 쿼리 작성
-if($cate){
-    $sql = "select * from $table_name where cate='$cate';";
-} else{
-    $sql = "select * from $table_name;";
-};
-
+$sql = "select * from notice;";
 
 // 쿼리 전송
 $result = mysqli_query($dbcon, $sql);
@@ -31,9 +20,7 @@ $list_num = 15;
 $page_num = 7;
 
 // paging : 현재 페이지
-$page_notice = isset($_GET["page_notice"])? $_GET["page_notice"] : 1;
-$page_news = isset($_GET["page_notice"])? $_GET["page_notice"] : 1;
-$page_all = isset($_GET["page_all"])? $_GET["page_all"] : 1;
+$page = isset($_GET["page"])? $_GET["page"] : 1;
 
 // paging : 전체 페이지 수 = 전체 데이터 / 페이지 당 목록 수,  ceil : 올림값, floor : 내림값, round : 반올림
 $total_page = ceil($total / $list_num);
@@ -44,7 +31,7 @@ $total_page = ceil($total / $list_num);
 $total_block = ceil($total_page / $page_num);
 
 // paging : 현재 블럭 번호 = 현재 페이지 번호 / 블럭 당 페이지 수
-    $now_block = ceil($page_all / $page_num);
+$now_block = ceil($page / $page_num);
 
 // paging : 블럭 당 시작 페이지 번호 = (해당 글의 블럭 번호 - 1) * 블럭 당 페이지 수 + 1
 $s_pageNum = ($now_block - 1) * $page_num + 1;
@@ -60,6 +47,9 @@ if($e_pageNum > $total_page){
 };
 
 ?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -95,34 +85,34 @@ if($e_pageNum > $total_page){
   crossorigin="anonymous"></script>
 
   <!-- 초기값 리셋 css -->
-  <link rel="stylesheet" href="../../css/reset.css">
-  <!-- 뉴스&공지사항 리스트 css -->
-  <link rel="stylesheet" href="../../css/list_notice_admin.css">
+  <link rel="stylesheet" href="../css/reset.css">
+  <!-- 뉴스&공지사항 css -->
+  <link rel="stylesheet" href="../css/notice.css">
   <!-- 애니메이션 css -->
-  <link rel="stylesheet" href="../../css/anime.css">
+  <link rel="stylesheet" href="../css/anime.css">
   <!-- 헤더 & 푸터 css -->
-  <link rel="stylesheet" href="../../css/header_and_footer.css">
+  <link rel="stylesheet" href="../css/header_and_footer.css">
 
-  <!-- 뉴스&공지사항 리스트 js -->
-  <script defer src="../../JS/list_notice_admin.js"></script>
+  <!-- 뉴스&공지사항 js -->
+  <script defer src="../JS/notice.js"></script>
   <!-- 헤더 & 푸터 js -->
-  <script defer src="../../JS/header_and_footer.js"></script>
+  <script defer src="../JS/header_and_footer.js"></script>
 
 
 
-    <title>설빙 | 뉴스&공지사항</title>
+    <title>공지사항</title>
+
 </head>
 <body>
-
     <!-- 헤더 영역 시작 -->
 
-    <?php include "../inc/header_ns.php"; ?>
+    <?php include "../inc/sub_header.php"; ?>
 
     <!-- 헤더 영역 종료 -->
 
     <!-- 콘텐트 영역 시작 -->
 
- <section class="title_wrap">
+    <section class="title_wrap">
     <div class="common_title">
       <div class="inner_title drop_down_off">
         <span class="title_left left_move_off"></span>
@@ -131,16 +121,16 @@ if($e_pageNum > $total_page){
       </div>
 
       <ul class="location">
-      <li><a href="../index.php">홈</a></li>
+        <li><a href="./Sulbing_index_유다찬.html">홈</a></li>
         <li><p>뉴스 & 공지사항</p></li>
       </ul>
     </div>
   </section>
 
   <ul class="tab_menu">
-      <li><button type="button" class="tab_all">전체</button></li>
-      <li><button type="button" class="tab_news">뉴스</button></li>
-      <li><button type="button" class="tab_notice">공지사항</button></li>
+      <li class="tab_menu_on"><a href="./user_info.php">전체</a></li>
+      <li class="tab_menu_off"><a href="./pwd_change.php">뉴스</a></li>
+      <li class="tab_menu_off"><a href="./user_delete.php">공지사항</a></li>
   </ul>
   <div class="list_top">
     <form class="notice_seach_wrap">
@@ -153,6 +143,7 @@ if($e_pageNum > $total_page){
             <button type="button"><i class="fa-solid fa-magnifying-glass"></i></button>
     </form>
   </div>
+  
 
     <table class="notice_list_board">
         <tr class="notice_list_title">
@@ -160,19 +151,14 @@ if($e_pageNum > $total_page){
             <th class="n_title">제목</th>
             <th class="w_date">날짜</th>
             <th class="n_cnt">조회수</th>
-            <th class="n_mod_del">수정&삭제</th>
         </tr>
         <?php
             // paging : 해당 페이지의 글 시작 번호 = (현재 페이지 번호 - 1) * 페이지 당 보여질 목록 수
-            $start = ($page_all - 1) * $list_num;
+            $start = ($page - 1) * $list_num;
 
             // paging : 시작번호부터 페이지 당 보여질 목록수 만큼 데이터 구하는 쿼리 작성
             // limit 몇번부터, 몇 개
-            if($cate){
-                $sql = "select * from $table_name where cate='$cate' order by idx desc limit $start, $list_num;";
-            } else{
-                $sql = "select * from $table_name order by idx desc limit $start, $list_num;";
-            };
+            $sql = "select * from notice order by idx desc limit $start, $list_num;";
             // echo $sql;
             /* exit; */
 
@@ -182,45 +168,23 @@ if($e_pageNum > $total_page){
             // DB에서 데이터 가져오기
             // pager : 글번호(역순)
             // 전체데이터 - ((현재 페이지 번호 -1) * 페이지 당 목록 수)
-            $i = $total - (($page_all - 1) * $list_num);
+            $i = $total - (($page - 1) * $list_num);
             while($array = mysqli_fetch_array($result)){
         ?>
-
-
-
         <tr class="notice_list_content">
-            <!-- 카테고리명 -->
             <td class="notice_cate">
             <a href="view.php?n_idx=<?php echo $array["idx"]; ?>">
-            <?php 
-                if($array["cate"] == ""){
-                    echo "전체";
-                } else if($array["cate"] == "news"){
-                    echo "뉴스";
-                } else if($array["cate"] == "notice"){
-                    echo "공지"; 
-                };
-            ?>
+                <!-- 카테고리명 -->
             </a>
             </td>
-            <!-- 제목 -->
             <td class="notice_content_title">
                 <a href="view.php?n_idx=<?php echo $array["idx"]; ?>">
-                <?php echo $i; ?>
-                .
                 <?php echo $array["n_title"]; ?>
                 </a>
             </td>
-            <!-- 작성일 -->
             <?php $w_date = substr($array["w_date"], 0, 10); ?>
             <td class="date"><?php echo $w_date; ?></td>
-            <!-- 조회수 -->
             <td class="cnt"><?php echo $array["cnt"]; ?></td>
-            <!-- 수정 및 삭제 -->
-            <td class="mod_del">
-                <a class="list_mod" href="modify.php?n_idx=<?php echo $array["idx"]; ?>">수정</a>
-                <a class="list_del" href="#" onclick=" remove_notice( <?php echo $array['idx']; ?> ) "> 삭제 </a>
-            </td>
         </tr>
         <?php
                 $i--;
@@ -229,63 +193,54 @@ if($e_pageNum > $total_page){
     </table>
 
     <div class="pager_wrap">
-        <?php if($s_id == "admin"){ ?>
-        <div class="admin_area">
-        <h3>전체 글 <?php echo $total; ?>개</h3>
-        </div>
-        <?php }; ?>
         <p class="pager_inner">
-            <!-- 일반 페이지 -->
-            <?php
-            // pager : 이전 페이지
-            if($page_all <= 1){
-            ?>
-            <a class="prev_btn btn_off" href="list_all.php?page_all=1">
-                <i class="fa-solid fa-chevron-left"></i>
-            </a>
-            <?php } else{ ?>
-            <a class="prev_btn"href="list_all.php?page_all=<?php echo ($page_all - 1); ?>">
-                <i class="fa-solid fa-chevron-left"></i>
-            </a>
-            <?php }; ?>
 
-            <?php
-            // pager : 페이지 번호 출력
-            for($print_page = $s_pageNum;  $print_page <= $e_pageNum; $print_page++){
-            ?>
-            <a class="page_num" href="list_all.php?page_all=<?php echo $print_page; ?>"><?php echo $print_page; ?></a>
-            <?php }; ?>
-
-            <?php
-            // pager : 다음 페이지
-            if($page_all >= $total_page){
-            ?>
-            <a class="next_btn btn_off" href="list_all.php?page_all=<?php echo $total_page; ?>">
-                <i class="fa-solid fa-chevron-right"></i>
-            </a>
-            <!-- 이전 페이지 -->
-            <?php } else{ ?>
-            <a class="next_btn" href="list_all.php?page_all=<?php echo ($page_all + 1); ?>">
-                <i class="fa-solid fa-chevron-right"></i>
-            </a>
-            <?php }; ?>
-
-
-        </p>
-        <?php if($s_id == "admin"){ ?>
-        <p class="admin_area">
-        <a href="write.php">글 작성</a>
-        </p>
+        <?php
+        // pager : 이전 페이지
+        if($page <= 1){
+        ?>
+        <a class="prev_btn btn_off" href="list.php?page=1">
+            <i class="fa-solid fa-chevron-left"></i>
+        </a>
+        <?php } else{ ?>
+        <a class="prev_btn"href="list.php?page=<?php echo ($page - 1); ?>">
+            <i class="fa-solid fa-chevron-left"></i>
+        </a>
         <?php }; ?>
+
+        <?php
+        // pager : 페이지 번호 출력
+        for($print_page = $s_pageNum;  $print_page <= $e_pageNum; $print_page++){
+        ?>
+        <a class="page_num" href="list.php?page=<?php echo $print_page; ?>"><?php echo $print_page; ?> ㅇ</a>
+        <?php }; ?>
+
+        <?php
+        // pager : 다음 페이지
+        if($page >= $total_page){
+        ?>
+        <a class="next_btn btn_off" href="list.php?page=<?php echo $total_page; ?>">
+            <i class="fa-solid fa-chevron-right"></i>
+        </a>
+        <?php } else{ ?>
+        <a class="next_btn" href="list.php?page=<?php echo ($page + 1); ?>">
+            <i class="fa-solid fa-chevron-right"></i>
+        </a>
+        <?php }; ?>
+        </p>
 
     </div>
 
-    <!-- 콘텐트 영역 종료 -->
 
+
+    <p class="write_area">
+        <span>전체 <?php echo $total; ?>개</span>
+        <span><a href="write.php">[글쓰기]</a></span>
+    </p>
 
     <!-- 푸터 영역 시작 -->
 
-    <?php include "../../inc/footer.php"; ?>
+    <?php include "../inc/footer.php"; ?>
 
     <!-- 푸터 영역 종료 -->
 

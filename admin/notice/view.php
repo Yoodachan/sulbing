@@ -29,6 +29,27 @@ mysqli_query($dbcon, $sql);
 
 $w_date = substr($array["w_date"], 0, 10);
 
+
+$prev_page = ($array["idx"]-1);
+$next_page = ($array["idx"]+1);
+
+
+// 현재 페이지 기준 이전 페이지 제목 가져와서 sql에 넣기
+// $sql = "select n_title from notice where idx = $prev_page;";
+// $prev = mysqli_query($dbcon, $sql);
+// echo $prev;
+// exit;
+
+// $sql = "select count(*) from notice;";
+
+// $nt_cnt = mysqli_query($dbcon, $sql);
+// echo $nt_cnt;
+// exit;
+
+
+
+
+
 ?>
 
 <!DOCTYPE html>
@@ -173,28 +194,33 @@ $w_date = substr($array["w_date"], 0, 10);
 
     <ul class="notice_list_nav">
         <li class="notice_list_prev">
-            <a href="">
+            <a href="view.php?n_idx=<?php echo $prev_page; ?>">
                 <span>
                     <strong>
                         <i class="fa-solid fa-chevron-up"></i>
                         이전글
                     </strong>
-                    이전 글이 없습니다.
+                    <?php $prpg_title ?>
                 </span>
             </a>
         </li>
         <li class="notice_list_next">
-            <a href="">
+            <a href="view.php?n_idx=<?php echo $next_page; ?>">
                 <span>
                     <strong>
                         <i class="fa-solid fa-chevron-down"></i>
                         다음글
                     </strong>
-                    이전 글이 없습니다.
+                    <?php $nxpg_title ?>
                 </span>
             </a>
         </li>
     </ul>
+
+
+<!-- 이전페이지는 1보다 작을 수 없다.
+
+다음페이지 <  전체 페이지보다 클 수 없다. -->
 
     <!-- 콘텐트 영역 종료 -->
 

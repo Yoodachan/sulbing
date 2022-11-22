@@ -12,7 +12,7 @@ $ps_code = $_POST["ps_code"];
 $addr1 = $_POST["addr1"];
 $addr2 = $_POST["addr2"];
 $addr3 = $_POST["addr3"];
-$marketing = $_POST["apply_marketing"];
+$marketing = isset($_POST["apply_marketing"])?  $_POST["apply_marketing"] : "n";
 
 //새로 추가
 
@@ -25,7 +25,7 @@ $reg_date = date("Y-m-d");
 
 
 
-// // 값 확인
+// 값 확인
 // echo "<p> 이름 : ".$u_name."</p>";
 // echo "<p> 아이디 : ".$u_id."</p>";
 // echo "<p> 비밀번호 : ".$pwd."</p>";
@@ -61,9 +61,16 @@ $sql .= "'$u_name', '$u_id', '$pwd',";
 $sql .= "'$mobile', '$birth', '$email',";
 $sql .= "'$ps_code', '$addr1', '$addr2', '$addr3', ";
 $sql .= "'$marketing', '$reg_date');";
+// echo $sql;
+// exit; 
 
 
 mysqli_query($dbcon, $sql);
+
+
+$_SESSION["w_name"] = $array["u_name"];
+$_SESSION["w_id"] = $array["u_id"];
+
 
 
 mysqli_close($dbcon);

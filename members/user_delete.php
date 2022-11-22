@@ -1,7 +1,5 @@
 <?php
 // 세션으로 데이터 가져오기
-/* session_start();
-$s_idx =  isset($_SESSION["s_idx"])?  $_SESSION["s_idx"] : ""; */
 include "../inc/session.php";
 
 // 로그인 사용자만 접근
@@ -14,13 +12,15 @@ include "../inc/dbcon.php";
 $sql = "select * from users where idx=$s_idx;";
 
 // 쿼리 실행
+
+
 $result = mysqli_query($dbcon, $sql);
 
 // DB에서 데이터 가져오기
 // mysqi_fetch_row(쿼리실행문) -- 필드순서
 // mysqi_fetch_array(쿼리실행문) -- 필드이름
 // mysqi_num_rows(쿼리실행문) -- 전체 행 개수
-$array = mysqli_fetch_array($result);
+
 ?>
 
 

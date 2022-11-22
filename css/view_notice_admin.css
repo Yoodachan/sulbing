@@ -236,17 +236,17 @@ strong i {
 
 
 .btn_submit {
-  color: #999;
-  background-color: #fff;
-}
-.btn_del {
-  background-color: #999;
+  background-color: #cdbbac;
   color: #fff;
 }
 
-.btn_del:hover,
-.btn_submit:hover {
-  background-color: #796150;
+.btn_del {
+  color: #999;
+  background-color: #fff;
+}
+
+.btn_del:hover {
+  background-color: #666;
   color: #fff;
   transition:all 0.3s;
 }

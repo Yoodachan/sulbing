@@ -2,11 +2,7 @@
 // 작성자 입력을 위한 session 가져오기
 include "../inc/session.php";
 
-// 테이블 이름
-$table_name = "notice";
-
 // 이전 페이지에서 값 가져오기
-$cate = $_POST["cate"];
 $n_title = $_POST["n_title"];
 $n_content = $_POST["n_content"];
 
@@ -14,7 +10,7 @@ $n_content = $_POST["n_content"];
 if($_FILES["up_file"] != NULL){
     $tmp_name = $_FILES["up_file"]["tmp_name"];
     $f_name = $_FILES["up_file"]["name"];
-    $up = move_uploaded_file($tmp_name, "../../data/$f_name");
+    $up = move_uploaded_file($tmp_name, "../data/$f_name");
 };
 /* echo $_FILES["up_file"]["tmp_name"]."/";
 echo $_FILES["up_file"]["name"]."/";
@@ -40,11 +36,11 @@ exit; */
 include "../inc/dbcon.php";
 
 // 쿼리 작성
-$sql = "insert into $table_name(";
-$sql .= "cate, n_title, n_content, writer, w_date, ";
+$sql = "insert into notice(";
+$sql .= "n_title, n_content, writer, w_date, ";
 $sql .= "f_name, f_type, f_size";
 $sql .= ") values(";
-$sql .= "'$cate', '$n_title', '$n_content', '$s_name', '$w_date', ";
+$sql .= "'$n_title', '$n_content', '$s_name', '$w_date', ";
 $sql .= "'$f_name', '$f_type', '$f_size'";
 $sql .= ");";
 /* echo $sql;
@@ -60,7 +56,7 @@ mysqli_close($dbcon);
 // 리디렉션
 echo "
     <script type=\"text/javascript\">
-        location.href = \"list_all.php\";
+        location.href = \"list.php\";
     </script>
     ";
 ?>

@@ -83,9 +83,9 @@ Table명 : notice
 * 테이블 수정
 alter table notice add column f_name varchar(50) after w_date;
 alter table notice add column f_type varchar(50) after f_name;
-alter table notice add column f_size  varchar(50) after f_type;
+alter table notice add column f_size varchar(50) after f_type;
 
-alter table notice add column cate  varchar(10) after idx;
+-- alter table notice change column f_data f_size varchar(50);
 
 * 테이블 목록 확인
 show tables;
