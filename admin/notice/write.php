@@ -46,9 +46,9 @@ include "../inc/admin_check.php";
   <link rel="stylesheet" href="../../css/header_and_footer.css">
 
   <!-- 뉴스&공지사항 작성 js -->
-  <script defer src="../../JS/write_notice.js"></script>
+  <script defer src="../../js/write_notice.js"></script>
   <!-- 헤더 & 푸터 js -->
-  <script defer src="../../JS/header_and_footer.js"></script>
+  <script defer src="../../js/header_and_footer.js"></script>
 
     <title> 뉴스&공지사항 작성 | 설빙 </title>
 </head>

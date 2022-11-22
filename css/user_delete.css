@@ -73,7 +73,7 @@
   }
   
   .title_left {
-    background-image: url(../IMAGES/ico_tit_arrow_left.jpg);
+    background-image: url(../images/ico_tit_arrow_left.jpg);
     left: 100px;
     width:44px;
     height:13px;
@@ -81,7 +81,7 @@
   
   .title_right {
     right: 100px;
-    background-image: url(../IMAGES/ico_tit_arrow_right.jpg);
+    background-image: url(../images/ico_tit_arrow_right.jpg);
     width:44px;
     height:13px;
   }

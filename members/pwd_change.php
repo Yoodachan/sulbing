@@ -74,9 +74,9 @@ $array = mysqli_fetch_array($result);
   <link rel="stylesheet" href="../css/header_and_footer.css">
 
   <!-- 비밀번호 변경 js -->
-  <script defer src="../JS/pwd_change.js"></script>
+  <script defer src="../js/pwd_change.js"></script>
   <!-- 헤더 & 푸터 js -->
-  <script defer src="../JS/header_and_footer.js"></script>
+  <script defer src="../js/header_and_footer.js"></script>
 
 
 </head>

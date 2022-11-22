@@ -42,9 +42,9 @@
   <link rel="stylesheet" href="../css/header_and_footer.css">
 
   <!-- 메인 js -->
-  <script defer src="../JS/welcome.js"></script>
+  <script defer src="../js/welcome.js"></script>
   <!-- 헤더 & 푸터 js -->
-  <script defer src="../JS/header_and_footer.js"></script>
+  <script defer src="../js/header_and_footer.js"></script>
 
   <title>회원 가입 완료 | 설빙</title>
 </head>
@@ -79,7 +79,7 @@
     <div class="register_inner">
 
         <div class=inner_top>
-          <img class="register_img anime_off" src="../IMAGES/img_register_complate_character.png" alt="설빙 캐릭터 그림">
+          <img class="register_img anime_off" src="../images/img_register_complate_character.png" alt="설빙 캐릭터 그림">
         </div>
 
         <div class="inner_bottom">

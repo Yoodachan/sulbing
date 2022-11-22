@@ -43,11 +43,11 @@
   <link rel="stylesheet" href="./css/header_and_footer.css">
 
   <!-- Bx 슬라이더 -->
-  <script defer src="./JS/jquery.bxslider.js"></script>
+  <script defer src="./js/jquery.bxslider.js"></script>
   <!-- 메인 js -->
-  <script defer src="./JS/index.js"></script>
+  <script defer src="./js/index.js"></script>
   <!-- 헤더 & 푸터 js -->
-  <script defer src="./JS/header_and_footer.js"></script>
+  <script defer src="./js/header_and_footer.js"></script>
 
   <title>설빙</title>
 </head>
@@ -56,10 +56,10 @@
     <div class="top_banner">
       <!-- 가맹상담문의 이동 -->
       <div class="top_link_wrap">
-        <img src="./IMAGES/img_top_banner_220630.jpg" alt="알림 배너" />
+        <img src="./images/img_top_banner_220630.jpg" alt="알림 배너" />
         <button type="button"><i class="fa-solid fa-x"></i></button>
         <a class="top_link_ko1" href="#" title="국내 가맹점 문의 이동"></a>
-        <a class="top_link_ko2" href="./IMAGES/img_01.png" download title="회사 소개서 다운로드"></a>
+        <a class="top_link_ko2" href="./images/img_01.png" download title="회사 소개서 다운로드"></a>
         <a class="top_link_en" href="#" title="해외 가맹점 문의 이동"></a>
       </div>
     </div>
@@ -72,7 +72,7 @@
 
   <div class="quick_on">
     <a href="#">
-      <img src="./IMAGES/img_quick_model.png">
+      <img src="./images/img_quick_model.png">
     </a>
   </div>
   <div class="top_on">
@@ -82,7 +82,7 @@
 <section class="content">
   <article id="popup">
     <div class="pop_img">
-      <img src="./IMAGES/img_pop_main_20220620.jpg">
+      <img src="./images/img_pop_main_20220620.jpg">
       <a href="#"><i class="fa-solid fa-x"></i></a>
       <form action="">
         <input type="checkbox">
@@ -93,19 +93,19 @@
   <div class="banner">
     <ul class="banner_slider">
       <li>
-        <a href="#"><img src="./IMAGES/slide_banner_01.jpg" alt="1"/></a>
+        <a href="#"><img src="./images/slide_banner_01.jpg" alt="1"/></a>
       </li>
       <li>
-        <a href="#"><img src="./IMAGES/slide_banner_02.jpg" alt="2"/></a>
+        <a href="#"><img src="./images/slide_banner_02.jpg" alt="2"/></a>
       </li>
       <li>
-        <a href="#"><img src="./IMAGES/slide_banner_03.jpg" alt="3"/></a>
+        <a href="#"><img src="./images/slide_banner_03.jpg" alt="3"/></a>
       </li>
       <li>
-        <a href="#"><img src="./IMAGES/slide_banner_04.jpg" alt="4"/></a>
+        <a href="#"><img src="./images/slide_banner_04.jpg" alt="4"/></a>
       </li>
       <li>
-        <a href="#"><img src="./IMAGES/slide_banner_05.jpg" alt="5"/></a>
+        <a href="#"><img src="./images/slide_banner_05.jpg" alt="5"/></a>
       </li>
     </ul>
     <div class="mb_hide_Pager">
@@ -121,7 +121,7 @@
             <h2>NEW</h2>
             <div class="new_item">
               <a href="#">
-                <img src="./IMAGES/new_item.png">
+                <img src="./images/new_item.png">
                 <strong>스윗캔디구슬설빙</strong>
               </a>
             </div>
@@ -134,31 +134,31 @@
             <div class="hot_item_list">
               <div class="hot_item_01">
                 <a href="#">
-                  <img src="./IMAGES/hot_item_01.png">
+                  <img src="./images/hot_item_01.png">
                   <strong>통통새우볶음밥</strong>
                 </a>
               </div>
               <div class="hot_item_02">
                 <a href="#">
-                  <img src="./IMAGES/hot_item_02.png">
+                  <img src="./images/hot_item_02.png">
                   <strong>콜드브루라떼</strong>
                 </a>
               </div>
               <div class="hot_item_03">
                 <a href="#">
-                  <img src="./IMAGES/hot_item_03.png">
+                  <img src="./images/hot_item_03.png">
                   <strong>콜드브루아메리카노</strong>
                 </a>
               </div>
               <div class="hot_item_04">
                 <a href="#">
-                  <img src="./IMAGES/hot_item_04.png">
+                  <img src="./images/hot_item_04.png">
                   <strong>킹망고설빙</strong>
                 </a>
               </div>
               <div class="hot_item_05">
                 <a href="#">
-                  <img src="./IMAGES/hot_item_05.png">
+                  <img src="./images/hot_item_05.png">
                   <strong>반숙김치볶음밥</strong>
                 </a>
               </div>
@@ -217,7 +217,7 @@
           <ul>
             <li class="top_notice">
               <div class="notice_img">
-                <img src="./IMAGES/notice_01.png">
+                <img src="./images/notice_01.png">
               </div>
               <div class="notice_text">
                 <p>Notice</p>
@@ -228,7 +228,7 @@
             </li>
             <li class="bottom_notice">
               <div class="notice_img">
-                <img src="./IMAGES/notice_02.png">
+                <img src="./images/notice_02.png">
               </div>
               <div class="notice_text">
                 <p>Notice</p>
@@ -343,7 +343,7 @@
 
       <div class="main_sns_banner">
         <a href="#" class="sns_banner_1">
-          <img src="./IMAGES/style_bottom_img_01.png">
+          <img src="./images/style_bottom_img_01.png">
           <div>
             <strong>
               #EVENT
@@ -376,7 +376,7 @@
           </div>
         </a>
         <a href="#" class="sns_banner_2">
-          <img src="./IMAGES/style_bottom_img_02.png">
+          <img src="./images/style_bottom_img_02.png">
           <div>
             <strong>
               찬바람이 뺨을 스치는 오늘🍂
@@ -394,7 +394,7 @@
           </div>
         </a>
         <a href="#" class="sns_banner_3">
-          <img src="./IMAGES/style_bottom_img_03.png">
+          <img src="./images/style_bottom_img_03.png">
           <div>
             <strong>
               #EVENT
@@ -432,7 +432,7 @@
           </div>
         </a>
         <a href="#" class="sns_banner_4">
-          <img src="./IMAGES/style_bottom_img_04.png">
+          <img src="./images/style_bottom_img_04.png">
           <div>
             <strong>
               #EVENT
@@ -464,7 +464,7 @@
           </div>
         </a>
         <a href="#" class="sns_banner_5">
-          <img src="./IMAGES/style_bottom_img_05.png">
+          <img src="./images/style_bottom_img_05.png">
           <div>
             <strong>
               #로투스
@@ -486,7 +486,7 @@
           </div>
         </a>
         <a href="#" class="sns_banner_6">
-          <img src="./IMAGES/style_bottom_img_06.png">
+          <img src="./images/style_bottom_img_06.png">
           <div>
             <strong>
               맛있는 건 먹고 싶지만

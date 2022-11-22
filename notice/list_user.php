@@ -105,9 +105,9 @@ if($e_pageNum > $total_page){
   <link rel="stylesheet" href="../css/header_and_footer.css">
 
   <!-- 뉴스&공지사항 리스트 js -->
-  <script defer src="../JS/list_notice_user.js"></script>
+  <script defer src="../js/list_notice_user.js"></script>
   <!-- 헤더 & 푸터 js -->
-  <script defer src="../JS/header_and_footer.js"></script>
+  <script defer src="../js/header_and_footer.js"></script>
 
 
 

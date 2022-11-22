@@ -42,7 +42,7 @@ top: 25px;
 }
 
 .title_left {
-background-image: url(../IMAGES/ico_tit_arrow_left.jpg);
+background-image: url(../images/ico_tit_arrow_left.jpg);
 left: 40px;
 width:44px;
 height:13px;
@@ -50,7 +50,7 @@ height:13px;
 
 .title_right {
 right: 40px;
-background-image: url(../IMAGES/ico_tit_arrow_right.jpg);
+background-image: url(../images/ico_tit_arrow_right.jpg);
 width:44px;
 height:13px;
 }
@@ -154,13 +154,13 @@ font-weight: bold;
 }
 
 .link_kakaostory p {
-  background-image: url(../IMAGES/ico_share_kakaoStory.jpg);
+  background-image: url(../images/ico_share_kakaoStory.jpg);
 }
 .link_kakao p {
-  background-image: url(../IMAGES/ico_share_kakao.jpg);
+  background-image: url(../images/ico_share_kakao.jpg);
 }
 .link_facebook p {
-  background-image: url(../IMAGES/ico_share_facebook.jpg);
+  background-image: url(../images/ico_share_facebook.jpg);
 }
 
 

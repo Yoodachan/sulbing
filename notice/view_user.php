@@ -77,9 +77,9 @@ $w_date = substr($array["w_date"], 0, 10);
   <link rel="stylesheet" href="../css/header_and_footer.css">
 
   <!-- 뉴스&공지사항 상세 js -->
-  <script defer src="../JS/view_notice_user.js"></script>
+  <script defer src="../js/view_notice_user.js"></script>
   <!-- 헤더 & 푸터 js -->
-  <script defer src="../JS/header_and_footer.js"></script>
+  <script defer src="../js/header_and_footer.js"></script>
 
     <title> 뉴스&공지사항 상세 | 설빙 </title>
 

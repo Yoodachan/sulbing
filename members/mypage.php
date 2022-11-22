@@ -44,9 +44,9 @@
     <link rel="stylesheet" href="../css/header_and_footer.css">
 
     <!-- 마이페이지 js -->
-    <script defer src="../JS/mypage.js"></script>
+    <script defer src="../js/mypage.js"></script>
     <!-- 헤더 & 푸터 js -->
-    <script defer src="../JS/header_and_footer.js"></script>
+    <script defer src="../js/header_and_footer.js"></script>
 
     <title> 마이페이지 | 설빙</title>
 </head>

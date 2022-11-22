@@ -70,9 +70,9 @@ $result = mysqli_query($dbcon, $sql);
   <link rel="stylesheet" href="../css/header_and_footer.css">
 
   <!-- 회원탈퇴 js -->
-  <script defer src="../JS/user_delete.js"></script>
+  <script defer src="../js/user_delete.js"></script>
   <!-- 헤더 & 푸터 js -->
-  <script defer src="../JS/header_and_footer.js"></script>
+  <script defer src="../js/header_and_footer.js"></script>
 
 
 </head>

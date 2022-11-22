@@ -24,7 +24,7 @@
     width: 20px;
     height: 20px;
     margin: 15px auto 15px;
-    background-image: url(../IMAGES/ico_google_translate.png);
+    background-image: url(../images/ico_google_translate.png);
     background-repeat: no-repeat;
 }
 
@@ -339,7 +339,7 @@
     height: 230px;
     width: 190px;
     margin: 20px 20px 0px 0px;
-    background-image: url(../IMAGES/img_gnb_model.png);
+    background-image: url(../images/img_gnb_model.png);
     background-repeat: no-repeat;
 }
 
@@ -499,5 +499,5 @@
     position: absolute;
     bottom: 0px;
     right: 0px;
-    background-image: url(../IMAGES/logo.jpg);
+    background-image: url(../images/logo.jpg);
 }

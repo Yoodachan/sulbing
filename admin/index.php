@@ -64,9 +64,9 @@ exit;
 
 
     <!-- 메인 어드민 js -->
-    <script defer src="../JS/index_a.js"></script>
+    <script defer src="../js/index_a.js"></script>
     <!-- 헤더 & 푸터 js -->
-    <script defer src="../JS/header_and_footer.js"></script>
+    <script defer src="../js/header_and_footer.js"></script>
 
     <title>설빙 | 관리자 페이지</title>
 </head>

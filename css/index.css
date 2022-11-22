@@ -392,7 +392,7 @@ right: 20px;
 .bottom_left a::before {
     width: 100px;
     height: 120px;
-    content: url(../Images/main_menu_character.png);
+    content: url(../images/main_menu_character.png);
     background-size: cover;
     display: block;
     margin: 40px auto 0px;
@@ -442,7 +442,6 @@ right: 20px;
 .menu_5,.menu_6,.menu_7 {
     border-right: 1px solid #f4eae2;
 }
-
 
 
 .menu_1 a::before {

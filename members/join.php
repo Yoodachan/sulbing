@@ -50,9 +50,9 @@
   <link rel="stylesheet" href="../css/header_and_footer.css">
 
   <!-- 회원가입 js -->
-  <script defer src="../JS/join.js"></script>
+  <script defer src="../js/join.js"></script>
   <!-- 헤더 & 푸터 js -->
-  <script defer src="../JS/header_and_footer.js"></script>
+  <script defer src="../js/header_and_footer.js"></script>
 
 
     <title>회원 가입 | 설빙</title>

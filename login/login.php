@@ -44,9 +44,9 @@
     <link rel="stylesheet" href="../css/header_and_footer.css">
 
     <!-- 로그인 js -->
-    <script defer src="../JS/login.js"></script>
+    <script defer src="../js/login.js"></script>
     <!-- 헤더 & 푸터 js -->
-    <script defer src="../JS/header_and_footer.js"></script>
+    <script defer src="../js/header_and_footer.js"></script>
 
     <title> 로그인 | 설빙</title>
 </head>

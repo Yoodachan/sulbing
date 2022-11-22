@@ -96,9 +96,9 @@ $next_page = ($array["idx"]+1);
   <link rel="stylesheet" href="../../css/header_and_footer.css">
 
   <!-- 뉴스&공지사항 js -->
-  <script defer src="../../JS/view_notice_admin.js"></script>
+  <script defer src="../../js/view_notice_admin.js"></script>
   <!-- 헤더 & 푸터 js -->
-  <script defer src="../../JS/header_and_footer.js"></script>
+  <script defer src="../../js/header_and_footer.js"></script>
 
     <title> 뉴스&공지사항 상세 | 설빙 </title>
 
