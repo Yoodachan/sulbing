@@ -30,8 +30,15 @@ quick_banner()
 
 
 
+let top_on = document.getElementsByClassName('top_on')[0];
 
 
+
+top_on.addEventListener('click',
+function () {
+  window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
+}
+)
 
 
 

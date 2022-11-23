@@ -37,9 +37,9 @@
     <!-- 초기값 리셋 css -->
     <link rel="stylesheet" href="../css/reset.css">
     <!-- 마이페이지 css -->
-    <link rel="stylesheet" href="../CSS/mypage.css">
+    <link rel="stylesheet" href="../css/mypage.css">
     <!-- 애니메이션 css -->
-    <link rel="stylesheet" href="../CSS/anime.css">
+    <link rel="stylesheet" href="../css/anime.css">
     <!-- 헤더 & 푸터 css -->
     <link rel="stylesheet" href="../css/header_and_footer.css">
 
@@ -64,12 +64,12 @@
     <div class="common_title">
       <div class="inner_title drop_down_off">
         <span class="title_left left_move_off"></span>
-        <h2 class="title_text"><a href="./Sulbing_join_유다찬.html">마이페이지</a></h2>
+        <h2 class="title_text"><a href="../index.php">마이페이지</a></h2>
         <span class="title_right right_move_off"></span>
       </div>
 
       <ul class="location">
-        <li><a href="./Sulbing_index_유다찬.html">홈</a></li>
+        <li><a href="../index.php">홈</a></li>
         <li><p>마이페이지</p></li>
       </ul>
     </div>

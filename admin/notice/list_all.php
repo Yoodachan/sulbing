@@ -205,6 +205,7 @@ if($e_pageNum > $total_page){
             </td>
             <!-- 제목 -->
             <td class="notice_content_title">
+                
                 <a href="view.php?n_idx=<?php echo $array["idx"]; ?>">
                 <?php echo $i; ?>
                 .

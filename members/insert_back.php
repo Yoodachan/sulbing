@@ -23,6 +23,27 @@ $reg_date = date("Y-m-d");
 
 
 
+
+
+// 값 확인
+// echo "<p> 이름 : ".$u_name."</p>";
+// echo "<p> 아이디 : ".$u_id."</p>";
+// echo "<p> 비밀번호 : ".$pwd."</p>";
+// echo "<p> 전화번호 : ".$mobile."</p>";
+// echo "<p> 이메일 : ".$email."</p>";
+
+// echo "<p> 생년월일 : ".$birth."</p>";
+// echo "<p> 우편번호 : ".$ps_code."</p>";
+// echo "<p> 주소1 : ".$addr1."</p>";
+// echo "<p> 주소2 : ".$addr2."</p>";
+// echo "<p> 주소3 : ".$addr3."</p>";
+
+// echo "<p> 마케팅 : ".$marketing."</p>";
+
+// echo "<p> 가입일 : ".$reg_date."</p>"; 
+
+// exit;
+
 include "../inc/dbcon.php";
 
 session_start();
@@ -80,6 +101,3 @@ echo "
         location.href = \"welcome.php\";
     </script>
     ";
-
-
-?>

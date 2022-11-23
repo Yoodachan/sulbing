@@ -79,7 +79,8 @@ body {
 /* 사용자 관리 시작 */
 
 
-.user_menu_wrap {
+.user_menu_wrap,
+.board_menu_wrap {
     display: flex;
     width: 300px;
     height: 60px;
@@ -95,7 +96,8 @@ body {
     position: relative;
 }
 
-.user_menu_wrap span {
+.user_menu_wrap span,
+.board_menu_wrap span {
     display: block;
     width: 220px;
     height: 60px;
@@ -104,7 +106,28 @@ body {
     color: #666666;
 }
 
-.user_menu_wrap i {
+.user_menu_inner,
+.board_menu_inner {
+    width: 300px;
+    min-height: 60px;
+    line-height: 60px;
+    font-size: 22px;
+    color: #666666;
+}
+
+
+.user_menu_list a,
+.board_menu_list a {
+    display: block;
+    padding-left: 20px;
+    border-bottom: 1px #f0f0f0 solid;
+    border-right: 1px #f0f0f0 solid;
+}
+
+
+
+ .fa-caret-left,
+.fa-caret-down {
     width: 60px;
     height: 60px;
     line-height: 60px;
@@ -115,43 +138,9 @@ body {
     right: 0px;
 }
 
-.user_menu_inner {
-    width: 300px;
-    min-height: 60px;
-    line-height: 60px;
-    font-size: 22px;
-    color: #666666;
+.fa-caret-left {
+    display: none;
 }
-.user_menu_inner a {
-    display: block;
-    padding-left: 20px;
-    border-bottom: 1px #f0f0f0 solid;
-    border-right: 1px #f0f0f0 solid;
-}
-
-
-
-/* .user_label>span {
-    display: block;
-    border: 2px solid red;
-    position: relative;
-}
-.user_label>span>p {
-    display: block;
-    width: 250px;
-    height: 60px;
-    position:absolute;
-    left: 0px;
-    border: 2px solid red;
-}
-.user_label>span>i {
-    width: 30px;
-    display: block;
-    position: absolute;
-    bottom: 18px;
-    right: 30%;
-}
- */
 
 
 .gnb {

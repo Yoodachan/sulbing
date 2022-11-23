@@ -105,7 +105,9 @@ mysqli_close($dbcon);
 
             <p>
                 <label for="b_content">내용</label>
-                <textarea cols="60" rows="10" name="b_content" id="b_content"><?php echo $array["b_content"]; ?></textarea>
+                <textarea cols="60" rows="10" name="b_content" id="b_content">
+                    <?php echo $array["b_content"]; ?>
+                </textarea>
             </p>
 
             <p>

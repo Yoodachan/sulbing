@@ -17,7 +17,7 @@
         <li><span>마케팅 제휴 이메일: marketing@sulbing.com</span></li>
         <li>COPYRIGHT SULBING 2013 ALL RIGHTS RESERVED.</li>
       </ul>
-      <p title="설빙 로고">
+      <a href="#"><p title="설빙 로고"></p></a>
     </div>
   </div>
 </footer>

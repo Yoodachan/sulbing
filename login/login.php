@@ -37,9 +37,9 @@
     <!-- 초기값 리셋 css -->
     <link rel="stylesheet" href="../css/reset.css">
     <!-- 로그인 css -->
-    <link rel="stylesheet" href="../CSS/login.css">
+    <link rel="stylesheet" href="../css/login.css">
     <!-- 애니메이션 css -->
-    <link rel="stylesheet" href="../CSS/anime.css">
+    <link rel="stylesheet" href="../css/anime.css">
     <!-- 헤더 & 푸터 css -->
     <link rel="stylesheet" href="../css/header_and_footer.css">
 
@@ -96,7 +96,7 @@
             </p>
             <fieldset class="captacha">
               <legend>자동등록방지</legend>
-              <div class="g-recaptcha" data-sitekey="6Le-vuwiAAAAAN4vjU1juzYfnTVnWaQV1hcE9-Fx"></div>
+              <div class="g-recaptcha" data-sitekey="6LdvnikjAAAAAKbKx7tukUeukjwThKhwq1Fe0KJj"></div>
             </fieldset>
             <label id="id_save_wrap" for="id_save">
               <p  class="id_save_inner">

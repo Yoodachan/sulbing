@@ -1,3 +1,4 @@
+  
   <!-- 헤더 영역 시작 -->
 
   <?php include "session.php"; ?>
@@ -24,15 +25,15 @@
 
       <ul class="head_menu">
       <?php if(!$s_idx){ ?>
-        <li class="login_menu"><a href="http://localhost/web_project/login/login.php">로그인</a></li>
-        <li class="join_menu"><a href="http://localhost/web_project/members/join.php">회원가입</a></li>
+        <li class="login_menu"><a href="../login/login.php">로그인</a></li>
+        <li class="join_menu"><a href="../members/join.php">회원가입</a></li>
       <?php } else if($s_id == "admin"){ ?>
-        <li class="admin_page"><a href="http://localhost/web_project/admin/index.php">관리자 페이지</a></li>
-        <li class="logout"><a href="http://localhost/web_project/login/logout.php">로그아웃</a></li>
-        <li class="user_info"><a href="http://localhost/web_project/members/user_info.php">마이페이지</a></li>
+        <li class="admin_page"><a href="../index.php">관리자 페이지</a></li>
+        <li class="logout"><a href="../login/logout.php">로그아웃</a></li>
+        <li class="user_info"><a href="../../members/user_info.php">마이페이지</a></li>
         <?php } else{ ?>
-        <li class="logout"><a href="http://localhost/web_project/login/logout.php">로그아웃</a></li>
-        <li class="user_info"><a href="http://localhost/web_project/members/user_info.php">마이페이지</a></li>
+        <li class="logout"><a href="../login/logout.php">로그아웃</a></li>
+        <li class="user_info"><a href="../../members/user_info.php">마이페이지</a></li>
         <?php }; ?>
         <li class="user_help"><a href="#">고객센터</a></li>
       </ul>
@@ -43,10 +44,10 @@
       <div class="GNB">
         <nav class="gnb_box">
           <h1 id="logo">
-            <a href="http://localhost/web_project/index.php">설빙</a>
+            <a href="../index.php">설빙</a>
           </h1>
           <ul class="gnb_list">
-            <li><a href="#">브랜드</a></li>
+            <li><a href="../notice/list_all.php">브랜드</a></li>
             <li><a href="#">메뉴</a></li>
             <li><a href="#">이벤트</a></li>
             <li><a href="#">게시판</a></li>
@@ -55,10 +56,9 @@
           </ul>
           <div class="gnb_sns">
             <div class="sns_list">
-              <a class="instagram" href="#"><i class="fa-brands fa-instagram"></i></a>
-              <a class="facebook" href="#"><i class="fa-brands fa-facebook"></i></a>
-              <a class="youtube" href="#"><i class="fa-brands fa-youtube"></i></a>
-              <a class="tiktok" href="#"><i class="fa-brands fa-tiktok"></i></a>
+              <a class="instagram" href="https://www.instagram.com/sulbing.official/"><i class="fa-brands fa-instagram"></i></a>
+              <a class="facebook" href="https://www.facebook.com/sulbing"><i class="fa-brands fa-facebook"></i></a>
+              <a class="youtube" href="https://www.youtube.com/@user-cz1no6iw9k"><i class="fa-brands fa-youtube"></i></a>
             </div>
           </div>
         </nav>
@@ -73,7 +73,7 @@
               <ul class="gnb_brand">
                 <li><a href="#">브랜드</a></li>
                 <li><a href="#">설빙 광고/영상</a></li>
-                <li><a href="http://localhost/web_project/notice/list_all.php">뉴스&공지사항</a></li>
+                <li><a href="../notice/list_all.php">뉴스&공지사항</a></li>
               </ul>
             </li>
       

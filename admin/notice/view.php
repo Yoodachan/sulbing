@@ -31,7 +31,28 @@ $w_date = substr($array["w_date"], 0, 10);
 
 
 $prev_page = ($array["idx"]-1);
+
+
 $next_page = ($array["idx"]+1);
+
+// echo $array["n_title"];
+// exit;
+
+
+// $total = "select count(*) as idx from $table_name;";
+// echo $total;
+// exit;
+
+// $total_cnt = mysqli_query($dbcon, $total);
+// echo $total_cnt;
+// exit;
+
+// $total_wrap = mysqli_num_rows($total_cnt);
+
+// if($next_page > $total_wrap){
+//     $next_page = $total_wrap;
+// };
+
 
 
 // 현재 페이지 기준 이전 페이지 제목 가져와서 sql에 넣기

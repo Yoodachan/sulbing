@@ -139,25 +139,14 @@ mysqli_close($dbcon);
             </tr>
 
             <tr class="notice_content_wrap">
-            <td colspan="2" class="v_text">
-            <?php
-            if($array["f_name"] && substr($array["f_type"], 0, 5) == "image"){
-                $f_name = $array["f_name"];
-                echo "
-                    <p>
-                        <img src=\"../../data/$f_name\" alt=\"\">
-                    </p>
-                ";
-            };
-            ?>
-            <?php 
-            // textarea의 엔터를 br로 변경
-            // str_repalce("어떤 문자를", "어떤 문자로", "어떤 값에서");
-            $n_content = str_replace("\n", "<br>", $array["n_content"]);
-            $n_content = str_replace(" ", "&nbsp;", $n_content);
-            echo $n_content; 
-            ?>
-            </td>
+                <th>
+                    <label for="n_content">내용</label>
+                </th>
+                <td>      
+                    <textarea cols="60" rows="10" name="n_content" id="n_content" >
+                    <?php echo $array["n_content"] ?>
+                    </textarea>
+                </td>
             </tr>
             <tr class="notice_file_wrap">
                 <th>

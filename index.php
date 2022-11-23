@@ -66,7 +66,7 @@
 
     <!-- 헤더 영역 시작 -->
 
-    <?php include "inc/header.php"; ?>
+    <?php include "inc/header_index.php"; ?>
 
     <!-- 헤더 영역 종료 -->
 
@@ -76,7 +76,7 @@
     </a>
   </div>
   <div class="top_on">
-    <a href="#"><i class="fa-solid fa-chevron-up"></i></a>
+    <p href=""><i class="fa-solid fa-chevron-up"></i></p>
   </div>
 </header>
 <section class="content">
@@ -334,11 +334,11 @@
   <div class="main_sns_wrap">
     <div class="sns_inner">
       <h3>설빙 SNS</h3>
+
       <div class="main_sns_icon">
-        <a class="instagram" href="#"><i class="fa-brands fa-instagram"></i></a>
-        <a class="facebook" href="#"><i class="fa-brands fa-facebook"></i></a>
-        <a class="youtube" href="#"><i class="fa-brands fa-youtube"></i></a>
-        <a class="tiktok" href="#"><i class="fa-brands fa-tiktok"></i></a>
+        <a class="instagram" href="https://www.instagram.com/sulbing.official/"><i class="fa-brands fa-instagram"></i></a>
+        <a class="facebook" href="https://www.facebook.com/sulbing"><i class="fa-brands fa-facebook"></i></a>
+        <a class="youtube" href="https://www.youtube.com/@user-cz1no6iw9k"><i class="fa-brands fa-youtube"></i></a>
       </div>
 
       <div class="main_sns_banner">

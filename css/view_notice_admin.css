@@ -105,7 +105,7 @@ font-weight: bold;
 }
 
 .v_title {
-  display: flex;
+  display: inline-block;
   width: 900px;
   margin: 0 auto;
   padding: 20px 160px 20px 20px;
@@ -173,12 +173,23 @@ font-weight: bold;
   border-bottom: 1px solid #e5e5e5;
 }
 
-.notice_view_content td {
+.v_text {
   display: block;
   margin: 0 auto;
   font-size: 16px;
   text-align: center;
 }
+
+.v_text p {
+  font-size: 22px;
+}
+
+.v_text img {
+  max-width: 800px;
+  display: block;
+  margin: 0 auto;
+}
+
 
 .notice_list {
   display: flex;

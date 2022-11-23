@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -53,6 +54,7 @@
   <!-- 헤더 영역 시작 -->
 
   <?php include "../inc/header.php"; ?>
+  <?php include "../inc/welcome_session.php"; ?>
 
   <!-- 헤더 영역 종료 -->
 
@@ -61,12 +63,12 @@
     <div class="common_title">
       <div class="inner_title drop_down_off">
         <span class="title_left left_move_off"></span>
-        <h2 class="title_text"><a href="./Sulbing_join_유다찬.html">회원 가입 완료</a></h2>
+        <h2 class="title_text"><a href="../index.php">회원 가입 완료</a></h2>
         <span class="title_right right_move_off"></span>
       </div>
 
       <ul class="location">
-        <li><a href="./Sulbing_index_유다찬.html">홈</a></li>
+        <li><a href="../index.php">홈</a></li>
         <li><p>회원가입</p></li>
         <li><p>회원가입 완료</p></li>
       </ul>
@@ -95,12 +97,10 @@
               
               <strong class="welcome_clear welcome_down_off_00">설빙 회원 가입이 완료 되었습니다.</strong>
               <strong class="welcome_service welcome_down_off_01">설빙의 다양한 서비스를 이용해 보세요!</strong>
-              <i class="welcome_user welcome_down_off_02"><em><?php echo $s_name; ?></em>님의 설빙 아이디는<em><?php echo $s_id; ?></em>입니다.</i>
+              <i class="welcome_user welcome_down_off_02"><em> <?php echo $w_name; ?> </em> 님의 설빙 아이디는 <em> <?php echo $w_id; ?> </em>입니다.</i>
               <a class="home_btn btn_left_off" href="../index.php">홈으로 이동</a>
             </div>
         </div>
-
-
 
     </div>
   </section>

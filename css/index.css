@@ -41,6 +41,7 @@
 
 
 .top_on {
+    display: block;
     transform: scale(0);
     /* transform: scale(0) !important; */
     width: 60px;
@@ -56,6 +57,7 @@
     right: 10px;
     z-index: 10;
     transition: 0.2s;
+    cursor:pointer;
 }
 
 .top_on.animate {
@@ -63,13 +65,15 @@
 }
 
 
-.top_on a {
+.top_on p {
+    width: 60px;
+    height: 60px;
     position: relative;
 }
 .top_on i {
     position: absolute;
     top: 18px;
-    left: -11px;
+    left: 18px;
 }
 
 
@@ -907,23 +911,18 @@ right: 20px;
 }
 .main_sns_icon .fa-instagram {
     font-size: 19px;
-    top: 9px;
-    left: 10px;
+    top: 14px;
+    left: 16px;
 }
 .main_sns_icon .fa-facebook {
     font-size: 20px;
-    top: 8px;
-    left: 8px;
+    top: 14px;
+    left: 14px;
 }
 .main_sns_icon .fa-youtube {
     font-size: 20px;
-    top: 9px;
-    left: 7px;
-}
-.main_sns_icon .fa-tiktok {
-    font-size: 20px;
-    top: 9px;
-    left: 10px;
+    top: 14px;
+    left: 13px;
 }
 
 .main_sns_banner {

@@ -264,9 +264,9 @@
 .gnb_sns a,
 .main_sns_icon a {
     display: block;
-    width: 40px;
-    height: 40px;
-    border: 2px solid #7b6454;
+    width: 50px;
+    height: 50px;
+    border: 1px solid #7b6454;
     color: #7b6454;
     border-radius: 50%;
     position:relative;
@@ -281,35 +281,27 @@
 }
 .gnb_sns .fa-instagram {
     font-size: 19px;
-    top: 9px;
-    left: 10px;
+    top: 14px;
+    left: 16px;
 }
 .gnb_sns .instagram {
     animation: fadeinicon 0.5s ease-in-out;
 }
 .gnb_sns .fa-facebook {
     font-size: 20px;
-    top: 8px;
-    left: 8px;
+    top: 14px;
+    left: 14px;
 }
 .gnb_sns .facebook {
     animation: fadeinicon 1.0s ease-in-out;
 }
 .gnb_sns .fa-youtube {
     font-size: 20px;
-    top: 9px;
-    left: 7px;
+    top: 14px;
+    left: 13px;
 }
 .gnb_sns .youtube {
     animation: fadeinicon 0.5s ease-in-out;
-}
-.gnb_sns .fa-tiktok {
-    font-size: 20px;
-    top: 9px;
-    left: 10px;
-}
-.gnb_sns .tiktok {
-    animation: fadeinicon 1.0s ease-in-out;
 }
 
 /* 네비게이션바 메뉴  */

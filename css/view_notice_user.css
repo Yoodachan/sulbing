@@ -180,6 +180,17 @@ font-weight: bold;
   text-align: center;
 }
 
+.notice_view_content td p {
+  font-size: 22px;
+}
+
+.notice_view_content td img {
+  max-width: 800px;
+  
+  display: block;
+  margin: 0 auto;
+}
+
 .notice_list {
   display: flex;
   width: 900px;

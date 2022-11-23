@@ -6,7 +6,7 @@ include "../inc/login_check.php";
 include "../inc/dbcon.php";
 
 // 쿼리 작성
-$sql = "select * from members;";
+$sql = "select * from users;";
 
 // 쿼리 전송
 $result = mysqli_query($dbcon, $sql);
@@ -123,7 +123,7 @@ if($e_pageNum > $total_page){
 
             // paging : 시작번호부터 페이지 당 보여질 목록수 만큼 데이터 구하는 쿼리 작성
             // limit 몇번부터, 몇 개
-            $sql = "select * from members limit $start, $list_num;";
+            $sql = "select * from users limit $start, $list_num;";
             // echo $sql;
             /* exit; */
 

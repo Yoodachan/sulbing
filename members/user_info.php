@@ -60,9 +60,6 @@ $array = mysqli_fetch_array($result);
   integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ="
   crossorigin="anonymous"></script>
 
-  <!-- 다음 주소 api -->
-  <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script> 
-
   <!-- 초기값 리셋 css -->
   <link rel="stylesheet" href="../css/reset.css">
   <!-- 회원 정보 css -->
@@ -93,11 +90,11 @@ $array = mysqli_fetch_array($result);
       <div class="common_title">
         <div class="inner_title drop_down_off">
           <span class="title_left left_move_off"></span>
-          <h2 class="title_text"><a href="./Sulbing_join_유다찬.html">개인정보 관리</a></h2>
+          <h2 class="title_text"><a href="../index.php">개인정보 관리</a></h2>
           <span class="title_right right_move_off"></span>
         </div>
         <ul class="location">
-          <li><a href="./Sulbing_index_유다찬.html">홈</a></li>
+          <li><a href="../index.php">홈</a></li>
           <li><p>개인정보 관리</p></li>
         </ul>
       </div>

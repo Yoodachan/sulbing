@@ -84,37 +84,38 @@ exit;
         <ul class="bar_menu_wrap">
 
             <li class="admin_label">
-                <a href="index.php">관리자 페이지</a>
+                <a href="index.php"> <i class="fas fa-file-alt"></i> 관리자 페이지</a>
             </li>
 
             <li class="user_label">
                 <button type="button" class="user_menu_wrap">
-                <span>사용자 관리</span>
-                <i class="fa-solid fa-caret-up"></i>
+                <span> <i class="fa-sharp fa-solid fa-wrench"></i> 사용자 관리</span>
+                <i class="fa-solid fa-caret-left"></i>
                 <i class="fa-solid fa-caret-down"></i>
                 </button>
                 
                 <ul class="user_menu_inner">
-                    <li>
-                        <a href="">사용자 목록</a>
+                    <li class="user_menu_list list_off">
+                        <a href="./members/list.php"><i class="fa-sharp fa-solid fa-table-list"></i> 사용자 목록</a>
                     </li>
                 </ul>
             </li>
 
-            <!-- <li class="board_label"><span>게시판 관리</span>
+            <li class="board_label">
+                <button type="button" class="board_menu_wrap">
+                <span> <i class="fa-sharp fa-solid fa-wrench"></i> 게시판 관리</span>
+                <i class="fa-solid fa-caret-left"></i>
                 <i class="fa-solid fa-caret-down"></i>
-                <ul class="board_menu">
-                    <li><a href="">
-                        공지사항 목록
-                        </a>
-                    </li>
-
-                    <li><a href="">
-                        게시판 목록
-                        </a>
+                </button>
+                
+                <ul class="board_menu_inner">
+                    <li class="board_menu_list list_off">
+                        <a href="./notice/list_all.php"><i class="fa-sharp fa-solid fa-table-list"></i> 뉴스&공지사항 목록</a>
                     </li>
                 </ul>
-            </li> -->
+            </li>
+
+
         </ul>
     </nav>
 
