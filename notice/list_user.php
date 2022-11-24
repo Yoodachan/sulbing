@@ -109,6 +109,8 @@ if($e_pageNum > $total_page){
   <!-- 헤더 & 푸터 js -->
   <script defer src="../js/header_and_footer.js"></script>
 
+ 
+
 
 
     <title>설빙 | 뉴스&공지사항</title>
@@ -264,7 +266,7 @@ if($e_pageNum > $total_page){
         </p>
         <?php if($s_id == "admin"){ ?>
         <p class="admin_area">
-        <a href="write_user.php">글 작성</a>
+        <a href="../admin/notice/write.php">글 작성</a>
         </p>
         <?php }; ?>
 

@@ -60,6 +60,8 @@ $array = mysqli_fetch_array($result);
   integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ="
   crossorigin="anonymous"></script>
 
+  <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+
   <!-- 초기값 리셋 css -->
   <link rel="stylesheet" href="../css/reset.css">
   <!-- 회원 정보 css -->

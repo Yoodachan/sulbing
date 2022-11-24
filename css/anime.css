@@ -1,6 +1,19 @@
 
 /* 드롭다운 애니 */
 
+
+/* header */
+
+.gnb_down {
+  
+
+}
+
+.gnb_up {
+
+}
+
+
 .drop_down_off {
     opacity: 0;
     transform: translate3d(0, -100%, 0);

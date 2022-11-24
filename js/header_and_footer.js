@@ -1,11 +1,37 @@
 // 네브바 호버
-// $(".test").mouseenter(function(){
-//     $(".GNB_menu").slideDown()
+
+
+
+
+
+// let gnb_body = document.getElementsByClassName('test')[0];
+
+// let gnb = document.getElementsByClassName('gnb')[0];
+
+
+
+// gnb_body.mouseover(function(){
+//   gnb.classList.remove('drop_down_off')
+//   gnb.classList.add('drop_down_on')
 // })
 
-// $(".test").mouseleave(function(){
-//     $(".GNB_menu").slideUp();
+// gnb_body.mouseout(function(){
+//   gnb.classList.remove('drop_down_on')
+//   gnb.classList.add('drop_down_off')
 // })
+
+
+
+
+
+
+$(".test").mouseenter(function(){
+    $(".GNB_menu").slideDown()
+})
+
+$(".test").mouseleave(function(){
+    $(".GNB_menu").slideUp();
+})
 
 //네브바 픽스드
 function nav_scroll () {

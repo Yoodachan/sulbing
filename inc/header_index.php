@@ -40,6 +40,7 @@
 
     </div>
     <div class="test">
+      <!-- <div class="GNB drop_down_off"> -->
       <div class="GNB">
         <nav class="gnb_box">
           <h1 id="logo">

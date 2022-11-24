@@ -13,10 +13,10 @@ function login_form_check(){
         return false;
     };
 
-    if (grecaptcha.getResponse() == "") {
-        alert("리캡챠를 체크해야 합니다.");
-        return false;
-    }
+    // if (grecaptcha.getResponse() == "") {
+    //     alert("리캡챠를 체크해야 합니다.");
+    //     return false;
+    // }
 }
 
 
