@@ -26,11 +26,11 @@
 
 
 $(".test").mouseenter(function(){
-    $(".GNB_menu").slideDown()
+    $(".GNB_menu").stop().slideDown()
 })
 
 $(".test").mouseleave(function(){
-    $(".GNB_menu").slideUp();
+    $(".GNB_menu").stop().slideUp();
 })
 
 //네브바 픽스드
