@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
@@ -164,8 +164,12 @@
               </div>
             </div>
             <div class="hot_item_pager">
-              <button class="hot_item_prev" type="button"><i class="fa-solid fa-arrow-left"></i></button>
-              <button class="hot_item_next" type="button"><i class="fa-solid fa-arrow-right"></i></button>
+              <button class="hot_item_prev" type="button">
+                <i class="fa-solid fa-arrow-left"></i>
+              </button>
+              <button class="hot_item_next" type="button">
+                <i class="fa-solid fa-arrow-right"></i>
+              </button>
             </div>
           </div>
         </div>

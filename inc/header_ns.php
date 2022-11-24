@@ -66,7 +66,7 @@
               <ul class="gnb_brand">
                 <li><a href="#">브랜드</a></li>
                 <li><a href="#">설빙 광고/영상</a></li>
-                <li><a href="../notice/list_all.php">뉴스&공지사항</a></li>
+                <li><a href="../notice/list_user.php">뉴스&공지사항</a></li>
               </ul>
             </li>
       

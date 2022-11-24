@@ -169,16 +169,6 @@ input::placeholder {
   font-size: 20px;
 }
 
-/* 인풋 박스 호버 */
-/* #u_name:hover,#u_id:hover,
-#pwd:hover,#re_pwd:hover,
-#mobile:hover,#email_id:hover,
-#birth:hover,#ps_code:hover,
-#addr1:hover,#addr2:hover,#addr3:hover {
-  border: 1px solid #e2e2e2;
-} */
-
-
 /* 인풋 박스 포커스 */
 #u_name:focus,#u_id:focus,
 #pwd:focus,#re_pwd:focus,
@@ -186,7 +176,6 @@ input::placeholder {
 #birth:focus,#ps_code:focus,
 #addr1:focus,#addr2:focus,#addr3:focus {
   outline: none;
-  /* border: 1px solid #e2e2e2; */
   z-index:3;
 }
 

@@ -1,7 +1,3 @@
-// 애니메이션
-
-// 타이틀 텍스트 동작 1 (타이틀 텍스트가 떨어짐)
-
 let inner_title = document.getElementsByClassName('inner_title')[0];
 let title_left = document.getElementsByClassName('title_left')[0];
 let title_right = document.getElementsByClassName('title_right')[0];
@@ -15,6 +11,7 @@ function title_anime () {
     title_right.classList.add('right_move_on');
 }
 title_anime ()
+
 
 // title_after.addEventListener('click',function(){console.log("dd ")})
 // // title_move.addEventListener('click',
@@ -92,11 +89,6 @@ let birth_check = false;
 // 주소
 let addr_check = false;
 var d_addr3 = document.getElementById("d_addr3");
-
-// 약관 확인
-// let apply_text_wrap = document.getElementById("apply_text_wrap");
-
-// let apply_check = false;
 
 // 버튼 포커스
 var postal_btn = document.getElementById("postal_btn");

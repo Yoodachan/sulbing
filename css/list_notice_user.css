@@ -234,12 +234,17 @@ font-weight: bold;
 .notice_content_title {
   display: block;
   width: 500px;
+  height: 70px;
   font-size: 16px;
   color: #222222;
   overflow: hidden;  		
   text-overflow: ellipsis;  	
   white-space: nowrap; 
   font-weight: bold;
+}
+
+.notice_content_title a {
+  line-height: 50px;
 }
 .w_date,.date,
 .n_cnt,.cnt {
