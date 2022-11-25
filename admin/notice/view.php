@@ -221,7 +221,7 @@ $next_page = ($array["idx"]+1);
                         <i class="fa-solid fa-chevron-up"></i>
                         이전글
                     </strong>
-                    <?php $prpg_title ?>
+                    <?php //$prpg_title ?>
                 </span>
             </a>
         </li>
@@ -232,7 +232,7 @@ $next_page = ($array["idx"]+1);
                         <i class="fa-solid fa-chevron-down"></i>
                         다음글
                     </strong>
-                    <?php $nxpg_title ?>
+                    <?php //$nxpg_title ?>
                 </span>
             </a>
         </li>

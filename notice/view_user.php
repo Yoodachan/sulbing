@@ -29,6 +29,11 @@ mysqli_query($dbcon, $sql);
 
 $w_date = substr($array["w_date"], 0, 10);
 
+$prev_page = ($array["idx"]-1);
+
+
+$next_page = ($array["idx"]+1);
+
 ?>
 
 
@@ -165,31 +170,43 @@ $w_date = substr($array["w_date"], 0, 10);
         </tr>
         </tbody>
     </table>
+    <?php if ($s_id == "admin") { ?>
+
     <div class="notice_list">
-      <a class="notice_list_btn" href="list_user.php">목록</a>
+        <a class="notice_list_btn btn_submit" href="../admin/notice/modify.php?n_idx=<?php echo $array["idx"]; ?>">수정</a>
+        <a class="notice_list_btn" href="list_user.php">목록</a>
+        <a class="notice_list_btn btn_del" href="../admin/notice/delete.php?n_idx=<?php echo $array["idx"]; ?>">삭제</a>
     </div>
+
+    <?php } else { ?>
+
+    <div class="notice_list">
+        <a class="notice_list_btn" href="list_user.php">목록</a>
+    </div>
+
+    <?php } ?>
 
 
     <ul class="notice_list_nav">
         <li class="notice_list_prev">
-            <a href="">
+            <a href="view_user.php?n_idx=<?php echo $prev_page; ?>">
                 <span>
                     <strong>
                         <i class="fa-solid fa-chevron-up"></i>
                         이전글
                     </strong>
-                    이전 글이 없습니다.
+                    <!-- 이전 글이 없습니다. -->
                 </span>
             </a>
         </li>
         <li class="notice_list_next">
-            <a href="">
+            <a href="view_user.php?n_idx=<?php echo $next_page; ?>">
                 <span>
                     <strong>
                         <i class="fa-solid fa-chevron-down"></i>
                         다음글
                     </strong>
-                    이전 글이 없습니다.
+                    <!-- 이전 글이 없습니다. -->
                 </span>
             </a>
         </li>
