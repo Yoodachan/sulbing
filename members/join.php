@@ -93,7 +93,7 @@
         <section class="id_wrap">
             <label for="u_id">아이디</label>
             <div class="id_bt_wrap">
-                <input id="u_id" name="u_id" class="n_border" type="text" placeholder="영소문자, 숫자 4~12자" onkeyup="u_id_text_on(this.value)">
+                <input id="u_id" name="u_id" class="n_border" type="text" placeholder="영소문자, 숫자 4~12자" oninput="u_id_text_on(this.value)">
                 <button id="d_id" class="off_view" type="button" title="입력한 내용 삭제"><i class="fa-solid fa-x"></i></button>
             </div>
             <span id="id_text_wrap"  class="err_txt">

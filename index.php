@@ -260,23 +260,7 @@
               <button type="button"><i class="fa-solid fa-magnifying-glass"></i></button>
               <select class="select_local">
                 <option>시도</option>
-                <!-- <option>경기</option>
-                <option>인천</option> -->
                 <option>서울</option>
-                <!-- <option>세종</option>
-                <option>대구</option>
-                <option>울산</option>
-                <option>부산</option>
-                <option>경남</option>
-                <option>경북</option>
-                <option>대전</option>
-                <option>강원</option>
-                <option>충남</option>
-                <option>충북</option>
-                <option>전남</option>
-                <option>전북</option>
-                <option>광주</option>          
-                <option>제주</option> -->
               </select>
               <select class="select_region" value="서울">
                 <option></option>
