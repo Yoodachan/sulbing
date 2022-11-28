@@ -85,6 +85,7 @@ ul {
 
 button {
     appearance: none;
+    cursor: pointer;
 }
 
 table,tr,th,td {

@@ -1,45 +1,76 @@
-
 // 상단 팝업창 제거
-$(".top_link_wrap>button").click(function(){
-    $(".top_banner").slideUp("slow")
-})
-// 콘텐츠 팝업창 제거
-$("#popup a").click(function(){
-  $("#popup").hide()
+let top_link_btn = document.getElementsByClassName('top_link_btn')[0];
+top_link_btn.addEventListener('click', function () {
+  let top_banner = document.getElementsByClassName('top_banner')[0];
+  top_banner.style.height = '0';
+  top_banner.style.visibility = 'hidden';
 })
 
-//광고 퀵업
-function quick_banner () {
-  $(window).scroll(function(){
-    var y = window.scrollY
-    const quick = $(".quick_on")
-    if (y>=700 && y<=2800) {
-      quick.fadeIn()
-    }
-    else {
-      quick.fadeOut()
-    }
-  });
-};
-quick_banner()
-
-//스크롤 올리기 버튼
-$(window).scroll(function(){
-  var y = window.scrollY
-  const top_on = $(".top_on")
-  if (y>=300) {
-    top_on.addClass('animate')
+//스크롤 모델
+window.addEventListener('scroll' , function () {
+  let quick = document.getElementsByClassName('quick_model')[0];
+  // 스크롤 변수 선언
+  var scroll_y = window.scrollY;
+  if ( scroll_y >= 700 && scroll_y <=2800 ) {
+    quick.classList.remove('quick_off');
+    quick.classList.add('quick_on');
   }
   else {
-    top_on.removeClass('animate')}
+    quick.classList.remove('quick_on');
+    quick.classList.add('quick_off');
+  }
+})
+
+//스크롤 버튼 생성
+
+// 스크롤 버튼
+var top_on = document.getElementsByClassName('top_on')[0];
+
+window.addEventListener('scroll' , function () {
+  // 스크롤 변수 선언
+  var scroll_y = window.scrollY;
+  if ( scroll_y >= 300 ) {
+    top_on.classList.remove('top_scale_off');
+    top_on.classList.add('top_scale_on');
+  }
+  else {
+    top_on.classList.remove('top_scale_on');
+    top_on.classList.add('top_scale_off');
+  }
 });
 
-let top_on = document.getElementsByClassName('top_on')[0];
+// 스크롤 버튼 클릭
 top_on.addEventListener('click',
 function () {
-  window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
-}
-);
+  window.scroll({ top: 0, left: 0, behavior: 'smooth' });
+});
+
+
+// 콘텐츠 팝업창 제거
+let pop_btn = document.getElementsByClassName('pop_btn')[0];
+pop_btn.addEventListener('click', function(){
+  let pop_wrap = document.getElementById('popup_wrap');
+  pop_wrap.style.opacity = '0';
+  pop_wrap.style.visibility = 'hidden';
+})
+
+let dd = document.getElementsByClassName('dd')[0];
+let change = 1;
+dd.addEventListener('click', function () {
+  let banner_list = document.getElementsByClassName('test_banner_list')[0];
+  if (change == 1) {
+    banner_list.style.transform = "translateX(-100vw)";
+    change += 1;
+  }
+  else if (change == 2) {
+    banner_list.style.transform = "translateX(-200vw)";
+    change += 1;
+  }
+  else if (change == 3) {
+    banner_list.style.transform = "translateX(-300vw)";
+    change += 1;
+  }
+})
 
 
 // 메인 배너 슬라이드
