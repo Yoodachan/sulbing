@@ -1,4 +1,5 @@
-<div class="head_top">
+
+<header class="head_top">
     <div class="head_inner">
       <div class="language_wrap">
         <p title="구글 아이콘"></p>
@@ -17,18 +18,18 @@
 
 
       <ul class="head_menu">
-      <?php if(!$s_idx){ ?>
-        <li class="login_menu"><a href="../login/login.php">로그인</a></li>
-        <li class="join_menu"><a href="../members/join.php">회원가입</a></li>
-      <?php } else if($s_id == "admin"){ ?>
-        <li class="admin_page"><a href="../index.php">관리자 페이지</a></li>
-        <li class="logout"><a href="../login/logout.php">로그아웃</a></li>
-        <li class="user_info"><a href="../../members/user_info.php">마이페이지</a></li>
-        <?php } else{ ?>
-        <li class="logout"><a href="../login/logout.php">로그아웃</a></li>
-        <li class="user_info"><a href="../../members/user_info.php">마이페이지</a></li>
-        <?php }; ?>
-        <li class="user_help"><a href="#">고객센터</a></li>
+        <?php if(!$s_idx){ ?>
+          <li class="login_menu"><a href="../login/login.php">로그인</a></li>
+          <li class="join_menu"><a href="../members/join.php">회원가입</a></li>
+        <?php } else if($s_id == "admin"){ ?>
+          <li class="admin_page"><a href="../index.php">관리자 페이지</a></li>
+          <li class="logout"><a href="../login/logout.php">로그아웃</a></li>
+          <li class="user_info"><a href="../../members/user_info.php">마이페이지</a></li>
+          <?php } else{ ?>
+          <li class="logout"><a href="../login/logout.php">로그아웃</a></li>
+          <li class="user_info"><a href="../../members/user_info.php">마이페이지</a></li>
+          <?php }; ?>
+          <li class="user_help"><a href="#">고객센터</a></li>
       </ul>
 
 
@@ -112,5 +113,4 @@
         </div>
       </div>
     </div>
-  </div>
-</div>
+</header>

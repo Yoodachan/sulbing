@@ -58,38 +58,49 @@
   <title>설빙</title>
 </head>
 <body>
-<header>
-
-
-  <!-- 가맹상담문의 이동 -->
-  <div class="top_banner">
-    <div class="top_link_wrap">
-      <button class="top_link_btn" type="button"><i class="fa-solid fa-x"></i></button>
-      <a class="top_link_ko1" href="#" title="국내 가맹점 문의 이동"></a>
-      <a class="top_link_ko2" href="./images/img_01.png" download title="회사 소개서 다운로드"></a>
-      <a class="top_link_en" href="#" title="해외 가맹점 문의 이동"></a>
-    </div>
-  </div>
 
   <!-- 헤더 영역 시작 -->
 
-  <?php include "inc/header_index.php"; ?>
+  <header id="header">
+
+    <!-- 가맹상담 배너 -->
   
+    <div class="top_banner">
+       <div class="top_link_wrap">
+         <button class="top_link_btn" type="button"><i class="fa-solid fa-x"></i></button>
+         <a class="top_link_ko1" href="#" title="국내 가맹점 문의 이동"></a>
+         <a class="top_link_ko2" href="./images/img_01.png" download title="회사 소개서 다운로드"></a>
+         <a class="top_link_en" href="#" title="해외 가맹점 문의 이동"></a>
+       </div>
+    </div>
+  
+    <!-- GNB 불러오기 -->
+  
+    <?php include "inc/header_index.php"; ?>
+  
+  
+    <!-- 스크롤 모델 -->
+    <div class="quick_wrap">
+      <a href="#" class="quick_model quick_off" title="상담/문의 이동"></a>
+    </div>
+  
+  
+    <!-- 스크롤 버튼 -->
+  
+    <button type="button" class="top_on top_scale_off">
+      <i class="fa-solid fa-chevron-up"></i>
+    </button>
+
+  </header>
+
   <!-- 헤더 영역 종료 -->
 
-  <!-- 스크롤 모델 -->
-  <div class="quick_wrap">
-    <a href="#" class="quick_model quick_off" title="상담/문의 이동"></a>
-  </div>
 
-  <!-- 스크롤 버튼 -->
-  <button type="button" class="top_on top_scale_off">
-    <i class="fa-solid fa-chevron-up"></i>
-  </button>
 
-</header>
-
+<!-- 콘텐트 영역 시작 -->
 <section class="content">
+
+  <!-- 입점후보 팝업 -->
 
   <article id="popup_wrap">
     <div class="pop_banner">
@@ -102,99 +113,90 @@
     </div>
   </article>
 
-  <div class="banner">
-    <ul class="banner_slider">
-      <li>
-        <a href="#"><img src="./images/slide_banner_01.jpg" alt="1"/></a>
-      </li>
-      <li>
-        <a href="#"><img src="./images/slide_banner_02.jpg" alt="2"/></a>
-      </li>
-      <li>
-        <a href="#"><img src="./images/slide_banner_03.jpg" alt="3"/></a>
-      </li>
-      <li>
-        <a href="#"><img src="./images/slide_banner_04.jpg" alt="4"/></a>
-      </li>
-      <li>
-        <a href="#"><img src="./images/slide_banner_05.jpg" alt="5"/></a>
-      </li>
-    </ul>
-    <div class="mb_hide_Pager">
-      <button class="mb_Prev" type="button" title="prev"><i class="fa-sharp fa-solid fa-chevron-left"></i></button>
-      <button class="mb_Next" type="button" title="next"><i class="fa-sharp fa-solid fa-chevron-right"></i></button>
+  <!-- 슬라이드 배너 -->
+
+  <div class="banner_wrap">
+    <div class="banner_list">
+      <div class="banner_item bn_item_01"> <a href="#"></a> </div>
+      <div class="banner_item bn_item_02"> <a href="#"></a> </div>
+      <div class="banner_item bn_item_03"> <a href="#"></a> </div>
+      <div class="banner_item bn_item_04"> <a href="#"></a> </div>
+      <div class="banner_item bn_item_05"> <a href="#"></a> </div>
+    </div>
+    <button class="bn_prev" type="button" title="prev"><i class="fa-sharp fa-solid fa-chevron-left"></i></button>
+    <button class="bn_next" type="button" title="next"><i class="fa-sharp fa-solid fa-chevron-right"></i></button>
+    <div class="bn_pager_wrap">
+      <div class="bn_pager_list">
+        <span class="bn_text_wrap">
+          <p class="bn_text_now"></p>  <p class="bn_text_all"></p>
+        </span>
+        <button class="bn_stop" type="button"><i id="bn_simbol" class="fa-solid fa-pause"></i></button>
+      </div>
     </div>
   </div>
 
-  <div class="test_banner_wrap">
-    <div class="test_banner_list">
-      <div class="item_01"></div>
-      <div class="item_02"></div>
-      <div class="item_03"></div>
-      <div class="item_04"></div>
-      <div class="item_05"></div>
-      <div class="item_06"></div>
-    </div>
-    <div class="dd">dd</div>
-  </div>
+  <!-- 메뉴 소개 슬라이드 -->
 
-  <div class="product_menu">
-    <div class="inner_menu">
-      <div class="menu_top">
-        <div class="top_left">
-            <h2>NEW</h2>
+  <div class="product_wrap">
+    <div class="product_wrap_inner">
+      <div class="product_list">
+        <div class="new_product_wrap">
+            <h2 class="new_product_cate">NEW</h2>
             <div class="new_item">
-              <a href="#">
-                <img src="./images/new_item.png">
-                <strong>스윗캔디구슬설빙</strong>
+              <a class="new_item_link" href="#">
+                <span class="new_item_img" title="스윗캔디구슬설빙 이미지"></span>
+                <strong class="new_item_title">스윗캔디구슬설빙</strong>
               </a>
             </div>
         </div>
 
-        <div class="top_right">
-          <h2>HOT</h2>
+
+        <div class="product_slider">
+          <h2 class="product_slider_cate">HOT</h2>
           
           <div class="hot_item_wrap">
             <div class="hot_item_list">
-              <div class="hot_item_01">
-                <a href="#">
-                  <img src="./images/hot_item_01.png">
-                  <strong>통통새우볶음밥</strong>
+              <div class="product">
+                <a class="hot_item_link" href="#">
+                  <span class="product_slider_img hot_item_01"></span>
+                  <strong class="hot_item_title">통통새우볶음밥</strong>
                 </a>
               </div>
-              <div class="hot_item_02">
-                <a href="#">
-                  <img src="./images/hot_item_02.png">
-                  <strong>콜드브루라떼</strong>
+
+              <div class="product">
+                <a class="hot_item_link" href="#">
+                  <span class="product_slider_img hot_item_02"></span>
+                  <strong class="hot_item_title">콜드브루라떼</strong>
                 </a>
               </div>
-              <div class="hot_item_03">
-                <a href="#">
-                  <img src="./images/hot_item_03.png">
-                  <strong>콜드브루아메리카노</strong>
+
+              <div class="product">
+                <a class="hot_item_link" href="#">
+                  <span class="product_slider_img hot_item_03"></span>
+                  <strong class="hot_item_title">콜드브루아메리카노</strong>
                 </a>
               </div>
-              <div class="hot_item_04">
-                <a href="#">
-                  <img src="./images/hot_item_04.png">
-                  <strong>킹망고설빙</strong>
+
+              <div class="product">
+                <a class="hot_item_link" href="#">
+                  <span class="product_slider_img hot_item_04"></span>
+                  <strong class="hot_item_title">킹망고설빙</strong>
                 </a>
               </div>
-              <div class="hot_item_05">
-                <a href="#">
-                  <img src="./images/hot_item_05.png">
-                  <strong>반숙김치볶음밥</strong>
+
+              <div class="product">
+                <a class="hot_item_link" href="#">
+                  <span class="product_slider_img hot_item_05"></span>
+                  <strong class="hot_item_title">반숙김치볶음밥</strong>
                 </a>
               </div>
             </div>
-            <div class="hot_item_pager">
-              <button class="hot_item_prev" type="button">
-                <i class="fa-solid fa-arrow-left"></i>
-              </button>
-              <button class="hot_item_next" type="button">
-                <i class="fa-solid fa-arrow-right"></i>
-              </button>
-            </div>
+            <button class="hot_item_prev" type="button">
+              <i class="fa-solid fa-arrow-left"></i>
+            </button>
+            <button class="hot_item_next" type="button">
+              <i class="fa-solid fa-arrow-right"></i>
+            </button>
           </div>
         </div>
       </div>

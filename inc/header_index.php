@@ -4,7 +4,7 @@
 
   <!-- 헤더 영역 종료 -->
   
-  <div class="head_top">
+  <header class="head_top">
     <div class="head_inner">
       <div class="language_wrap">
         <p title="구글 아이콘"></p>
@@ -119,5 +119,4 @@
         </div>
       </div>
     </div>
-  </div>
-</div>
+  </header>

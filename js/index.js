@@ -38,7 +38,6 @@ window.addEventListener('scroll' , function () {
     top_on.classList.add('top_scale_off');
   }
 });
-
 // 스크롤 버튼 클릭
 top_on.addEventListener('click',
 function () {
@@ -54,56 +53,73 @@ pop_btn.addEventListener('click', function(){
   pop_wrap.style.visibility = 'hidden';
 })
 
-let dd = document.getElementsByClassName('dd')[0];
+
+
+let bn_prev = document.getElementsByClassName('bn_prev')[0];
+let bn_next = document.getElementsByClassName('bn_next')[0];
 let change = 1;
-dd.addEventListener('click', function () {
-  let banner_list = document.getElementsByClassName('test_banner_list')[0];
-  if (change == 1) {
-    banner_list.style.transform = "translateX(-100vw)";
+let bn_items = document.getElementsByClassName('banner_item').length
+let banner_list = document.getElementsByClassName('banner_list')[0];
+let bn_text_now = document.getElementsByClassName('bn_text_now')[0];
+let bn_text_all = document.getElementsByClassName('bn_text_all')[0];
+
+let bn_stop = document.getElementsByClassName('bn_stop')[0];
+
+let bn_simbol = document.getElementById('bn_simbol');
+
+
+let bn_auto = null;
+
+window.onload = function () {
+  banner_list.style.width = bn_items+'00vw';
+  bn_text_now.textContent = change;
+  bn_text_all.textContent = bn_items;
+  bn_auto = setInterval( next_banner , 6000 );
+}
+
+function next_banner () {
+  if (change <= bn_items ) {
+    banner_list.style.transition ='all 0.6s';
+    banner_list.style.transform = `translateX(-` +change+ `00vw)`;
     change += 1;
+  };
+  if (change > bn_items  ) {
+    banner_list.style.transition ='all 0.6s';
+    banner_list.style.transform = `translateX(0vw)`;
+    change = 1;
+  };
+  bn_text_now.textContent = change;
+};
+
+// 2안
+bn_next.addEventListener( 'click' , next_banner );
+
+
+
+bn_prev.addEventListener('click', function () {
+  if ( change >= 2 ) {
+    let rechange = change-=1;
+    rechange -=1
+    banner_list.style.transform = `translateX(-`+ rechange +`00vw)`;
   }
-  else if (change == 2) {
-    banner_list.style.transform = "translateX(-200vw)";
-    change += 1;
+  bn_text_now.textContent = change;
+})
+
+bn_stop.addEventListener('click', function () {
+  if (bn_simbol.classList.contains('fa-play')) {
+    bn_simbol.classList.add('fa-pause');
+    bn_simbol.classList.remove('fa-play');
+    bn_auto = setInterval( next_banner , 6000 );
   }
-  else if (change == 3) {
-    banner_list.style.transform = "translateX(-300vw)";
-    change += 1;
+  else {
+    clearTimeout( bn_auto );
+    bn_simbol.classList.remove('fa-pause');
+    bn_simbol.classList.add('fa-play');
   }
 })
 
 
-// 메인 배너 슬라이드
-const mbSlider = $('.banner_slider').bxSlider({
-    mode:"horizontal",
-    pager: false, 
-    controls: false,
-    speed: 1000,
-    auto: true,
-    autoHover: true
-});
-$(".main_Banner").mouseenter(function(){
-  $(".mb_hide_Pager").show('fast')
-})
 
-$(".main_Banner").mouseleave(function(){
-  $(".mb_hide_Pager").hide('fast')
-})
-
-$('.mb_hide_Pager').mouseenter(function(){
-  mbSlider.stopAuto() 
-})   
-$('.mb_hide_Pager').mouseleave(function(){
-  mbSlider.startAuto()
-})    
-// 메인 배너 슬라이드 버튼
-$('.mb_Prev').click(function () {
-  mbSlider.goToPrevSlide();  //이전 슬라이드 배너로 이동
- });
-
- $('.mb_Next').click(function () {
-  mbSlider.goToNextSlide();  //이전 슬라이드 배너로 이동
- });
 // 상품 소개 슬라이드
 
  const hiSlider = $('.hot_item_list').bxSlider({
@@ -118,6 +134,8 @@ $('.mb_Prev').click(function () {
   auto: true,
   autoHover: true
 });
+
+
 $(".main_Banner").mouseenter(function(){
 $(".mb_hide_Pager").show('fast')
 })
