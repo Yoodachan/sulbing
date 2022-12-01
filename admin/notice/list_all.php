@@ -30,7 +30,7 @@ $list_num = 15;
 // paging : 한 블럭 당 페이지 수
 $page_num = 7;
 
-// paging : 현재 페이지
+// paging : 현재 페이지 및 카테고리
 $page_notice = isset($_GET["page_notice"])? $_GET["page_notice"] : 1;
 $page_news = isset($_GET["page_notice"])? $_GET["page_notice"] : 1;
 $page_all = isset($_GET["page_all"])? $_GET["page_all"] : 1;
@@ -164,15 +164,21 @@ if($e_pageNum > $total_page){
         </tr>
         <?php
             // paging : 해당 페이지의 글 시작 번호 = (현재 페이지 번호 - 1) * 페이지 당 보여질 목록 수
-            $start = ($page_all - 1) * $list_num;
+            $start_all = ($page_all - 1) * $list_num;
+            $start_notice = ($page_notice - 1) * $list_num;
+            $start_news = ($page_news - 1) * $list_num;
 
             // paging : 시작번호부터 페이지 당 보여질 목록수 만큼 데이터 구하는 쿼리 작성
             // limit 몇번부터, 몇 개
+
+
             if($cate){
-                $sql = "select * from $table_name where cate='$cate' order by idx desc limit $start, $list_num;";
+                $sql = "select * from $table_name where cate='$cate' order by idx desc limit $start_all, $list_num;";
             } else{
-                $sql = "select * from $table_name order by idx desc limit $start, $list_num;";
+                $sql = "select * from $table_name order by idx desc limit $start_all, $list_num;";
             };
+
+
             // echo $sql;
             /* exit; */
 
@@ -227,6 +233,7 @@ if($e_pageNum > $total_page){
                 $i--;
             }; 
         ?>
+        
     </table>
 
     <div class="pager_wrap">
