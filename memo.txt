@@ -1,0 +1,212 @@
+
+
+뷰포트 (viewport)
+1. 디바이스의 렌더링 화면사이즈를 물리적 크기의 픽셀로 변환
+ex) 아이폰 6플러스 : 물리적 가로크기 414px
+     디스플레이 해상도 : 1080px
+     > viewport를 사용하여 414px로 변환
+2. 반응형 웹, 모바일 웹 등 미디어쿼리를 사용하는 웹 페이지에서 필수
+3. 속성
+- width = device-width
+- initial-scale=1.0
+
+
+* 준비 *
+1. 구간 별 페이지 제작
+- pc, tablet, mobile 
+-viewport 작성
+2. 큰 화면 복사해서 다른 파일 준비
+3. 복사한 파일의 css 하단에 분기점 작성
+4. 각 구간별 css 복사하여 붙여넣기
+
+* 코딩 *
+1. 통상 구간은 분기점 작성 x
+2. 중간 구간은 최소값 생략
+- 반드시 큰 구간부터 작성
+
+* css 수정 *
+1. 상위 구간과 하위 구간에 동일한 속성과 값은 하위 구간에서 삭제
+2. 상위 구간에는 있고 하위 구간에는 필요없는 속성과 값은 해당 속성을 작은 구간으로 복사해서
+기본값으로 작성
+3. 상위 구간과 하위 구간에 동일한 속성 및 다른 값인 경우 하위 구간 속성 수정 x
+4. 상위 구간에 없고 하위 구간에만 있는 속성 및 값은 하위 구간 속성 수정 x
+
+sigh_board_data
+no 
+id
+subject
+password
+name
+email
+memo
+url
+hit
+regdate
+file
+top 순서
+level 답글 깊이
+
+* 테이블 생성
+create table sing_board_data(
+    idx int auto_increment primary key,
+    b_id varchar(20) not null,
+    b_subject varchar(80) not null,
+    b_name varchar(20) not null,
+    b_pwd varchar(20) not null,
+    b_email varchar(50) not null,
+    b_memo text not null,
+    b_url varchar(80) not null,
+    b_hit int not null,
+    b_regdate int not null,
+    b_file varchar(80) not null,
+    b_top int not null,
+    level int not null
+);
+
+https://www.youtube.com/watch?v=PP6tTUIZRdA&list=PLLtzrE3hP5SQc0jE3UoWKZ3yrQTRzkKaa&index=2
+
+댓글 대댓글
+ 
+카테고리 페이지 이동
+이전 다음 페이지 타이틀
+
+네이티브앱
+안드로이드 자바 코틀린
+아이폰 c
+
+01. pwa (프로그래시브 웹앱 )
+
+배경
+2015년 구글 크롬 엔지니어 알렉스 러셀이 고안
+웹에서 출발해 앱으로 도착함
+
+특징
+웹의 장점은 그대로 유지하면서 네이티브 앱의 강점으로 무장
+네이티브 앱의 강력한 기능성과 웹의 뛰어난 접근성을 모두
+갖춘 가장 이상적인 형태의 웹앱이라는 평가
+
+네이티브 앱은 기기에 최적화된 기능을 구현하다.
+
+pwa 필수요소
+1 서비스 워커
+2 웹앱 매니페스트
+3 https로만 배포 가능함 로컬에서 테스트할땐 http도 가능
+
+주요 기능(네이티브 앱과 같은 경험)
+4 푸시 알림
+5 홈 화면에 추가
+6 웹 api
+
+2-1. pwa 필수 요소
+1. 서비스 워커
+웹 브라우저 내에 있음
+웹 페이지와 분리
+항상 실행되고 있는 백그라운드 프로그램
+캐시 관리
+
+2. 웹앱 매니페스트
+앱 소개 정보
+앱 기본 설정
+json 파일 형식
+a2hs(add to home screen)
+
+3. 보안을 강화한 'https'
+암호화와 인증을 거쳐 보안을 강화한 웹 통신 규약
+
+반응속도가 http보다 빠름
+
+pwa는 로컬에서도 동작 가능
+
+1 기본 정보 작성
+name 
+첫 화면(스플래시 스크린)에 출력 될 이름
+옴니(다운로드) 버튼에도 출력
+홈 화면 아이콘
+
+short_name
+주로 모바일에서 사용
+설치 배너에 출력
+
+description 
+웹 크롤러(검색엔진)이 정보 가져갈 떄 사용
+
+2 시작 URL 설정
+
+스코프 (scope)
+매니페스트에 정의된 내용이 적용될 수 있는 파일들의 경로 범위를 지정
+웹앱이 어느 폴더에 있는지 지정
+"." : 현재 폴더에 있는 모든 파일
+
+start_url
+프로그램을 실행하면 시작될 URL을 루트 경로(/)로 설정
+index.html 파일이 있는 폴더 지정
+
+"scope" : ".",
+"start_url" : "./",
+
+3 display : 화면 표시 방법 설정
+fullscreen
+기기의 최대 화면
+운영체제가 fullscreen을 지원하지 않으면 standalone으로 적용
+"display" : "fullscreen",
+
+standalone
+브라우저의 주소표시줄, 상태표시줄 제거하여 일반 앱처럼 표시
+가장 보편적으로 사용
+
+minimal-UI
+상단에 주소 표시줄 추가
+운영체제가 minimal-ui를 지원하지 않으면 standalone으로 적용
+
+browser
+웹 브라우저와 동일한 모습으로 실행
+
+orientation: 화면 실행 방향 설정
+
+portrait
+세로로 화면 실행
+landscape
+가로로 화면 실행
+
+"orientation" : "portrait"
+
+5 테마와 배경 화면 색상 설정
+theme_color
+앱 테마 색상 
+background_color
+앱 화면 배경 색
+
+"theme_color" : "#ffffff",
+"background_color" : "#ffffff"
+
+6 스플래시 스크린 설정
+
+src 이미지의 절대 주소 또는 상대 주소
+sizes 이미지의 픽셀 크기
+type 이미지의 파일 유형
+
+7 바로가기 설정
+
+shortcuts
+
+ms 제품군 os 아래쪽 아이콘 > 마우스 오른쪽 > 메뉴들 중 상단 메뉴
+ex) 새창
+
+name: 마우스 오른쪽 클릭 시 출력될 이름 
+
+short_name: 모바일에서 앱 설치후 클릭했을 때 출력
+
+index.html 실행 > 옴니버튼 > 다운로드 실행 > 운영체제 하단 설치된 파일에서
+
+마우스 오른쪽 > 이름에 작성된 내용과 아이콘 확인
+
+
+03-2 매니페스트 작성
+보편적으로 사용되므로 주로 템플릿 사용하여 작성함
+
+
+서비스워커 생애주기(Lifecycle)
+서비스워커 등록 
+install
+activate
+fetch ldle

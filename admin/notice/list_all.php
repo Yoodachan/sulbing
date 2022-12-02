@@ -4,7 +4,7 @@ include "../inc/admin_check.php";
 // DB 연결
 include "../inc/dbcon.php";
 
-//카테고리
+//카테고리         조건     참이면?       거짓이면?
 $cate = isset($_GET["cate"])? $_GET["cate"]: "";
 
 // 테이블 이름
@@ -43,7 +43,7 @@ $total_page = ceil($total / $list_num);
 // paging : 전체 블럭 수 = 전체 페이지 수 / 블럭 당 페이지 수
 $total_block = ceil($total_page / $page_num);
 
-// paging : 현재 블럭 번호 = 현재 페이지 번호 / 블럭 당 페이지 수
+// paging : 현재 블럭 번호 = 현재 카테고리 페이지 번호 / 블럭 당 페이지 수
     $now_block = ceil($page_all / $page_num);
 
 // paging : 블럭 당 시작 페이지 번호 = (해당 글의 블럭 번호 - 1) * 블럭 당 페이지 수 + 1
