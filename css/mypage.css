@@ -121,7 +121,6 @@ h5 {
 .my_qna {
     width: 350px;
     height: 360px;
-    border: 2px solid red;
 }
 
 .mypage_link i {
@@ -140,10 +139,9 @@ h5 {
     height: 120px;
     margin: 0 auto;
     background-repeat: no-repeat;
-    background-position: center;
     position:absolute;
     top: 30px;
-    left: 30px;
+    left: 35px;
     z-index:3;
 }
 
@@ -152,9 +150,7 @@ h5 {
   display: block;
   width: 180px;
   height: 180px;
-  margin: 0 auto;
   background-repeat: no-repeat;
-  background-position: center;
   position:absolute;
   top: 0px;
   z-index:6;
@@ -170,9 +166,10 @@ h5 {
   color: #fff;
   font-size: 80px;
   background: none;
-  margin: 50px auto 0px;
   font-style:normal;
   font-weight: bold;
+  border: 2px solid red;
+  margin: 60px auto;
 }
 
 
@@ -193,6 +190,35 @@ h5 {
 
 .qna_img_after {
   background-image: url(../images/bg_cscenter_intro_on.png);
+}
+
+
+/* mypage */
+
+/* 호버 애니메이션 */
+.link_btn_off {
+  color: #666;
+  background-color: #fff;
+}
+
+.link_btn_on {
+  color: #fff;
+  background-color: #7b6251;
+  transition: all 0.3s;
+}
+
+
+.link_img_off {
+  display: block;
+  opacity:0;
+  scale:calc(200%);
+}
+
+.link_img_on {
+  display: block;
+  opacity:1;
+  scale:calc(100%);
+  transition: all 0.6s;
 }
 
 

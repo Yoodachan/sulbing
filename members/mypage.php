@@ -84,7 +84,9 @@
           <li class="private_info">
             <a href="./users_info.php" alt="개인정보 관리 이동">
               <i class="mypage_icon">
-                <p class="mypage_img_before"></p>
+                <p class="mypage_img_before">
+                  
+                </p>
                 <p class="mypage_img_after link_img_off">
                 <i class="fa-light fa-plus"></i>
                 </p>

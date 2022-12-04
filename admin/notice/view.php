@@ -14,6 +14,13 @@ $table_name = "notice";
 // 쿼리 작성
 $sql = "select * from $table_name where idx=$n_idx;";
 
+// 내 idx보다 적은 애들 중에 제일 큰 애
+// 이전글
+
+// 내 idx보다 큰 애들중에서 가장 작은애
+// 오더바이 사용해서
+
+
 // 쿼리 전송
 $result = mysqli_query($dbcon, $sql);
 

@@ -1,0 +1,224 @@
+.scroll_guide {
+  display: none;
+}
+
+#content {
+  margin: 0 auto;
+}
+
+.cs_intro {
+  width: 1040px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+h5 {
+  display: block;
+  font-size: 1.15em;
+  color:#666;
+  line-height: 1.5;
+}
+h5 span {
+  display: block;
+
+}
+
+h5 strong {
+  display: block;
+  margin-top: 10px;
+  font-weight: 600;
+  font-size: 0.9em;
+}
+
+.cscenter_link {
+  display: flex;
+  width: 1040px;
+  height: 350px;
+  justify-content: center;
+}
+
+.faq,.qna,.qnl {
+  width: 345px;
+  height: 350px;
+}
+
+.cscenter_link li a>i {
+  display: block;
+  position: relative;
+  width: 180px;
+  height: 180px;
+  margin: 0 auto;
+  transition: all 0.6s;
+}
+.back_off {
+  background-image: url(../images/bg_cscenter_intro_off.png);
+  transform: scale(1.0);
+}
+.back_on {
+  background-image: url(../images/bg_cscenter_intro_on.png);
+  transform: scale(1.5);
+}
+
+.cscenter_link li a>i>span {
+  position: absolute;
+  top: 30px;
+  left: 30px;
+  width: 120px;
+  height: 120px;
+  background-repeat: no-repeat;
+  background-size:cover;
+}
+
+.faq_icon_off {
+  display: none;
+  /* background-image: url(../images/ico_cscenter_faq.png); */
+}
+
+.faq_icon_on i {
+  margin: 30px auto;
+  display: block;
+  width: 60px;
+  height: 60px;
+  line-height: 60px;
+  font-size: 60px;
+  font-weight: bold;
+  font-style: normal;
+  color: #fff;
+}
+
+.qna_icon::before {
+  background-image: url(../images/ico_cscenter_qna.png);
+}
+.qnl_icon::before {
+  background-image: url(../images/ico_cscenter_qna_list.png);
+}
+
+
+
+
+
+.cscenter_link a strong {
+  display: block;
+  font-size: 1.5em;
+  color: #2d2d2d;
+  text-align: center;
+  margin: 20px 0px;
+  font-weight: 800;
+}
+
+.cscenter_link a span {
+  display: block;
+  color: #666666;
+  font-size: 16px;
+  font-weight: 400;
+  margin-bottom: 15px;
+}
+
+.cscenter_link em {
+  display: block;
+}
+
+.cscenter_link span>em {
+  border: 1px solid red;
+}
+
+.cscenter_link a>em {
+  margin: 0 auto;
+  width: 105px;
+  height: 45px;
+  line-height: 45px;
+  font-size: 1.15em;
+  border: 1px #9a9a9a solid;
+  color: #666666;
+}
+
+dl {
+  width: 1040px;
+  margin: 50px auto 35px;
+  padding: 30px;
+  line-height: 1.15;
+  text-align: left;
+  background-color: #faf9f5;
+}
+dt {
+  font-size: 1.15em;
+  line-height: 1.15;
+  font-weight: 800;
+  margin-bottom: 15px;
+  margin-bottom: 15px;
+  padding: 0;
+  color: #666;
+}
+dd {
+  position: relative;
+  padding-left: 20px;
+  margin-bottom: 10px;
+  font-weight: 600;
+  color: #666;
+}
+
+dd::before {
+  position: absolute;
+  top: 8px;
+  left: 5px;
+  display: block;
+  content: "";
+  width: 2px;
+  height: 2px;
+  background-color: #000;
+}
+
+.btn_more {
+  width: 1040px;
+  border:none;
+  background-color: #fff;
+  height: 60px;
+  padding: 20px 0px;
+  border-top: 1px #9a9a9a solid;
+  border-bottom: 1px #9a9a9a solid;
+  font-weight: 400;
+  font-size: 16px;
+  color: #666;
+}
+
+.btn_more i {
+  transition: all 0.3s;
+}
+
+.table {
+  width: 1040px;
+  border-bottom: 1px solid #ddd;
+  text-align: center;
+  transition: 0.6s;
+}
+
+caption {
+  display: none;
+    
+}
+
+thead tr {
+  width: 1040px;
+}
+
+thead tr th:nth-of-type(1) {
+  width: 20%;
+}
+
+tr {
+  height: 50px;
+  line-height: 50px;
+  color: #666;
+}
+
+thead tr {
+  background-color: #f8f8f8;
+}
+
+/* anime */
+.table_off {
+  display: none;
+}
+
+.table_on {
+}

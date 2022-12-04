@@ -4,8 +4,7 @@ top_link_btn.addEventListener('click', function () {
   let top_banner = document.getElementsByClassName('top_banner')[0];
   top_banner.style.height = '0';
   top_banner.style.visibility = 'hidden';
-})
-
+});
 //스크롤 모델
 window.addEventListener('scroll' , function () {
   let quick = document.getElementsByClassName('quick_model')[0];

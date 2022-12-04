@@ -16,7 +16,7 @@
       </div>
 
       <div class="seach_wrap">
-        <form action="#">
+        <form method="get"  action="#">
           <button type="button"><i class="fa-solid fa-magnifying-glass"></i></button>
           <input type="text" placeholder="검색어를 입력해주세요">
         </form>
@@ -30,10 +30,10 @@
       <?php } else if($s_id == "admin"){ ?>
         <li class="admin_page"><a href="../index.php">관리자 페이지</a></li>
         <li class="logout"><a href="../login/logout.php">로그아웃</a></li>
-        <li class="user_info"><a href="../../members/user_info.php">마이페이지</a></li>
+        <li class="user_info"><a href="../../members/mypage.php">마이페이지</a></li>
         <?php } else{ ?>
         <li class="logout"><a href="../login/logout.php">로그아웃</a></li>
-        <li class="user_info"><a href="../../members/user_info.php">마이페이지</a></li>
+        <li class="user_info"><a href="../../members/mypage.php">마이페이지</a></li>
         <?php }; ?>
         <li class="user_help"><a href="#">고객센터</a></li>
       </ul>

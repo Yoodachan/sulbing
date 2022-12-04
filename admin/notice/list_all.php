@@ -10,30 +10,49 @@ $cate = isset($_GET["cate"])? $_GET["cate"]: "";
 // 테이블 이름
 $table_name = "notice";
 
-// 쿼리 작성
+// 대상 지정
+$where = "where 1=1 ";
+
+
 if($cate){
-    $sql = "select * from $table_name where cate='$cate';";
-} else{
-    $sql = "select * from $table_name;";
+    $where .= "and cate='$cate' ";
+}
+$type = "";
+if(!empty($_GET["type"])){
+    $type=$_GET["type"];
+}
+$search = "";
+if(!empty($_GET["search"])){
+    $search=$_GET["search"];
+}  
+if($search){
+    if($type && $type=="title"){
+        $where .= "and n_title like '%$search%' ";
+    }else if($type && $type=="content"){
+        $where .= "and n_content like '%$search%' ";
+    }else if($type && $type=="titlecontent"){
+        $where .= "and n_title like '%$search%' or n_content like '%$search%' ";
+    }
+    
 };
 
+$sql = "select * from $table_name $where";
 
-// 쿼리 전송
+
+// DB에 데이터 전송
 $result = mysqli_query($dbcon, $sql);
-
 // 전체 데이터 가져오기
 $total = mysqli_num_rows($result);
 
+
 // paging : 한 페이지 당 보여질 목록 수
-$list_num = 15;
+$list_num = 5;
 
 // paging : 한 블럭 당 페이지 수
-$page_num = 7;
+$page_num = 3;
 
 // paging : 현재 페이지 및 카테고리
-$page_notice = isset($_GET["page_notice"])? $_GET["page_notice"] : 1;
-$page_news = isset($_GET["page_notice"])? $_GET["page_notice"] : 1;
-$page_all = isset($_GET["page_all"])? $_GET["page_all"] : 1;
+$page = !empty($_GET["page"])? $_GET["page"] : 1;
 
 // paging : 전체 페이지 수 = 전체 데이터 / 페이지 당 목록 수,  ceil : 올림값, floor : 내림값, round : 반올림
 $total_page = ceil($total / $list_num);
@@ -44,7 +63,8 @@ $total_page = ceil($total / $list_num);
 $total_block = ceil($total_page / $page_num);
 
 // paging : 현재 블럭 번호 = 현재 카테고리 페이지 번호 / 블럭 당 페이지 수
-    $now_block = ceil($page_all / $page_num);
+
+    $now_block = ceil($page / $page_num);
 
 // paging : 블럭 당 시작 페이지 번호 = (해당 글의 블럭 번호 - 1) * 블럭 당 페이지 수 + 1
 $s_pageNum = ($now_block - 1) * $page_num + 1;
@@ -59,6 +79,27 @@ if($e_pageNum > $total_page){
     $e_pageNum = $total_page;
 };
 
+// paging : 해당 페이지의 글 시작 번호 = (현재 페이지 번호 - 1) * 페이지 당 보여질 목록 수
+$start_all = ($page - 1) * $list_num;
+
+// paging : 시작번호부터 페이지 당 보여질 목록수 만큼 데이터 구하는 쿼리 작성
+// limit 몇번부터, 몇 개
+
+
+$sql = "select * from $table_name $where order by idx desc limit $start_all, $list_num;";
+
+
+// DB에 데이터 전송
+$result = mysqli_query($dbcon, $sql);
+// 전체 데이터 가져오기
+$total = mysqli_num_rows($result);
+
+
+
+// DB에서 데이터 가져오기
+// pager : 글번호(역순)
+// 전체데이터 - ((현재 페이지 번호 -1) * 페이지 당 목록 수)
+$i = $total - (($page - 1) * $list_num);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -138,19 +179,24 @@ if($e_pageNum > $total_page){
   </section>
 
   <ul class="tab_menu">
-      <li><button type="button" class="tab_all">전체</button></li>
-      <li><button type="button" class="tab_news">뉴스</button></li>
-      <li><button type="button" class="tab_notice">공지사항</button></li>
+      <li><button type="button" class="tab_all <?php echo $cate=="" ? "tab_menu_on" : "tab_menu_off"?>" data-cate="">전체</button></li>
+      <li><button type="button" class="tab_news <?php echo $cate=="news" ? "tab_menu_on" : "tab_menu_off"?>" data-cate="news">뉴스</button></li>
+      <li><button type="button" class="tab_notice <?php echo $cate=="notice" ? "tab_menu_on" : "tab_menu_off"?>" data-cate="notice">공지사항</button></li>
+
   </ul>
   <div class="list_top">
-    <form class="notice_seach_wrap">
-            <select>
-                <option>제목</option>
-                <option>내용</option>
-                <option>제목+내용</option>
-            </select>
-            <input type="text" placeholder="검색어를 입력해주세요.">
-            <button type="button"><i class="fa-solid fa-magnifying-glass"></i></button>
+    <form class="notice_seach_wrap" id="search_form">
+
+        <input type="hidden" name="cate" id="cate" value="<?php echo $cate  ?>">
+        <input type="hidden" name="page" id="page" value="<?php echo $page  ?>">
+
+        <select name="type">
+            <option value="title" <?php echo $type=="title" ? "selected" : ""?>>제목</option>
+            <option value="content" <?php echo $type=="content" ? "selected" : ""?>>내용</option>
+            <option value="titlecontent" <?php echo $type=="titlecontent" ? "selected" : ""?>>제목+내용</option>
+        </select>
+        <input type="text" name="search" value="<?php echo $search  ?>" placeholder="검색어를 입력해주세요.">
+        <button><i class="fa-solid fa-magnifying-glass"></i></button>
     </form>
   </div>
 
@@ -163,36 +209,9 @@ if($e_pageNum > $total_page){
             <th class="n_mod_del">수정&삭제</th>
         </tr>
         <?php
-            // paging : 해당 페이지의 글 시작 번호 = (현재 페이지 번호 - 1) * 페이지 당 보여질 목록 수
-            $start_all = ($page_all - 1) * $list_num;
-            $start_notice = ($page_notice - 1) * $list_num;
-            $start_news = ($page_news - 1) * $list_num;
 
-            // paging : 시작번호부터 페이지 당 보여질 목록수 만큼 데이터 구하는 쿼리 작성
-            // limit 몇번부터, 몇 개
-
-
-            if($cate){
-                $sql = "select * from $table_name where cate='$cate' order by idx desc limit $start_all, $list_num;";
-            } else{
-                $sql = "select * from $table_name order by idx desc limit $start_all, $list_num;";
-            };
-
-
-            // echo $sql;
-            /* exit; */
-
-            // DB에 데이터 전송
-            $result = mysqli_query($dbcon, $sql);
-
-            // DB에서 데이터 가져오기
-            // pager : 글번호(역순)
-            // 전체데이터 - ((현재 페이지 번호 -1) * 페이지 당 목록 수)
-            $i = $total - (($page_all - 1) * $list_num);
             while($array = mysqli_fetch_array($result)){
         ?>
-
-
 
         <tr class="notice_list_content">
             <!-- 카테고리명 -->
@@ -213,7 +232,7 @@ if($e_pageNum > $total_page){
             <td class="notice_content_title">
                 
                 <a href="view.php?n_idx=<?php echo $array["idx"]; ?>">
-                <?php echo $i; ?>
+                <?php echo $array["idx"]; ?>
                 .
                 <?php echo $array["n_title"]; ?>
                 </a>
@@ -246,13 +265,13 @@ if($e_pageNum > $total_page){
             <!-- 일반 페이지 -->
             <?php
             // pager : 이전 페이지
-            if($page_all <= 1){
+            if($page <= 1){
             ?>
             <a class="prev_btn btn_off" href="list_all.php?page_all=1">
                 <i class="fa-solid fa-chevron-left"></i>
             </a>
             <?php } else{ ?>
-            <a class="prev_btn"href="list_all.php?page_all=<?php echo ($page_all - 1); ?>">
+            <a class="prev_btn"href="list_all.php?page_all=<?php echo ($page - 1); ?>">
                 <i class="fa-solid fa-chevron-left"></i>
             </a>
             <?php }; ?>
@@ -261,19 +280,19 @@ if($e_pageNum > $total_page){
             // pager : 페이지 번호 출력
             for($print_page = $s_pageNum;  $print_page <= $e_pageNum; $print_page++){
             ?>
-            <a class="page_num" href="list_all.php?page_all=<?php echo $print_page; ?>"><?php echo $print_page; ?></a>
+            <a class="page_num" data-page="<?php echo $print_page  ?>" href="list_all.php?page_all=<?php echo $print_page; ?>"><?php echo $print_page; ?></a>
             <?php }; ?>
 
             <?php
             // pager : 다음 페이지
-            if($page_all >= $total_page){
+            if($page >= $total_page){
             ?>
             <a class="next_btn btn_off" href="list_all.php?page_all=<?php echo $total_page; ?>">
                 <i class="fa-solid fa-chevron-right"></i>
             </a>
             <!-- 이전 페이지 -->
             <?php } else{ ?>
-            <a class="next_btn" href="list_all.php?page_all=<?php echo ($page_all + 1); ?>">
+            <a class="next_btn" href="list_all.php?page_all=<?php echo ($page + 1); ?>">
                 <i class="fa-solid fa-chevron-right"></i>
             </a>
             <?php }; ?>
@@ -299,3 +318,19 @@ if($e_pageNum > $total_page){
 
 </body>
 </html>
+
+
+<script>
+$(document).on("click",".tab_menu button",function(){
+    let cate = $(this).data("cate");
+    $("#cate").val(cate);
+    $("#page").val(1);
+    $("#search_form").submit();
+})
+$(document).on("click",".page_num",function(e){
+    e.preventDefault();
+    let page = $(this).data("page");
+    $("#page").val(page);
+    $("#search_form").submit();
+})
+</script>

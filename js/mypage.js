@@ -23,6 +23,8 @@ let mypage_btn = document.getElementsByClassName('link_btn')[0];
 let mypage_img_before = document.getElementsByClassName('mypage_img_before')[0];
 let mypage_img_after = document.getElementsByClassName('mypage_img_after')[0];
 
+
+
 private_info.addEventListener('mouseenter', function () {
     console.log('on')
     mypage_btn.classList.remove('link_btn_off');
@@ -53,8 +55,9 @@ let qna_img_before = document.getElementsByClassName('qna_img_before')[0];
 let qna_img_after = document.getElementsByClassName('qna_img_after')[0];
 
 
-my_qna.addEventListener('mouseenter', function () {
-    console.log('on')
+my_qna.addEventListener('mouseenter', function (e)  {
+    e.stopImmediatePropagation()
+    console.log('ddd')
     qna_btn.classList.remove('link_btn_off');
     qna_btn.classList.add('link_btn_on');
 
@@ -62,10 +65,10 @@ my_qna.addEventListener('mouseenter', function () {
 
     qna_img_after.classList.remove('link_img_off');
     qna_img_after.classList.add('link_img_on');
-})
+},{once : true })
 
-my_qna.addEventListener('mouseleave', function () {
-    console.log('out')
+my_qna.addEventListener('mouseleave', function (e) {
+    e.stopImmediatePropagation();
     qna_btn.classList.remove('link_btn_on');
     qna_btn.classList.add('link_btn_off');
 
