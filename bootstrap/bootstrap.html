@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" >
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <title> 부트스트랩 테스트 </title>
+</head>
+<style>
+    div {
+        text-align: center;
+    }
+</style>
+<body>
+    <h1>Hello, Bootstrap!!!</h1>
+    <div class="row">
+        <div class="col-8 brd">col-8</div>
+        <div class="col-8 brd">col-4</div>
+    </div>
+
+    <div class="row">
+        <div class="col brd">1</div>
+        <div class="col brd">2</div>
+    </div>
+
+    <h2>중단점 설정</h2>
+
+    <!-- 브라우저 크기가 768 미마닐 때 레이아웃 변경 -->
+    <div class="row">
+        <div class="col-md-4 col-xs-6 brd">1</div>
+        <div class="col-md-4 col-xs-6 brd">2</div>
+        <div class="col-md-4 col-xs-12 brd">3</div>
+    </div>
+
+
+    <h2>화면 전체 크기 container</h2>
+    <div class="container-fluid">
+        <div class="col brd">1</div>
+        <div class="col brd">2</div>
+        <div class="col brd">3</div>
+    </div>
+
+    <h2>인라인 요소</h2>
+    <p>mark : 참조 또는 표기 목적으로 표시되거나 강조된 <mark>텍스트</mark></p>
+    <p>del : 문서에서 <del> 제거된 </del> 텍스트 </p>
+    <p> s : 더 이상 관련이 없거나 <s> 더 이상 정확하지 않은 </s> 텍스트 </p>
+    <p> ins : <ins>문서의 버전이 변경 될 떄</ins> 추가된 내용 표시 </p>
+    <p> u : <u>주석이 있음을 나타내는 방식으로 렌더링 </u> 되어야 할 때</p>
+    <p> small : <small> 저작권 및 법적 텍스트 </small> 와 같은 부가적인 텍스트와 작은 텍스트 작성 </p>
+    
+    <h1> 이미지 사용하기 </h1>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4"> 
+                <img class="img-fluid" src="../images/1794566202_e8IivfKj_529055b408e73deb9ba31e52827df23a02ccb1e1.png" alt=""> 
+            </div>
+            <div class="col-md-4"> 
+                <img class="img-fluid" src="../images/1794566202_e8IivfKj_529055b408e73deb9ba31e52827df23a02ccb1e1.png" alt=""> 
+            </div>
+            <div class="col-md-4"> 
+                <img class="img-fluid" src="../images/1794566202_e8IivfKj_529055b408e73deb9ba31e52827df23a02ccb1e1.png" alt=""> 
+            </div>
+        </div>
+    </div>
+        <h2>hover 효과</h2>
+    <table class="table table-striped table-hover">
+        <thead>
+
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">First</th>
+            <th scope="col">Last</th>
+            <th scope="col">Handle</th>
+          </tr>
+          
+        </thead>
+        <tbody>
+
+          <tr>
+            <th scope="row">1</th>
+            <td>Mark</td>
+            <td>Otto</td>
+            <td>@mdo</td>
+          </tr>
+
+          <tr>
+            <th scope="row">2</th>
+            <td>Jacob</td>
+            <td>Thornton</td>
+            <td>@fat</td>
+          </tr>
+
+          <tr>
+            <th scope="row">3</th>
+            <td colspan="2">Larry the Bird</td>
+            <td>@twitter</td>
+          </tr>
+
+        </tbody>
+      </table>
+
+
+</body>
+</html>

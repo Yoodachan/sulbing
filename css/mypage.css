@@ -84,15 +84,16 @@
 } 
 
 
-.content {
-  width: 100%;
-  height: 520px;
+#content {
+  margin: 0 auto;
 }
 
-.inner_page_wrap,
-.mypage_info {
+.page_wrap {
+  padding: 0px 20px 50px;
+}
+
+.mypage_intro {
   width: 1040px;
-  height: 530px;
   margin: 0 auto;
   text-align: center;
 }
@@ -102,162 +103,178 @@ h5 {
   font-size: 28px;
   color: #7b6251;
   font-weight: 600;
+  text-align: center;
 }
-.mypage_intro>span {
+h5 span {
+  display: block;
   color: #666666;
   font-size: 18px;
   font-weight: bold;
 }
+
 .mypage_link {
-  margin: 40px auto 0px;
+  display: flex;
   width: 1040px;
   height: 360px;
-  display:flex;
   justify-content: center;
+  margin-top: 50px;
 }
 
 
-.private_info,
-.my_qna {
-    width: 350px;
-    height: 360px;
+.inf,
+.qnl {
+    width: 345px;
+    height: 350px;
 }
 
-.mypage_link i {
-    display: block;
-    width: 180px;
-    height: 180px;
-    margin: 0 auto;
-    background-image: url(../images/bg_cscenter_intro_off.png);
-    position:relative;
+.mypage_link li a {
+  position: relative;
+  display: block;
 }
 
-.mypage_img_before,
-.qna_img_before {
-    display: block;
-    width: 120px;
-    height: 120px;
-    margin: 0 auto;
-    background-repeat: no-repeat;
-    position:absolute;
-    top: 30px;
-    left: 35px;
-    z-index:3;
-}
-
-.mypage_img_after,
-.qna_img_after {
+.mypage_link li a>i {
   display: block;
   width: 180px;
   height: 180px;
-  background-repeat: no-repeat;
-  position:absolute;
+  margin: 0 auto;
+}
+
+.inf_back_off,
+.qnl_back_off {
+  background-image: url(../images/bg_cscenter_intro_off.png);
+}
+
+.inf_back_on,
+.qnl_back_on {
+  background-image: url(../images/bg_cscenter_intro_on.png);
+  position: absolute;
   top: 0px;
-  z-index:6;
+  left: 80px;
+  scale: 1.5;
 }
 
-.mypage_icon i,
-.qna_icon i {
-  display: block;
-  width: 60px;
-  height: 60px;
-  line-height: 60px;
-  text-align: center;
-  color: #fff;
-  font-size: 80px;
-  background: none;
-  font-style:normal;
-  font-weight: bold;
-  border: 2px solid red;
-  margin: 60px auto;
-}
-
-
-
-.mypage_img_before {
-    background-image: url(../images/ico_mypage_info.png);
-}
-
-.qna_img_before {
-    background-image: url(../images/ico_cscenter_qna_list.png);
-}
-
-
-
-.mypage_img_after {
-  background-image: url(../images/bg_cscenter_intro_on.png);
-}
-
-.qna_img_after {
-  background-image: url(../images/bg_cscenter_intro_on.png);
-}
-
-
-/* mypage */
-
-/* 호버 애니메이션 */
-.link_btn_off {
-  color: #666;
-  background-color: #fff;
-}
-
-.link_btn_on {
-  color: #fff;
-  background-color: #7b6251;
-  transition: all 0.3s;
-}
-
-
-.link_img_off {
-  display: block;
+.back_hidden {
+  visibility: hidden;
   opacity:0;
   scale:calc(200%);
 }
 
-.link_img_on {
-  display: block;
+.back_view {
+  visibility: visible;
   opacity:1;
   scale:calc(100%);
   transition: all 0.6s;
 }
 
-
-
-.mypage_link a>strong {
-    display: block;
-    width: 360px;
-    height: 25px;
-    color:#2d2d2d;
-    font-size: 23px;
-    text-align: center;
-    margin: 20px auto;
-
+.icon_off {
+  display: block;
+  width: 120px;
+  height: 120px;
+  position:relative;
 }
 
-.mypage_link a>span {
-    display: block;
-    width: 360px;
-    height: 36px;
-    line-height: 18px;
-    color:#666666;
-    font-size: 16px;
-    text-align: center;
-    margin-bottom: 20px;
+.icon_off::before {
+  content: "";
+  width: 120px;
+  height: 120px;
+  position:absolute;
+  background-repeat: no-repeat;
+  background-size:cover;
 }
+.inf_icon::before {
+  top: 25px;
+  left: 25px;
+}
+.qnl_icon::before {
+  top: 20px;
+  left: 30px;
+}
+
+.icon_on {
+  display: block;
+  width: 120px;
+  height: 120px;
+  position:relative;
+}
+
+.icon_on::before {
+  display: block;
+  content: "";
+  width: 2px;
+  height: 48px;
+  color: red;
+  position:absolute;
+  top: 55%;
+  left: 75%;
+  background-color: #fff;
+}
+
+
+.icon_on::after {
+  display: block;
+  content: "";
+  width: 48px;
+  height: 2px;
+  color: red;
+  position:absolute;
+  background-color: #fff;
+  top: 75%;
+  left: 55%;
+}
+
+.inf_icon::before {
+  background-image: url(../images/ico_mypage_info.png);
+}
+.qnl_icon::before {
+  background-image: url(../images/ico_cscenter_qna_list.png);
+}
+
+.mypage_link a strong {
+  display: block;
+  width: 345px;
+  height: 20px;
+  font-size: 1.5em;
+  color: #2d2d2d;
+  text-align: center;
+  margin: 20px 0px;
+  font-weight: 800;
+}
+
+.mypage_link a span {
+  display: block;
+  color: #666666;
+  font-size: 16px;
+  font-weight: 400;
+  margin-bottom: 15px;
+}
+
+.mypage_link em {
+  display: block;
+}
+
 .mypage_link span>em {
-    display: block;
-    height: 18px;
+  display: block;
 }
 
-.link_btn {
-    display: block;
-    width: 100px;
-    height: 45px;
-    line-height: 42px;
-    margin: 0 auto;
-    border: 1px #9a9a9a solid;
-    font-size: 18px;
-    text-align: center;
-    color: #666;
-    background-color: #fff;
+.mypage_link a>em {
+  margin: 0 auto;
+  width: 105px;
+  height: 45px;
+  line-height: 45px;
+  font-size: 1.15em;
 }
+
+.link_off {
+  border: 1px #9a9a9a solid;
+  background-color: #fff;
+  color: #666666;
+  border-radius: 2px;
+}
+.link_on {
+  border: 1px #9a9a9a solid;
+  background-color: #7b6251;
+  color: #fff;
+  transition: all 0.6s;
+  border-radius: 2px;
+}
+

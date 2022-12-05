@@ -1,6 +1,97 @@
+
+/* 타이틀 영역 */
+
+.title_wrap {
+  width: 100%;
+}
+.common_title {
+display: block;
+position:relative;
+width: 1040px;
+height: 60px;
+margin: 50px auto;
+}
+
+.inner_title {
+position: relative;
+text-align: center;
+display: block;
+width: 520px;
+height: 60px;
+font-size: 36px;
+line-height: 60px;
+margin: 0 auto;
+text-align: center;
+}
+
+.title_text {
+display: block;
+width: 200px;
+height: 60px;
+font-size: 36px;
+line-height: 60px;
+margin: 0 auto;
+color: #2d2d2d;
+}
+
+.title_left,
+.title_right {
+position: absolute;
+top: 25px;
+}
+
+.title_left {
+background-image: url(../images/ico_tit_arrow_left.jpg);
+left: 120px;
+width:44px;
+height:13px;
+}
+
+.title_right {
+right: 120px;
+background-image: url(../images/ico_tit_arrow_right.jpg);
+width:44px;
+height:13px;
+}
+
+
+.location {
+display: flex;
+position: absolute;
+top: 0px;
+right: 30px;
+width: 140px;
+height: 60px;
+}
+
+.location li {
+margin: 20px auto;
+height: 20px;
+line-height: 20px;
+font-size: 16px;
+color:#666666;
+}
+
+.common_title li:nth-of-type(2)::before {
+width: 20px;
+height: 18px;
+font-size: 16px;
+content: ">";
+position:absolute;
+top: 19px;
+left: 45px;
+} 
+
+.common_title li p {
+font-weight: bold;
+} 
+
+
 .scroll_guide {
   display: none;
 }
+
+/* 컨텐츠 영역 */
 
 #content {
   margin: 0 auto;
@@ -20,7 +111,6 @@ h5 {
 }
 h5 span {
   display: block;
-
 }
 
 h5 strong {
@@ -35,6 +125,7 @@ h5 strong {
   width: 1040px;
   height: 350px;
   justify-content: center;
+  margin-top: 50px;
 }
 
 .faq,.qna,.qnl {
@@ -42,50 +133,99 @@ h5 strong {
   height: 350px;
 }
 
+.cscenter_link li a {
+  position: relative;
+  display: block;
+}
+
 .cscenter_link li a>i {
   display: block;
-  position: relative;
   width: 180px;
   height: 180px;
   margin: 0 auto;
+}
+
+.faq_back_off,
+.qna_back_off,
+.qnl_back_off {
+  background-image: url(../images/bg_cscenter_intro_off.png);
+}
+
+.faq_back_on,
+.qna_back_on,
+.qnl_back_on {
+  background-image: url(../images/bg_cscenter_intro_on.png);
+  position: absolute;
+  top: 0px;
+  left: 80px;
+  scale: 1.5;
+}
+
+.back_hidden {
+  visibility: hidden;
+  opacity:0;
+  scale:calc(200%);
+}
+
+.back_view {
+  visibility: visible;
+  opacity:1;
+  scale:calc(100%);
   transition: all 0.6s;
 }
-.back_off {
-  background-image: url(../images/bg_cscenter_intro_off.png);
-  transform: scale(1.0);
-}
-.back_on {
-  background-image: url(../images/bg_cscenter_intro_on.png);
-  transform: scale(1.5);
-}
 
-.cscenter_link li a>i>span {
-  position: absolute;
-  top: 30px;
-  left: 30px;
+.icon_off {
+  display: block;
   width: 120px;
   height: 120px;
+  position:relative;
+}
+
+.icon_off::before {
+  content: "";
+  width: 120px;
+  height: 120px;
+  position:absolute;
   background-repeat: no-repeat;
   background-size:cover;
+  top: 20px;
+  left: 30px;
 }
 
-.faq_icon_off {
-  display: none;
-  /* background-image: url(../images/ico_cscenter_faq.png); */
-}
-
-.faq_icon_on i {
-  margin: 30px auto;
+.icon_on {
   display: block;
-  width: 60px;
-  height: 60px;
-  line-height: 60px;
-  font-size: 60px;
-  font-weight: bold;
-  font-style: normal;
-  color: #fff;
+  width: 120px;
+  height: 120px;
+  position:relative;
 }
 
+.icon_on::before {
+  display: block;
+  content: "";
+  width: 2px;
+  height: 48px;
+  color: red;
+  position:absolute;
+  top: 55%;
+  left: 75%;
+  background-color: #fff;
+}
+
+.icon_on::after {
+  display: block;
+  content: "";
+  width: 48px;
+  height: 2px;
+  color: red;
+  position:absolute;
+  background-color: #fff;
+  top: 75%;
+  left: 55%;
+}
+
+.faq_icon::before {
+  background-image: url(../images/ico_cscenter_faq.png);
+}
 .qna_icon::before {
   background-image: url(../images/ico_cscenter_qna.png);
 }
@@ -99,6 +239,8 @@ h5 strong {
 
 .cscenter_link a strong {
   display: block;
+  width: 345px;
+  height: 20px;
   font-size: 1.5em;
   color: #2d2d2d;
   text-align: center;
@@ -119,7 +261,7 @@ h5 strong {
 }
 
 .cscenter_link span>em {
-  border: 1px solid red;
+  display: block;
 }
 
 .cscenter_link a>em {
@@ -128,8 +270,20 @@ h5 strong {
   height: 45px;
   line-height: 45px;
   font-size: 1.15em;
+}
+
+.link_off {
   border: 1px #9a9a9a solid;
+  background-color: #fff;
   color: #666666;
+  border-radius: 2px;
+}
+.link_on {
+  border: 1px #9a9a9a solid;
+  background-color: #7b6251;
+  color: #fff;
+  transition: all 0.6s;
+  border-radius: 2px;
 }
 
 dl {
@@ -166,6 +320,10 @@ dd::before {
   width: 2px;
   height: 2px;
   background-color: #000;
+}
+
+.cscenter_table {
+  margin-bottom: 100px;
 }
 
 .btn_more {
@@ -218,7 +376,4 @@ thead tr {
 /* anime */
 .table_off {
   display: none;
-}
-
-.table_on {
 }

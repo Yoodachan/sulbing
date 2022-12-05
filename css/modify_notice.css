@@ -115,7 +115,7 @@ font-weight: bold;
 .board_tab_on {
   background-color:#796150;
   color:#fff;
-  font-weight: 400;
+  font-weight: bold;
 }
 caption {
   display: none;

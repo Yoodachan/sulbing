@@ -58,6 +58,29 @@
 
 <body>
 
+<!-- 헤더 영역 시작 -->
+
+<?php include "../inc/header.php"; ?>
+
+<!-- 헤더 영역 종료 & 메인 영역 시작 -->
+
+<main>
+
+  <section class="title_wrap">
+    <div class="common_title">
+      <div class="inner_title drop_down_off">
+        <span class="title_left left_move_off"></span>
+        <h2 class="title_text"><a href="../index.php">고객센터</a></h2>
+        <span class="title_right right_move_off"></span>
+      </div>
+
+      <ul class="location">
+        <li><a href="../index.php">홈</a></li>
+        <li><p>고객센터</p></li>
+      </ul>
+    </div>
+  </section>
+
   <section id="content">
     <i class="scroll_guide">scroll을 내려주세요.</i>
     <div class="inner cscenter_wrap">
@@ -67,82 +90,113 @@
           <span> 설빙에게 궁금한 사항을 남겨주시면 최선을 다해 답변을 드리도록 하겠습니다. </span>
           <strong> (평일 9am~6pm/점심시간 12시~1시, 주말 및 공휴일 제외) </strong>
         </h5>
+        
         <ul class="cscenter_link">
-          <li class="faq">
-            <a href="#">
-              <i class="faq_back back_off">
-                <span class="faq_icon faq_icon_off"></span>
-                <span class="faq_icon faq_icon_on">
-                  <i class="fa-light fa-plus"></i>
 
-                </span>
+          <li class="faq">
+            <a href="#" alt="faq">
+              <!-- 기본 배경 -->
+              <i class="faq_back_off">
+              <!-- 변경 아이콘 -->
+                <span class="faq_icon icon_off"></span>
               </i>
+              <i class="faq_back_on back_hidden">
+                <span class="faq_icon icon_on"></span>
+              </i>
+
               <strong>FAQ</strong>
               <span>
                 고객님께서 자주 문의하시는 내용에
                 <em>대한 답변을 준비하였습니다.</em>
               </span>
-              <em class="faq_link">바로가기</em>
+              <em class="faq_link link_off">바로가기</em>
             </a>
           </li>
-          <!-- <li class="qna">
-            <a href="#">
-              <i class="qna_icon icon_off"></i>
+
+          <li class="qna">
+            <a href="#" alt="qna">
+
+              <i class="qna_back_off">
+                <span class="qna_icon icon_off"></span>
+              </i>
+              <i class="qna_back_on back_hidden">
+                <span class="qna_icon icon_on"></span>
+              </i>
+
               <strong>온라인 상담</strong>
               <span>
                 홈페이지를 통해서 온라인 상담을
                 <em>24시간 접수를 받고 있습니다.</em>
               </span>
-              <em class="qna_link">바로가기</em>
+              <em class="qna_link link_off">바로가기</em>
             </a>
           </li>
+
           <li class="qnl">
-            <a href="#">
-              <i class="qnl_icon icon_off"></i>
+            <a href="#" alt="qnl">
+
+              <i class="qnl_back_off">
+                  <span class="qnl_icon icon_off"></span>
+                </i>
+                <i class="qnl_back_on back_hidden">
+                  <span class="qnl_icon icon_on"></span>
+                </i>
+
               <strong>온라인 상담 내역</strong>
               <span>
                 홈페이지를 통해 온라인 상담한
                 <em>내역을 확인할 수 있습니다.</em>
               </span>
-              <em class="qnl_link">바로가기</em>
+              <em class="qnl_link link_off">바로가기</em>
             </a>
-          </li> -->
+          </li>
         </ul>
+
         <dl>
           <dt>접수 안내</dt>
           <dd>매장과 관련된 내용의 경우, 해당 가맹점에 작성자의 개인정보를 전달할 수 있습니다.</dd>
           <dd>접수사항은 통합시스템에 일괄 접수되어 관할부서/담당자에게 통보됩니다.</dd>
           <dd>접수해주신 내용은 공정거래위원회 고시 소비자분쟁해결기준에 의거하여 처리됩니다.</dd>
         </dl>
-        <button type="button" class="btn_more">
-          자세히 보기
-          <i id="btn_arrow" class="fa-solid fa-chevron-up"></i>
-        </button>
-        <table class="table table_on">
-          <caption>피해유형 테이블</caption>
-          <thead>
-            <tr>
-              <th>구분</th>
-              <th>피해유형</th>
-              <th>보상기준</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>식품</td>
-              <td>함량,용량부족,부패변질,유통기간경과,이물혼입</td>
-              <td>제품교환 또는 구입가 환불</td>
-            </tr>
-          </tbody>
-        </table>
 
+        <div class="cscenter_table">
+          <button type="button" class="btn_more">
+            자세히 보기
+            <i id="btn_arrow" class="fa-solid fa-chevron-up"></i>
+          </button>
+
+          <table class="table table_off">
+            <caption>피해유형 테이블</caption>
+            <thead>
+              <tr>
+                <th>구분</th>
+                <th>피해유형</th>
+                <th>보상기준</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>식품</td>
+                <td>함량,용량부족,부패변질,유통기간경과,이물혼입</td>
+                <td>제품교환 또는 구입가 환불</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        
       </div>
     </div>
-
   </section>
 
+</main>
 
-  
+<!-- 푸터 영역 시작 -->
+
+<?php include "../inc/footer.php"; ?>
+
+<!-- 푸터 영역 종료 -->
+
 </body>
 
 </html>

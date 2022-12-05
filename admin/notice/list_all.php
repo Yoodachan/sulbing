@@ -46,10 +46,10 @@ $total = mysqli_num_rows($result);
 
 
 // paging : 한 페이지 당 보여질 목록 수
-$list_num = 5;
+$list_num = 15;
 
 // paging : 한 블럭 당 페이지 수
-$page_num = 3;
+$page_num = 5;
 
 // paging : 현재 페이지 및 카테고리
 $page = !empty($_GET["page"])? $_GET["page"] : 1;
@@ -182,8 +182,8 @@ $i = $total - (($page - 1) * $list_num);
       <li><button type="button" class="tab_all <?php echo $cate=="" ? "tab_menu_on" : "tab_menu_off"?>" data-cate="">전체</button></li>
       <li><button type="button" class="tab_news <?php echo $cate=="news" ? "tab_menu_on" : "tab_menu_off"?>" data-cate="news">뉴스</button></li>
       <li><button type="button" class="tab_notice <?php echo $cate=="notice" ? "tab_menu_on" : "tab_menu_off"?>" data-cate="notice">공지사항</button></li>
-
   </ul>
+  
   <div class="list_top">
     <form class="notice_seach_wrap" id="search_form">
 

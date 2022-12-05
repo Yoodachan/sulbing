@@ -1,3 +1,30 @@
+<?php
+
+// 로그인 사용자만 접근
+
+include "../inc/session.php";
+
+// 로그인 사용자만 접근
+include "../inc/login_check.php";
+
+// DB 연결
+include "../inc/dbcon.php";
+
+// 쿼리 작성
+$sql = "select * from users where idx=$s_idx;";
+
+// 쿼리 실행
+$result = mysqli_query($dbcon, $sql);
+
+// DB에서 데이터 가져오기
+// mysqi_fetch_row(쿼리실행문) -- 필드순서
+// mysqi_fetch_array(쿼리실행문) -- 필드이름
+// mysqi_num_rows(쿼리실행문) -- 전체 행 개수
+$array = mysqli_fetch_array($result);
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -55,11 +82,14 @@
 
 <!-- 헤더 영역 시작 -->
 
-<?php include "../inc/header.php"; ?>
+<?php include "../inc/header_ns.php"; ?>
 
-<!-- 헤더 영역 종료 -->
+<!-- 헤더 영역 종료 & 메인 영역 시작 -->
 
 <main>
+
+<!-- 타이틀 영역 시작 -->
+
   <section class="title_wrap">
     <div class="common_title">
       <div class="inner_title drop_down_off">
@@ -74,39 +104,56 @@
       </ul>
     </div>
   </section>
+
+<!-- 타이틀 영역 종료 & 콘텐트 영역 시작  -->
   
-  <section class="contents">
-    <div class="inner_page_wrap">
+  <section id="content">
+    <div class="inner page_wrap">
       <div class="mypage_intro">
-        <h5><strong> 안녕하세요 <em>유다찬 고객님!</em> </strong></h5>
-        <span> 마이페이지에서는 고객님의 정보 및 활동 내용을 확인할 수 있습니다. </span>
+        <h5>
+          <strong>안녕하세요<em>
+            <?php echo $array["u_name"]; ?>
+            <?php if ($s_id == "admin") { ?> 
+            님! 
+            <?php } else { ?> 
+            고객님!
+            <?php } ?>
+          </em></strong>
+          <span> 마이페이지에서는 고객님의 정보 및 활동 내용을 확인할 수 있습니다. </span>
+        </h5>
+
         <ul class="mypage_link">
-          <li class="private_info">
-            <a href="./users_info.php" alt="개인정보 관리 이동">
-              <i class="mypage_icon">
-                <p class="mypage_img_before">
-                  
-                </p>
-                <p class="mypage_img_after link_img_off">
-                <i class="fa-light fa-plus"></i>
-                </p>
+      
+          <li class="inf">
+            <a href="./user_info.php" alt="개인정보 관리 이동">
+
+              <!-- 기본 배경 -->
+              <i class="inf_back_off">
+              <!-- 변경 아이콘 -->
+                <span class="inf_icon icon_off"></span>
               </i>
+              <i class="inf_back_on back_hidden">
+                <span class="inf_icon icon_on"></span>
+              </i>
+
               <strong>개인정보 관리</strong>
               <span>
-              고객님께서 자주 문의하시는 내용에
-              <em>대한 답변을 준비하였습니다.</em>
+                간단한 절차를 통해 고객님의
+                <em>정보를 수정할 수 있습니다.</em>
               </span>
-              <em class="link_btn link_btn_off" >바로가기</em>
+              <em class="inf_link link_off" >바로가기</em>
             </a>
-
           </li>
-          <li class="my_qna">
+
+          <li class="qnl">
             <a href="#" alt="온라인 상담내역 이동">
-              <i class="qna_icon">
-              <p class="qna_img_before"></p>
-              <p class="qna_img_after link_img_off">
-              <i class="fa-light fa-plus"></i>
-              </p>
+
+              <i class="qnl_back_off">
+
+              <span class="qnl_icon icon_off"></span>
+              </i>
+              <i class="qnl_back_on back_hidden">
+                <span class="qnl_icon icon_on"></span>
               </i>
 
               <strong>온라인 상담내역</strong>
@@ -114,7 +161,7 @@
               홈페이지를 통해 온라인 상담한
               <em>내역을 확인할수 있습니다.</em>
               </span>
-              <em class="link_btn link_btn_off">바로가기</em>
+              <em class="qnl_link link_off">바로가기</em>
             </a>
 
           </li>
@@ -126,7 +173,10 @@
     </div>
 
   </section>
+
 </main>
+
+<!-- 메인 영역 & 타이틀 영역 종료  -->
 
 <!-- 푸터 영역 시작 -->
 

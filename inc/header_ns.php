@@ -29,7 +29,7 @@
         <li class="logout"><a href="../login/logout.php">로그아웃</a></li>
         <li class="user_info"><a href="../members/mypage.php">마이페이지</a></li>
         <?php }; ?>
-        <li class="user_help"><a href="#">고객센터</a></li>
+        <li class="user_help"><a href="../cscenter/cscenter_intro.php">고객센터</a></li>
       </ul>
 
 

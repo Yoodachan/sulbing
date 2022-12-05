@@ -1,0 +1,208 @@
+.title_wrap {
+    width: 100%;
+}
+.common_title {
+    display: block;
+    position:relative;
+    width: 1040px;
+    height: 60px;
+    margin: 50px auto;
+}
+
+.inner_title {
+    position: relative;
+    text-align: center;
+    display: block;
+    width: 520px;
+    height: 60px;
+    font-size: 36px;
+    line-height: 60px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.title_text {
+    display: block;
+    width: 200px;
+    height: 60px;
+    font-size: 36px;
+    line-height: 60px;
+    margin: 0 auto;
+    color: #2d2d2d;
+}
+
+.title_left,
+.title_right {
+    position: absolute;
+    top: 25px;
+}
+
+.title_left {
+    background-image: url(../images/ico_tit_arrow_left.jpg);
+    left: 120px;
+    width:44px;
+    height:13px;
+}
+
+.title_right {
+    right: 120px;
+    background-image: url(../images/ico_tit_arrow_right.jpg);
+    width:44px;
+    height:13px;
+}
+
+
+.location {
+    display: flex;
+    position: absolute;
+    top: 0px;
+    right: 30px;
+    width: 140px;
+    height: 60px;
+}
+
+.location li {
+    margin: 20px auto;
+    height: 20px;
+    line-height: 20px;
+    font-size: 16px;
+    color:#666666;
+}
+
+.common_title li:nth-of-type(2)::before {
+    width: 20px;
+    height: 18px;
+    font-size: 16px;
+    content: ">";
+    position:absolute;
+    top: 19px;
+    left: 45px;
+} 
+
+.common_title li p {
+    font-weight: bold;
+} 
+
+/* 컨텐츠 영역 */
+
+#content {
+    margin: 0 auto;
+}
+
+.cscenter_faq {
+    width: 1040px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+/* 컨텐츠 텍스트 */
+
+h5 {
+    display: block;
+    font-size: 1.15em;
+    color:#666;
+    line-height: 1.5;
+}
+h5 span {
+    display: block;
+}
+
+h5 strong {
+    display: block;
+    margin-top: 10px;
+    font-weight: 600;
+    font-size: 0.9em;
+}
+
+/* 컨텐츠 카테고리 */
+
+.board_tab {
+    margin: 50px auto;
+    display: flex;
+    width: 1040px;
+    justify-content: center;
+}
+
+.board_tab li {
+    display: block;
+    width: 240px;
+    height: 50px;
+    line-height: 50px;
+    border: 1px #796150 solid;
+    text-align: center;
+    margin: 0px 5px;
+}
+.board_tab li a {
+    display: block;
+}
+.board_tab_off {
+    background-color: #fff;
+    color: #796150;
+    font-weight: lighter;
+}
+.board_tab_on {
+    background-color:#796150;
+    color:#fff;
+    font-weight: bold;
+}
+
+.faq_list {
+    width: 1040px;
+    border-top: 2px #9a9a9a solid;
+    border-bottom: 1px #c8c8c8 solid;
+    margin: 0 auto;
+}
+
+dl {
+    display: block;
+}
+
+.question_wrap {
+    height: 60px;
+}
+
+.question_wrap button {
+    display: block;
+    width: 1040px;
+    height: 60px;
+    border: none;
+    background: none;
+    padding: 20px 60px;
+    position: relative;
+}
+
+.question_wrap strong {
+    display: block;
+    width: 920px;
+    font-size: 16px;
+    color: #3c3c3c;
+    text-align: left;
+
+}
+
+.question_wrap strong::after {
+    position: absolute;
+    display: block;
+    content:"Q";
+    width: 60px;
+    height: 60px;
+    color: #7b6251;
+    top: 0px;
+    left: 0px;
+    text-align: center;
+    line-height: 60px;
+    font-size: 1.15em;
+    font-weight: bold;
+}
+
+.q_arrow {
+    position: absolute;
+    display: block;
+    width: 60px;
+    height: 60px;
+    line-height: 60px;
+    font-size: 16px;
+    color: #3c3c3c;
+    top: 0px;
+    right: 0px;
+}
