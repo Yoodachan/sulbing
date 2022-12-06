@@ -9,7 +9,7 @@ $cate = isset($_GET["cate"])? $_GET["cate"]: "";
 
 
 // 테이블 이름
-$table_name = "board";
+$table_name = "notice";
 
 // 쿼리 작성
 if($cate){

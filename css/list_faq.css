@@ -149,7 +149,6 @@ h5 strong {
 .faq_list {
     width: 1040px;
     border-top: 2px #9a9a9a solid;
-    border-bottom: 1px #c8c8c8 solid;
     margin: 0 auto;
 }
 
@@ -157,11 +156,28 @@ dl {
     display: block;
 }
 
-.question_wrap {
+.qa_wrap {
     height: 60px;
+    border-bottom: 1px #c8c8c8 solid;
+    overflow: hidden;
+    transition: all 0.3s;
 }
 
-.question_wrap button {
+.fal_on {
+    height: 120px;
+}
+
+.question_wrap {
+    display: block;
+    background-color: #fff;
+}
+.answering_wrap {
+    display: block;
+    background-color: #fafafa;
+}
+
+.question_wrap button,
+.answering_wrap span {
     display: block;
     width: 1040px;
     height: 60px;
@@ -171,29 +187,48 @@ dl {
     position: relative;
 }
 
-.question_wrap strong {
+.answering_wrap span {
+    border-bottom: 1px solid #000;
+}
+
+.question_wrap strong,
+.answering_wrap strong {
     display: block;
     width: 920px;
     font-size: 16px;
-    color: #3c3c3c;
     text-align: left;
-
 }
 
-.question_wrap strong::after {
+.question_wrap strong {
+    color: #3c3c3c;
+}
+.answering_wrap strong {
+    color: #666;
+    font-weight: normal;
+}
+
+.question_wrap strong::after,
+.answering_wrap strong::after {
     position: absolute;
     display: block;
-    content:"Q";
     width: 60px;
     height: 60px;
-    color: #7b6251;
     top: 0px;
     left: 0px;
+    color: #7b6251;
     text-align: center;
     line-height: 60px;
     font-size: 1.15em;
     font-weight: bold;
 }
+.question_wrap strong::after {
+    content:"Q";
+}
+
+.answering_wrap strong::after {
+    content:"A";
+}
+
 
 .q_arrow {
     position: absolute;
@@ -205,4 +240,15 @@ dl {
     color: #3c3c3c;
     top: 0px;
     right: 0px;
+    transition: all 0.6s;
+}
+
+/* 애니메이션 */
+
+.arrow_on {
+    transform:rotate(0deg)
+}
+
+.arrow_on {
+    transform:rotate(180deg)
 }

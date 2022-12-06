@@ -1,0 +1,334 @@
+.title_wrap {
+    width: 100%;
+}
+.common_title {
+    display: block;
+    position:relative;
+    width: 1040px;
+    height: 60px;
+    margin: 50px auto;
+}
+
+.inner_title {
+    position: relative;
+    text-align: center;
+    display: block;
+    width: 520px;
+    height: 60px;
+    font-size: 36px;
+    line-height: 60px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.title_text {
+    display: block;
+    width: 200px;
+    height: 60px;
+    font-size: 36px;
+    line-height: 60px;
+    margin: 0 auto;
+    color: #2d2d2d;
+}
+
+.title_left,
+.title_right {
+    position: absolute;
+    top: 25px;
+}
+
+.title_left {
+    background-image: url(../images/ico_tit_arrow_left.jpg);
+    left: 120px;
+    width:44px;
+    height:13px;
+}
+
+.title_right {
+    right: 120px;
+    background-image: url(../images/ico_tit_arrow_right.jpg);
+    width:44px;
+    height:13px;
+}
+
+
+.location {
+    display: flex;
+    position: absolute;
+    top: 0px;
+    right: 30px;
+    width: 140px;
+    height: 60px;
+}
+
+.location li {
+    margin: 20px auto;
+    height: 20px;
+    line-height: 20px;
+    font-size: 16px;
+    color:#666666;
+}
+
+.common_title li:nth-of-type(2)::before {
+    width: 20px;
+    height: 18px;
+    font-size: 16px;
+    content: ">";
+    position:absolute;
+    top: 19px;
+    left: 45px;
+} 
+
+.common_title li p {
+    font-weight: bold;
+} 
+
+/* 컨텐츠 영역 */
+
+#content {
+    margin: 0 auto;
+}
+
+.cscenter_faq {
+    width: 1040px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+/* 컨텐츠 텍스트 */
+
+h5 {
+    display: block;
+    font-size: 1.15em;
+    color:#666;
+    line-height: 1.5;
+}
+h5 span {
+    display: block;
+}
+
+h5 strong {
+    display: block;
+    margin-top: 10px;
+    font-weight: 600;
+    font-size: 0.9em;
+}
+
+/* 컨텐츠 카테고리 */
+
+.board_tab {
+    margin: 50px auto;
+    display: flex;
+    width: 1040px;
+    justify-content: center;
+}
+
+.board_tab li {
+    display: block;
+    width: 240px;
+    height: 50px;
+    line-height: 50px;
+    border: 1px #796150 solid;
+    text-align: center;
+    margin: 0px 5px;
+}
+.board_tab li a {
+    display: block;
+}
+.board_tab_off {
+    background-color: #fff;
+    color: #796150;
+    font-weight: lighter;
+}
+.board_tab_on {
+    background-color:#796150;
+    color:#fff;
+    font-weight: bold;
+}
+
+
+
+input,
+input::placeholder,
+.store,
+.content {
+    padding: 0 10px;
+}
+
+input::placeholder {
+    color:#666666;
+}
+
+caption {
+    display: none;
+}
+
+.n_border {
+    border: 1px solid #f0f0f0;  
+    border-radius: 4px;
+}
+  
+.n_border:focus {
+    border: 1px solid #e2e2e2;
+}
+
+/* 테이블 크기 및 테이블 라벨 설정 */
+
+.qna_board,
+.check_board {
+    display: block;
+    width: 1040px;
+    margin: 0 auto;
+    border-top: 1px #9a9a9a solid;
+    border-bottom: 1px #9a9a9a solid;
+  }
+
+.qna_board th,
+.check_board th {
+    width: 210px;
+    height: 60px;
+    border-bottom: 1px #e2e2e2 solid;
+    background-color: #faf9f5;
+    color: #2d2d2d;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+/* 테이블 내용 레이아웃 */
+.cate_wrap td,.store_wrap td,
+.mobile_wrap td,.email_wrap td,
+.title_wrap td,.content_wrap td {
+    width: 830px;
+    height: 60px;
+    border-bottom: 1px #e2e2e2 solid;
+    padding: 5px 0px 5px 20px;
+    color: #666666;
+    font-weight: 400;
+    font-size: 16px;
+    overflow: hidden;
+  }
+  
+/* 인풋 박스 크기 */
+.qna_board input,
+.qna_board .cate,
+.qna_board .content {
+    display: block;
+    width: 520px;
+    color: #444;
+    font-weight: 400;
+    font-size: 16px;
+}
+
+.qna_board input,
+.qna_board .cate {
+    height: 50px;
+}
+
+.qna_board .content {
+    height: 200px;
+    
+}
+
+.store_tag {
+    display: block;
+    position: relative;
+    width: 520px;
+    height: 50px;
+}
+.store_btn {
+    display: block;
+    width: 100px;
+    height: 46px;
+    text-align: center;
+    line-height: 46px;
+    font-size: 16px;
+    font-weight: bold;
+    background-color: #fff;
+    color:#999;
+    border: 1px solid #e2e2e2;
+    border-radius: 4px;
+    cursor:pointer;
+    transition:all 0.3s;
+    position: absolute;
+    top: 2px;
+    right: 2px;
+} 
+  
+.store_btn:hover {
+    color:#fff;
+    background-color: #ad9582;
+}
+
+
+/* 인풋 박스 포커스 */
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+  z-index:3;
+}
+
+h3,h4 {
+    display: block;
+    width: 400px;
+    line-height: 50px;
+    text-align: left;
+    margin: 30px auto 10px;
+    padding: 0;
+    background-color: #fff;
+}
+h3 {
+    font-size: 24px;
+
+}
+h4 {
+    font-size: 18px;
+}
+
+.check_area span {
+    width: 400px;
+    display: block;
+    margin: 0 auto;
+}
+
+.check_area .info {
+    display: block;
+    width: 400px;
+    height: 200px;
+    margin: 0 auto;
+
+}
+
+
+
+
+
+
+.form_btn_wrap {
+  display: flex;
+  width: 1040px;
+  height: 60px;
+  margin: 50px auto 30px;
+  justify-content: center;
+}
+
+.cancel_btn,
+.edit_btn {
+  width: 200px;
+  height: 60px;
+  line-height: 60px;
+  color: #fff;
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+  margin: 0 5px;
+  border: none;
+  cursor:pointer;
+}
+
+.cancel_btn {
+  background-color: #cdbbac;
+}
+.edit_btn {
+  background-color: #796150;
+}

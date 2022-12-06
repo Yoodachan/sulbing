@@ -72,7 +72,7 @@
     height: 300px;
     top: 500px;
     right: 80px;
-    z-index: 10;
+    z-index: 3;
 }
 
 .quick_model{
@@ -283,7 +283,7 @@
     position: absolute;
     transition: all 0.5s;
     bottom: 324px;
-    z-index: 10;
+    z-index: 1;
 }
 .bn_prev {
     left: 40px;
@@ -1157,4 +1157,12 @@
     height: 100%;
 }
 
+.sns_banner_1,
+.sns_banner_2,
+.sns_banner_3,
+.sns_banner_4,
+.sns_banner_5,
+.sns_banner_6 {
+    z-index:10;
+}
 

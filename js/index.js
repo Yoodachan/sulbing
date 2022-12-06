@@ -7,6 +7,7 @@ top_link_btn.addEventListener('click', function () {
 });
 //스크롤 모델
 window.addEventListener('scroll' , function () {
+  let quick_wrap = document.getElementsByClassName('quick_wrap')[0];
   let quick = document.getElementsByClassName('quick_model')[0];
   // 스크롤 변수 선언
   var scroll_y = window.scrollY;

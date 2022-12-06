@@ -61,8 +61,6 @@
 
   <!-- 헤더 영역 시작 -->
 
-  <header id="header">
-
     <!-- 가맹상담 배너 -->
   
     <div class="top_banner">
@@ -91,7 +89,6 @@
       <i class="fa-solid fa-chevron-up"></i>
     </button>
 
-  </header>
 
   <!-- 헤더 영역 종료 -->
 

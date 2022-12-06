@@ -179,9 +179,9 @@ $i = $total - (($page - 1) * $list_num);
   </section>
 
   <ul class="tab_menu">
-      <li><button type="button" class="tab_all <?php echo $cate=="" ? "tab_menu_on" : "tab_menu_off"?>" data-cate="">전체</button></li>
-      <li><button type="button" class="tab_news <?php echo $cate=="news" ? "tab_menu_on" : "tab_menu_off"?>" data-cate="news">뉴스</button></li>
-      <li><button type="button" class="tab_notice <?php echo $cate=="notice" ? "tab_menu_on" : "tab_menu_off"?>" data-cate="notice">공지사항</button></li>
+      <li><button id="tab_all" type="button" class="tab_btn <?php echo $cate=="" ? "tab_menu_on" : "tab_menu_off"?>" data-cate="">전체</button></li>
+      <li><button id="tab_news" type="button" class="tab_btn <?php echo $cate=="news" ? "tab_menu_on" : "tab_menu_off"?>" data-cate="news">뉴스</button></li>
+      <li><button id="tab_notice" type="button" class="tab_btn <?php echo $cate=="notice" ? "tab_menu_on" : "tab_menu_off"?>" data-cate="notice">공지사항</button></li>
   </ul>
   
   <div class="list_top">
@@ -321,12 +321,28 @@ $i = $total - (($page - 1) * $list_num);
 
 
 <script>
-$(document).on("click",".tab_menu button",function(){
+
+const tab_btn = document.querySelectorAll(".tab_btn");
+const tab_btl = tab_btn.length;
+
+for(var tab = 0 ; tab < tab_btl ; tab++ ) {
+    tab_btn[tab].addEventListener('click',
+    function () {
     let cate = $(this).data("cate");
     $("#cate").val(cate);
     $("#page").val(1);
     $("#search_form").submit();
-})
+    })
+}
+
+// $(document).on("click",".tab_btn",function(){
+//     let cate = $(this).data("cate");
+//     $("#cate").val(cate);
+//     $("#page").val(1);
+//     $("#search_form").submit();
+// })
+
+
 $(document).on("click",".page_num",function(e){
     e.preventDefault();
     let page = $(this).data("page");
