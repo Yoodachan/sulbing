@@ -23,27 +23,25 @@ title_anime ()
 
 
 //인풋 변수
-var u_name = document.getElementById("u_name");
-var u_id = document.getElementById("u_id");
-let pwd = document.getElementById("pwd");
-let re_pwd = document.getElementById("re_pwd");
-let mobile = document.getElementById("mobile");
-let email = document.getElementById("email_id");
-let dns = document.getElementById("email_dns");
-let birth = document.getElementById("birth");
+const u_name = document.getElementById("u_name");
+const u_id = document.getElementById("u_id");
+const pwd = document.getElementById("pwd");
+const re_pwd = document.getElementById("re_pwd");
+const mobile = document.getElementById("mobile");
+const email = document.getElementById("email_id");
+const dns = document.getElementById("email_dns");
+const birth = document.getElementById("birth");
 
-let ps_code = document.getElementById("ps_code");
-let addr1 = document.getElementById("addr1");
-let addr2 = document.getElementById("addr2");
-let addr3 = document.getElementById("addr3");
-
-let apply_all = document.getElementById("apply_all");
-
-let apply_priv = document.getElementById("apply_priv");
-let apply_medie = document.getElementById("apply_medie");
-let apply_age = document.getElementById("apply_age");
-let apply_marketing = document.getElementById("apply_marketing");
-let apply_marketing_hidden = document.getElementById('apply_marketing_hidden');
+const ps_code = document.getElementById("ps_code");
+const addr1 = document.getElementById("addr1");
+const addr2 = document.getElementById("addr2");
+const addr3 = document.getElementById("addr3");
+const apply_all = document.getElementById("apply_all");
+const apply_priv = document.getElementById("apply_priv");
+const apply_medie = document.getElementById("apply_medie");
+const apply_age = document.getElementById("apply_age");
+const apply_marketing = document.getElementById("apply_marketing");
+const apply_marketing_hidden = document.getElementById('apply_marketing_hidden');
 
 // 이름
 var u_name_reg = /^[가-힣]{2,20}$/;
@@ -94,13 +92,13 @@ var d_addr3 = document.getElementById("d_addr3");
 var postal_btn = document.getElementById("postal_btn");
 
 
-//이름
 
+
+//이름
 //이름 미 작성시 실시간으로 하단 텍스트 생성
 var name_text_wrap = document.getElementById("name_text_wrap");
 let name_text = document.createElement('p');
 //chap1. p태그를 변수에 저장
-
 u_name.addEventListener('input', 
 function name_text_on () {
     if(!u_name_reg.test(u_name.value) ) {
@@ -130,11 +128,7 @@ u_name.addEventListener('change',
 function name_text_out() {
     if(u_name_reg.test(u_name.value)) {
         name_text_wrap.removeChild(name_text);
-    //   name_check = false;
    } 
-    else {
-        // name_check = true;
-    }
 }
 ) ;
 //이름 삭제 버튼 on/off
@@ -151,7 +145,6 @@ function name_button_on () {
 })
 
 //이름 삭제 버튼 기능
-
 d_name.addEventListener('click',
 function name_button_off () {
     u_name.value = ""
@@ -167,6 +160,8 @@ function name_button_off () {
     name_check = false;
 }
 );
+
+
 
 // 아이디
 
@@ -568,7 +563,7 @@ function mobile_button_off () {
 );
 
 
-// 연락처
+// 이메일
 let email_text_wrap = document.getElementById("email_text_wrap");
 let email_text = document.createElement('p');
 
@@ -602,10 +597,6 @@ email.addEventListener('change',
     function mobile_text_out() {
         if (email_reg.test(email.value)) {
             email_text_wrap.removeChild(email_text);
-            //   name_check = false;
-        }
-        else {
-            // name_check = true;
         }
     }
 );
