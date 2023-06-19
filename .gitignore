@@ -1,4 +1,4 @@
-admin/inc/dbcon_dothome.php
-admin/inc/dothome.php
-inc/dbcon_dothome.php
-inc/dothome.php
+##폴더 무시
+inc
+admin/
+.vscode/
